@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+out/*.csv
+out/*.json
+!out/.gitkeep
+.DS_Store
+.pytest_cache/
+
+# Internal strategy doc — kept out of the public Pages site
+docs/growth-plan.html

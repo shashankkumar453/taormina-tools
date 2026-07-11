@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Taormina Tools — Weekly Report 2026-06-22</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1400px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+h1 { font-size: 28px; margin-bottom: 4px; }
+.subtitle { color: #666; margin-bottom: 10px; font-size: 14px; }
+nav { display: flex; gap: 8px; margin: 16px 0 30px; flex-wrap: wrap; }
+nav a { display: inline-block; padding: 8px 16px; border-radius: 6px; background: #2c3e50; color: white; font-size: 13px; font-weight: 600; text-decoration: none; }
+nav a:hover { background: #1a252f; }
+nav a .nav-count { opacity: 0.7; font-weight: 400; margin-left: 4px; }
+.report-section { margin-bottom: 60px; }
+.report-header { font-size: 24px; margin: 0 0 4px; padding-top: 30px; border-top: 3px solid #8b1c1c; }
+.report-desc { color: #666; font-size: 13px; margin-bottom: 16px; }
+.stats { display: flex; gap: 16px; margin: 16px 0 20px; flex-wrap: wrap; }
+.stat-card { background: #f8f9fa; border-radius: 8px; padding: 14px 20px; border-left: 3px solid #8b1c1c; }
+.stat-card .num { font-size: 24px; font-weight: 700; color: #8b1c1c; }
+.stat-card .label { font-size: 12px; color: #666; }
+.method { background: #f0f7f0; border: 1px solid #c3e6c3; border-radius: 6px; padding: 14px 18px; margin: 12px 0 20px; font-size: 13px; }
+.method strong { color: #1a5c1a; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 16px; }
+th { background: #2c3e50; color: white; padding: 10px 8px; text-align: left; position: sticky; top: 0; z-index: 1; }
+td { padding: 8px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:hover td { background: #f5f5f5; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.good { color: #27ae60; font-weight: 600; }
+.bad { color: #c0392b; }
+.tag { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+.tag-clean { background: #d4edda; color: #155724; }
+.tag-salvage { background: #f8d7da; color: #721c24; }
+.tag-1owner { background: #cce5ff; color: #004085; }
+.tag-swap { background: #fff3cd; color: #856404; }
+.tag-project { background: #e2e3e5; color: #383d41; }
+.low-miles { color: #27ae60; }
+.high-miles { color: #c0392b; }
+.model-title { font-size: 18px; margin: 30px 0 8px; padding-top: 16px; border-top: 1px solid #eee; }
+.baseline-info { font-size: 12px; color: #666; margin: 4px 0 12px; }
+.highlight-row td { background: #f0fff0; }
+.snippet { max-width: 400px; font-size: 12px; color: #555; word-break: break-word; }
+.footer { color: #666; font-size: 12px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 12px; }
+
+</style>
+</head>
+<body>
+<h1>Weekly Report</h1>
+<p class="subtitle">Generated 2026-06-22 | 100 total leads across 6 sources</p>
+<nav>
+<a href="#values">Market Values</a>
+<a href="#swap-economics">Swap Targets</a>
+<a href="#deals">Deals<span class="nav-count">(6)</span></a>
+<a href="#swaps">Swap Candidates<span class="nav-count">(7)</span></a>
+<a href="#stale">Stale Inventory<span class="nav-count">(54)</span></a>
+<a href="#salvage">Salvage<span class="nav-count">(2)</span></a>
+<a href="#projects">Project Cars<span class="nav-count">(30)</span></a>
+<a href="#forums">Classifieds<span class="nav-count">(1)</span></a>
+</nav>
+<div class="report-section" id="values">
+<h2 class="report-header">Estimated Market Values</h2>
+<p class="report-desc">Based on recent Bring a Trailer + Cars &amp; Bids sold prices (mileage + year adjusted regression)</p>
+<table>
+<tr><th>Model</th><th>Est. Market Value</th><th>Range (P25–P75)</th><th>Avg Miles</th><th>$/Mile</th><th>$/Year</th><th>Sales Sampled</th><th>Listings Found</th><th>Best Deal</th><th>Best Adj. Disc.</th></tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$180,000</td>
+  <td>$120,000–$240,000</td>
+  <td>14,747</td>
+  <td>$-2</td>
+  <td>$112,225</td>
+  <td>21</td>
+  <td>45</td>
+  <td>$147,000</td>
+  <td class="good">61.0%</td>
+</tr>
+<tr>
+  <td><strong>F355</strong></td>
+  <td>$156,500</td>
+  <td>$87,000–$182,000</td>
+  <td>18,000</td>
+  <td>$-4</td>
+  <td>$-43,414</td>
+  <td>25</td>
+  <td>9</td>
+  <td>$88,900</td>
+  <td class="good">37.9%</td>
+</tr>
+<tr>
+  <td><strong>F430 Spider</strong></td>
+  <td>$108,777</td>
+  <td>$105,000–$114,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>5</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$108,050</td>
+  <td>$32,250–$152,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>6</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>F355 Spider</strong></td>
+  <td>$87,000</td>
+  <td>$57,500–$143,500</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>3</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>599 GTB</strong></td>
+  <td>$87,000</td>
+  <td>$40,727–$152,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>7</td>
+  <td>13</td>
+  <td>$179,888</td>
+  <td class="bad">-106.8%</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="swap-economics">
+<h2 class="report-header">Manual Swap Targets</h2>
+<p class="report-desc">F1/e-gear exotics where converting to manual gearbox unlocks significant value. Swap cost is for parts + labor at a specialist shop.</p>
+<table>
+<tr><th>Model</th><th>F1/E-gear Value</th><th>Manual Value</th><th>Swap Cost</th><th>Potential Profit</th><th>ROI</th><th>Notes</th></tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$180,000</td>
+  <td>$260,000</td>
+  <td>$22,000</td>
+  <td class="good"><strong>$58,000</strong></td>
+  <td class="good">29%</td>
+  <td class="snippet">F1-to-gated 6-speed. Largest profit margin — manual F430s are highly sought.</td>
+</tr>
+<tr>
+  <td><strong>F430 Spider</strong></td>
+  <td>$108,777</td>
+  <td>$180,000</td>
+  <td>$22,000</td>
+  <td class="good"><strong>$49,223</strong></td>
+  <td class="good">38%</td>
+  <td class="snippet">Same swap as coupe. Spider manual premiums slightly lower but still significant.</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$108,050</td>
+  <td>$175,000</td>
+  <td>$20,000</td>
+  <td class="good"><strong>$46,950</strong></td>
+  <td class="good">37%</td>
+  <td class="snippet">F1-to-gated 6-speed. V12 GT cruiser with strong manual demand.</td>
+</tr>
+<tr>
+  <td><strong>599 GTB</strong></td>
+  <td>$87,000</td>
+  <td>$250,000</td>
+  <td>$25,000</td>
+  <td class="good"><strong>$138,000</strong></td>
+  <td class="good">123%</td>
+  <td class="snippet">F1-to-gated 6-speed. Low production manual cars; swap adds huge value.</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="deals">
+<h2 class="report-header">Deal Finder</h2>
+<p class="report-desc">6 listings found</p>
+<div class="method"><strong>How market price is determined:</strong> Recent sold prices from Bring a Trailer (with mileage and year from titles) + Cars &amp; Bids (via Google). A multivariate regression on price vs. mileage and model year calculates what each car <em>should</em> cost at its specific odometer reading and year. The "Adj. Disc." column shows how far below that adjusted expected price this listing is — a much more accurate picture than a flat median comparison.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">6</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">3</div><div class="label">Positive Score</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">F430 (6 listings)</h3>
+<div class="baseline-info">Market baseline: Median $180,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">31.1</td>
+  <td>2007</td>
+  <td><a href="https://driversource.com/vehicles/1912/2007-ferrari-f430" target="_blank">2007 Ferrari F430</a></td>
+  <td><strong>$156,500</strong></td>
+  <td>13.1%</td>
+  <td class="good">36.1%</td>
+  <td>33,865</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>107</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Driversource</td>
+  <td>TX</td>
+  <td>281-497-1000</td>
+</tr>
+<tr>
+  <td class="good">26.7</td>
+  <td>2008</td>
+  <td><a href="https://www.8-11motorgroup.com/inventory/used-2008-ferrari-f430-spider-zffew59a580160546-in-troy-mi" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$149,995</strong></td>
+  <td>16.7%</td>
+  <td class="good">33.2%</td>
+  <td>40,285</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>5</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Yellow</td>
+  <td>8-11 Motor Group</td>
+  <td>MI</td>
+  <td>248-817-9677</td>
+</tr>
+<tr>
+  <td class="good">13.6</td>
+  <td>2007</td>
+  <td><a href="https://www.malibuautomotivegroup.com/used-cars-FERRARI-F430-2007-156018-YDDNWXKY" target="_blank">2007 FERRARI F430</a></td>
+  <td><strong>$129,890</strong></td>
+  <td>27.8%</td>
+  <td class="good">18.6%</td>
+  <td>33,616</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>131</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Malibu Automotive Group</td>
+  <td>CA</td>
+  <td>310-919-4692</td>
+</tr>
+<tr>
+  <td class="bad">-59.2</td>
+  <td>2006</td>
+  <td><a href="http://www.goldboyzautosales.com/pre-owned-cars/detail/2006-Ferrari-430-/1501088" target="_blank">2006-Ferrari-430-</a></td>
+  <td><strong>$129,950</strong></td>
+  <td>27.8%</td>
+  <td class="bad">-54.2%</td>
+  <td>35,572</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>102</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Goldboyz Auto Sales</td>
+  <td>WA</td>
+  <td>253-301-4555</td>
+</tr>
+<tr>
+  <td class="bad">-81.2</td>
+  <td>2005</td>
+  <td><a href="https://www.formulaimports.com/used-vehicle-2005-ferrari-f430-berlinetta-daytona-power-seats-leather-rear-shelf-door-moulding-c-4659/" target="_blank">Used 2005 Ferrari F430 Berlinetta DAYTONA POWER SEATS / LEATHER REAR SHELF &amp; DOOR MOULDING</a></td>
+  <td><strong>$147,995</strong></td>
+  <td>17.8%</td>
+  <td class="bad">-76.2%</td>
+  <td>40,320</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>127</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Corsa Ds</td>
+  <td>Formula Imports</td>
+  <td>NC</td>
+  <td>980-202-5890</td>
+</tr>
+<tr>
+  <td class="bad">-95.5</td>
+  <td>2006</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2006-147934-RJPDMMQR" target="_blank">2006 FERRARI F430</a></td>
+  <td><strong>$159,985</strong></td>
+  <td>11.1%</td>
+  <td class="bad">-90.5%</td>
+  <td>37,283</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>66</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="swaps">
+<h2 class="report-header">Manual Swap Candidates</h2>
+<p class="report-desc">7 listings found</p>
+<div class="method"><strong>Manual-swap economics:</strong> F1/e-gear exotics (Ferrari 360, F430, Gallardo, etc.) trade 30-50% below their manual equivalents. Converting the transmission costs $15-25k but unlocks $50-100k+ in value. This section shows F1/e-gear cars priced below mileage-adjusted market value — the best swap candidates.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">7</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">3</div><div class="label">Positive Score</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">F430 (6 listings)</h3>
+<div class="baseline-info">Market baseline: Median $180,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">41.1</td>
+  <td>2007</td>
+  <td><a href="https://driversource.com/vehicles/1912/2007-ferrari-f430" target="_blank">2007 Ferrari F430</a></td>
+  <td><strong>$156,500</strong></td>
+  <td>13.1%</td>
+  <td class="good">36.1%</td>
+  <td>33,865</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>107</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Driversource</td>
+  <td>TX</td>
+  <td>281-497-1000</td>
+</tr>
+<tr>
+  <td class="good">36.7</td>
+  <td>2008</td>
+  <td><a href="https://www.8-11motorgroup.com/inventory/used-2008-ferrari-f430-spider-zffew59a580160546-in-troy-mi" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$149,995</strong></td>
+  <td>16.7%</td>
+  <td class="good">33.2%</td>
+  <td>40,285</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>5</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Yellow</td>
+  <td>8-11 Motor Group</td>
+  <td>MI</td>
+  <td>248-817-9677</td>
+</tr>
+<tr>
+  <td class="good">23.6</td>
+  <td>2007</td>
+  <td><a href="https://www.malibuautomotivegroup.com/used-cars-FERRARI-F430-2007-156018-YDDNWXKY" target="_blank">2007 FERRARI F430</a></td>
+  <td><strong>$129,890</strong></td>
+  <td>27.8%</td>
+  <td class="good">18.6%</td>
+  <td>33,616</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>131</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Malibu Automotive Group</td>
+  <td>CA</td>
+  <td>310-919-4692</td>
+</tr>
+<tr>
+  <td class="bad">-49.2</td>
+  <td>2006</td>
+  <td><a href="http://www.goldboyzautosales.com/pre-owned-cars/detail/2006-Ferrari-430-/1501088" target="_blank">2006-Ferrari-430-</a></td>
+  <td><strong>$129,950</strong></td>
+  <td>27.8%</td>
+  <td class="bad">-54.2%</td>
+  <td>35,572</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>102</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Goldboyz Auto Sales</td>
+  <td>WA</td>
+  <td>253-301-4555</td>
+</tr>
+<tr>
+  <td class="bad">-71.2</td>
+  <td>2005</td>
+  <td><a href="https://www.formulaimports.com/used-vehicle-2005-ferrari-f430-berlinetta-daytona-power-seats-leather-rear-shelf-door-moulding-c-4659/" target="_blank">Used 2005 Ferrari F430 Berlinetta DAYTONA POWER SEATS / LEATHER REAR SHELF &amp; DOOR MOULDING</a></td>
+  <td><strong>$147,995</strong></td>
+  <td>17.8%</td>
+  <td class="bad">-76.2%</td>
+  <td>40,320</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>127</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Corsa Ds</td>
+  <td>Formula Imports</td>
+  <td>NC</td>
+  <td>980-202-5890</td>
+</tr>
+<tr>
+  <td class="bad">-85.5</td>
+  <td>2006</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2006-147934-RJPDMMQR" target="_blank">2006 FERRARI F430</a></td>
+  <td><strong>$159,985</strong></td>
+  <td>11.1%</td>
+  <td class="bad">-90.5%</td>
+  <td>37,283</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>66</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+</table>
+<h3 class="model-title">599 GTB (1 listings)</h3>
+<div class="baseline-info">Market baseline: Median $87,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="bad">-504.1</td>
+  <td>2008</td>
+  <td><a href="https://www.fusionmotorco.com/vehicles/1507/2008-ferrari-599-gtb-fiorano-6-speed-conversion" target="_blank">2008 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$349,950</strong></td>
+  <td>-302.2%</td>
+  <td class="bad">-518.8%</td>
+  <td>16,578</td>
+  <td class="">1.1x avg</td>
+  <td>138</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Fusion Luxury Motors</td>
+  <td>CA</td>
+  <td>818-773-8181</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="stale">
+<h2 class="report-header">Stale Inventory (Problem Signals)</h2>
+<p class="report-desc">54 listings found</p>
+<div class="method"><strong>Stale inventory:</strong> Dealer listings sitting 120+ days on market, sorted by days on lot. Cars that sit this long usually have undisclosed problems — mechanical issues, title problems, or dealers who can't move them. The longer it sits, the more negotiable the price. Non-clean titles are highlighted as fixable opportunities.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">54</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">54</div><div class="label">Positive Score</div></div>
+<div class="stat-card"><div class="num">3</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">F430 (33 listings)</h3>
+<div class="baseline-info">Market baseline: Median $180,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">45.3</td>
+  <td>2009</td>
+  <td><a href="https://www.montecarlocarclub1.com/2009-Ferrari-430-Newark-NJ-Harrison-Kearny-Irvington-Essex/used_car/DCG3nncUCUs=" target="_blank">Used 2009 Ferrari 430 2dr Conv Spider|8,472 Miles|Rear Wheel Drive</a></td>
+  <td><strong>$165,000</strong></td>
+  <td>8.3%</td>
+  <td class="good">50.9%</td>
+  <td>8,472</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>488</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red Corsa</td>
+  <td>Monte Carlo Car Club Llc</td>
+  <td>NJ</td>
+  <td>908-936-1234</td>
+</tr>
+<tr>
+  <td class="good">43.2</td>
+  <td>2008</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/20080/" target="_blank">2008 Ferrari 430 Spyder</a></td>
+  <td><strong>$149,800</strong></td>
+  <td>16.8%</td>
+  <td class="good">44.1%</td>
+  <td>4,420</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>2062</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">40.8</td>
+  <td>2009</td>
+  <td><a href="https://www.5cornerautosales.com/Inventory/Details/beb10c26-83be-4196-b917-521e260dff7b" target="_blank">2009 Ferrari F430 Spider F1</a></td>
+  <td><strong>$165,995</strong></td>
+  <td>7.8%</td>
+  <td class="good">50.0%</td>
+  <td>12,141</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>790</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Burgundy</td>
+  <td>5 Corner Auto Sales Inc.</td>
+  <td>MA</td>
+  <td>508-801-7426</td>
+</tr>
+<tr>
+  <td class="good">40.4</td>
+  <td>2009</td>
+  <td><a href="https://www.westcoastexoticcars.com/used-vehicle-2009-ferrari-430-spider-c-2845/" target="_blank">2009 Ferrari 430</a></td>
+  <td><strong>$219,980</strong></td>
+  <td>-22.2%</td>
+  <td class="good">34.6%</td>
+  <td>8,375</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>615</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>West Coast Exotic Cars</td>
+  <td>CA</td>
+  <td>844-488-9232</td>
+</tr>
+<tr>
+  <td class="good">38.2</td>
+  <td>2008</td>
+  <td><a href="https://mrcarguys.com/2008-ferrari-f430-spider-base-%7C-addison,-tx-%7C-mr-car-guys-addison-tx-75001/7294475" target="_blank">2008 Ferrari F430 Spider Base | Addison, TX | Mr Car Guys</a></td>
+  <td><strong>$149,900</strong></td>
+  <td>16.7%</td>
+  <td class="good">41.8%</td>
+  <td>13,180</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>1587</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Mr Car Guys</td>
+  <td>TX</td>
+  <td>214-732-7859</td>
+</tr>
+<tr>
+  <td class="good">35.1</td>
+  <td>2008</td>
+  <td><a href="https://www.autoexcellencegroup.com/details/used-2008-ferrari-f430-spider/92241166" target="_blank">2008 Ferrari F430 Spider</a></td>
+  <td><strong>$149,888</strong></td>
+  <td>16.7%</td>
+  <td class="good">37.5%</td>
+  <td>27,722</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1624</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Auto Excellence Group</td>
+  <td>MA</td>
+  <td>617-782-8222</td>
+</tr>
+<tr>
+  <td class="good">32.7</td>
+  <td>2008</td>
+  <td><a href="https://www.blackhorsegarage.com/inventory/ferrari/f430-spider/160504/" target="_blank">2008 FERRARI F430 SPIDER</a></td>
+  <td><strong>$147,000</strong></td>
+  <td>18.3%</td>
+  <td class="good">61.0%</td>
+  <td>23,651</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>1960</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>RED</td>
+  <td>Black Horse Garage</td>
+  <td>CT</td>
+  <td>203-330-9604</td>
+</tr>
+<tr>
+  <td class="good">32.3</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/380/" target="_blank">2007 Ferrari F430 Coupe</a></td>
+  <td><strong>$123,995</strong></td>
+  <td>31.1%</td>
+  <td class="good">27.0%</td>
+  <td>25,200</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>1946</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">31.4</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/007%20fer/" target="_blank">2007 Ferrari F430 Spider</a></td>
+  <td><strong>$139,900</strong></td>
+  <td>22.3%</td>
+  <td class="good">21.1%</td>
+  <td>19,200</td>
+  <td class="">1.0x avg</td>
+  <td>870</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Corsa red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">30.6</td>
+  <td>2007</td>
+  <td><a href="https://www.martinautopa.com/Inventory/Details/19ddd0b1-d718-4eb1-91ab-c0178eaa718c" target="_blank">2007 Ferrari F430 Spider</a></td>
+  <td><strong>$149,988</strong></td>
+  <td>16.7%</td>
+  <td class="good">17.2%</td>
+  <td>15,905</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2767</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>Martin Auto Gallery</td>
+  <td>PA</td>
+  <td>412-861-0904</td>
+</tr>
+<tr>
+  <td class="good">30.4</td>
+  <td>2006</td>
+  <td><a href="https://www.cardogroup.us/inventory/ferrari/f430/150312/" target="_blank">2006 FERRARI F430</a></td>
+  <td><strong>$120,000</strong></td>
+  <td>33.3%</td>
+  <td class="good">1.4%</td>
+  <td>4,899</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>513</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Cardo Group</td>
+  <td>FL</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2009</td>
+  <td><a href="https://exoticmotors.com/listing/2009-ferrari-430/" target="_blank">2009 Ferrari 430 Scuderia Spider 16M</a></td>
+  <td><strong>$979,990</strong></td>
+  <td>-444.4%</td>
+  <td class="bad">-189.2%</td>
+  <td>6,260</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>606</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Exotic Motors</td>
+  <td>NJ</td>
+  <td>862-223-8001</td>
+</tr>
+<tr>
+  <td class="good">28.8</td>
+  <td>2008</td>
+  <td><a href="https://www.eurocaroc.com/inventory/display/used/2008/Ferrari/F430/ZFFKW64A480164216/" target="_blank">2008 Ferrari F430 Scuderia</a></td>
+  <td><strong>$899,999</strong></td>
+  <td>-400.0%</td>
+  <td class="bad">-240.8%</td>
+  <td>7,781</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>413</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>Eurocar Inc.</td>
+  <td>CA</td>
+  <td>949-722-7121</td>
+</tr>
+<tr>
+  <td class="good">28.6</td>
+  <td>2009</td>
+  <td><a href="https://www.vegasautogallery.com/used-vehicle-2009-ferrari-f430-spider-c-6347/" target="_blank">2009 Ferrari F430</a></td>
+  <td><strong>$449,999</strong></td>
+  <td>-150.0%</td>
+  <td class="bad">-34.0%</td>
+  <td>8,844</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>408</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Lotus Cars Las Vegas</td>
+  <td>NV</td>
+  <td>725-219-0524</td>
+</tr>
+<tr>
+  <td class="good">28.4</td>
+  <td>2008</td>
+  <td><a href="https://jsmitsubishi.com/inventory/Used-2008-Ferrari-F430-Berlinetta-ZFFEW58A680164655" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$214,995</strong></td>
+  <td>-19.4%</td>
+  <td class="good">12.6%</td>
+  <td>22,534</td>
+  <td class="">1.1x avg</td>
+  <td>1201</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow Modena</td>
+  <td>J And S Mitsubishi</td>
+  <td>NJ</td>
+  <td>609-739-7619</td>
+</tr>
+<tr>
+  <td class="good">28.2</td>
+  <td>2008</td>
+  <td><a href="https://www.eastsidemotoringautosales.com/used/Ferrari/2008-Ferrari-F430-06bc351cac18104abfd5363456c1e7f2.htm" target="_blank">2008 Ferrari F430 Spider Convertible 2D</a></td>
+  <td><strong>$129,983</strong></td>
+  <td>27.8%</td>
+  <td class="good">43.9%</td>
+  <td>34,167</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1486</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Eastside Motoring</td>
+  <td>MA</td>
+  <td>781-488-1998</td>
+</tr>
+<tr>
+  <td class="good">26.0</td>
+  <td>2007</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2007-157753-ROAOBJJR" target="_blank">2007 FERRARI F430</a></td>
+  <td><strong>$359,985</strong></td>
+  <td>-100.0%</td>
+  <td class="bad">-91.6%</td>
+  <td>10,488</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>894</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>YELLOW</td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2009</td>
+  <td><a href="https://www.ferrarislc.com/inventory/used-2009-ferrari-430-scuderia-rwd-2dr-car-zffkw64a990168263/" target="_blank">Pre-Owned 2009 Ferrari 430 Scuderia</a></td>
+  <td><strong>$855,960</strong></td>
+  <td>-375.5%</td>
+  <td class="bad">-157.9%</td>
+  <td>11,955</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>577</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Avus</td>
+  <td>Ferrari Of Salt Lake City</td>
+  <td>UT</td>
+  <td>801-521-0340</td>
+</tr>
+<tr>
+  <td class="good">25.6</td>
+  <td>2009</td>
+  <td><a href="https://www.meritpartners.com/2009-Ferrari-430-Scuderia-167104" target="_blank">2009 Ferrari 430 Scuderia</a></td>
+  <td><strong>$749,990</strong></td>
+  <td>-316.7%</td>
+  <td class="bad">-127.5%</td>
+  <td>13,797</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>531</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Merit Partners</td>
+  <td>GA</td>
+  <td>404-719-4265</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-ferrari-f430-spider-ZFFEW59A080159742" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$149,998</strong></td>
+  <td>16.7%</td>
+  <td class="good">35.1%</td>
+  <td>34,735</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>715</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Black</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2006</td>
+  <td><a href="https://www.cavallinorossostlouis.com/used-St+Louis-2006-Ferrari-F430+Spider-+-ZFFEW59A460145212" target="_blank">2006 Ferrari F430 Spider Spider</a></td>
+  <td><strong>$524,890</strong></td>
+  <td>-191.6%</td>
+  <td class="bad">-379.8%</td>
+  <td>14,998</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>630</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Nero</td>
+  <td>Cavallino Rosso St. Louis</td>
+  <td>MO</td>
+  <td>314-626-9591</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2008</td>
+  <td><a href="https://www.falconmotorgroup.com/inventory/used-2008-ferrari-f430-scuderia-rwd-2d-coupe-zffkw64a080162446/" target="_blank">Pre-Owned 2008 Ferrari F430 Scuderia</a></td>
+  <td><strong>$799,995</strong></td>
+  <td>-344.4%</td>
+  <td class="bad">-214.8%</td>
+  <td>15,939</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>760</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Exotic Knights</td>
+  <td>FL</td>
+  <td>407-664-1194</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2008</td>
+  <td><a href="https://rocklandcounty.ferraridealers.com/en-US/a/used-ferrari/430-scuderia/IljixbcgVnJGsKsQfDGsrsMahcgaB38Xe8Zn+aJCkBjm0%2FcDxnZr5uRzrioFM6VCuIYTZ0GzhhVEsEH9sfTxDha37uloK3wdaj+MELhMFg==" target="_blank">2008 430 Scuderia</a></td>
+  <td><strong>$759,888</strong></td>
+  <td>-322.2%</td>
+  <td class="bad">-199.6%</td>
+  <td>16,340</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>488</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Scuderia</td>
+  <td>Wide World Ferrari</td>
+  <td>NY</td>
+  <td>888-502-3890</td>
+</tr>
+<tr>
+  <td class="good">25.3</td>
+  <td>2007</td>
+  <td><a href="https://www.ranchcoastmotorsport.com/vehicle-details/used-2007-ferrari-f430-spider-6-speed-manual--san-diego-ca-id-64675349" target="_blank">2007 Ferrari F430 Spider 6 Speed Manual</a></td>
+  <td><strong>$239,999</strong></td>
+  <td>-33.3%</td>
+  <td class="bad">-33.4%</td>
+  <td>17,004</td>
+  <td class="">0.9x avg</td>
+  <td>557</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Nero Daytona</td>
+  <td>Ranch &amp; Coast Motorsport</td>
+  <td>CA</td>
+  <td>858-759-7695</td>
+</tr>
+<tr>
+  <td class="good">25.1</td>
+  <td>2008</td>
+  <td><a href="http://www.ferrariboca.com/inventory/used-2008-ferrari-f430-rwd-2d-coupe-zffkw64a580162989/" target="_blank">Pre-Owned 2008 Ferrari F430</a></td>
+  <td><strong>$789,900</strong></td>
+  <td>-338.8%</td>
+  <td class="bad">-215.3%</td>
+  <td>18,921</td>
+  <td class="">0.9x avg</td>
+  <td>465</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Ferrari Of Boca Raton</td>
+  <td>FL</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/777677/" target="_blank">2007 Ferrari 430 convertible 430</a></td>
+  <td><strong>$189,000</strong></td>
+  <td>-5.0%</td>
+  <td class="bad">-3.5%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1079</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2005</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/79990/" target="_blank">2005 Ferrari 430 spider Convertible</a></td>
+  <td><strong>$180,000</strong></td>
+  <td>0.0%</td>
+  <td class="bad">-114.3%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>612</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Gray</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">24.9</td>
+  <td>2006</td>
+  <td><a href="https://www.ryanfriedmanmotorcars.com/2006-ferrari-f430-f1-spider-c-3103/" target="_blank">2006 Ferrari F430</a></td>
+  <td><strong>$239,995</strong></td>
+  <td>-33.3%</td>
+  <td class="bad">-134.8%</td>
+  <td>20,872</td>
+  <td class="">1.0x avg</td>
+  <td>591</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Silverstone</td>
+  <td>Ryan Friedman Motor Cars</td>
+  <td>NY</td>
+  <td>516-888-9000</td>
+</tr>
+<tr>
+  <td class="good">23.9</td>
+  <td>2009</td>
+  <td><a href="https://www.dcmotorcompany.com/vehicle-details/2009-ferrari-430-scuderia-16m-f1-racing-carbon-seats-for-sale-portland-or-65253338" target="_blank">2009 Ferrari 430 Scuderia</a></td>
+  <td><strong>$999,999</strong></td>
+  <td>-455.6%</td>
+  <td class="bad">-219.0%</td>
+  <td>27,087</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>873</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>D&amp;c Motor Company</td>
+  <td>OR</td>
+  <td>503-719-5038</td>
+</tr>
+<tr>
+  <td class="good">22.4</td>
+  <td>2007</td>
+  <td><a href="https://thenewautotoystore.com/carsforsale/2007-FERRARI-F430-Spider-Stock=102518" target="_blank">2007 FERRARI F430 Spider</a></td>
+  <td><strong>$119,950</strong></td>
+  <td>33.4%</td>
+  <td class="good">24.5%</td>
+  <td>34,152</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1768</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black / Black</td>
+  <td>The New Auto Toy Store</td>
+  <td>FL</td>
+  <td>954-379-2886</td>
+</tr>
+<tr>
+  <td class="good">15.1</td>
+  <td>2007</td>
+  <td><a href="https://highsierrapowersports.com/inventory/2007-Ferrari-F430-673e4b71-7529-4c2d-8a17-4f4386e66b88" target="_blank">2007 Ferrari F430</a></td>
+  <td><strong>$159,999</strong></td>
+  <td>11.1%</td>
+  <td class="good">0.3%</td>
+  <td>32,899</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>722</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>High Sierra Powersports</td>
+  <td>NV</td>
+  <td>775-384-1398</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2006</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/176398/2006-Ferrari-F-430.aspx" target="_blank">2006 Ferrari F 430</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>44.5%</td>
+  <td class="bad">-19.0%</td>
+  <td>43,100</td>
+  <td class="high-miles">2.2x avg</td>
+  <td>2809</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Alloy</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2006</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/Red2006/" target="_blank">2006 Ferrari F430 Coupe</a></td>
+  <td><strong>$99,995</strong></td>
+  <td>44.4%</td>
+  <td class="bad">-19.0%</td>
+  <td>38,500</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>888</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Corsa Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+</table>
+<h3 class="model-title">F355 (9 listings)</h3>
+<div class="baseline-info">Market baseline: Median $156,500</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">37.0</td>
+  <td>1997</td>
+  <td><a href="https://www.domanimotorsfl.com/details/used-1997-ferrari-f355/79484860" target="_blank">1997 Ferrari F355</a></td>
+  <td><strong>$88,900</strong></td>
+  <td>43.2%</td>
+  <td class="good">37.9%</td>
+  <td>20,805</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>2555</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Blue</td>
+  <td>Domani Motors</td>
+  <td>FL</td>
+  <td>954-519-6572</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>1999</td>
+  <td><a href="https://www.5cornerautosales.com/Inventory/Details/33da4745-9bb3-4de3-932f-caa0a60a6ddc" target="_blank">1999 Ferrari F355 BASE</a></td>
+  <td><strong>$125,995</strong></td>
+  <td>19.5%</td>
+  <td class="bad">-15.2%</td>
+  <td>11,025</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>1096</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>5 Corner Auto Sales Inc.</td>
+  <td>MA</td>
+  <td>508-801-7426</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>1999</td>
+  <td><a href="https://www.alfafl.com/inventory/used-1999-ferrari-f355-spider-zffxr48a4x0115074/" target="_blank">Pre-Owned 1999 Ferrari F355 Spider</a></td>
+  <td><strong>$169,900</strong></td>
+  <td>-8.6%</td>
+  <td class="bad">-80.9%</td>
+  <td>17,717</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>477</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>Alfa Romeo Of Fort Lauderdale</td>
+  <td>FL</td>
+  <td>954-892-6847</td>
+</tr>
+<tr>
+  <td class="good">25.7</td>
+  <td>1999</td>
+  <td><a href="https://www.thoroughbredmotors.org/details/used-1999-ferrari-355/108565923" target="_blank">1999 Ferrari 355</a></td>
+  <td><strong>$94,900</strong></td>
+  <td>39.4%</td>
+  <td class="bad">-7.3%</td>
+  <td>20,083</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>614</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Thoroughbred Motors</td>
+  <td>FL</td>
+  <td>954-787-5536</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>1996</td>
+  <td><a href="https://www.ready4cars.com/vehicle-details/1996-ferrari-berlinetta-sedan-4d54f1b254c2ce489dddcbcbfd7e0ddc" target="_blank">1996 FERRARI BERLINETTA Sedan</a></td>
+  <td><strong>$300,000</strong></td>
+  <td>-91.7%</td>
+  <td class="bad">-80.3%</td>
+  <td>23,000</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1996</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>ROSSO CORSA</td>
+  <td>Ready 4 Cars &amp; Smog Check &amp; Auto Repair Shop &amp; Car Sales</td>
+  <td>CA</td>
+  <td>661-418-7779</td>
+</tr>
+<tr>
+  <td class="good">24.2</td>
+  <td>1999</td>
+  <td><a href="https://www.locomotorcars.com/inventory/1999-ferrari-f355-spider/1046050" target="_blank">1999 Ferrari F355 Spider</a></td>
+  <td><strong>$165,790</strong></td>
+  <td>-5.9%</td>
+  <td class="bad">-58.5%</td>
+  <td>13,087</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>275</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Giallo Modena</td>
+  <td>Loco Motorcars</td>
+  <td>VA</td>
+  <td>571-626-5626</td>
+</tr>
+<tr>
+  <td class="good">20.8</td>
+  <td>1997</td>
+  <td><a href="https://www.tampaautogallery.com/inventory/ZFFXR48A5V0108874" target="_blank">1997 F355</a></td>
+  <td><strong>$129,991</strong></td>
+  <td>16.9%</td>
+  <td class="bad">-12.9%</td>
+  <td>32,976</td>
+  <td class="">1.1x avg</td>
+  <td>332</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Tampa Auto Gallery Sales &amp; Leasing</td>
+  <td>FL</td>
+  <td>813-733-4165</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>1999</td>
+  <td><a href="https://minneapolis.ferraridealers.com/en-US/a/used-ferrari/f355-spider/IljixbcgVnJGsKsQfDGsrjSR7ayKhMU8GKPJUrzI47K9zU%2F4OCf%2FhKVL4z4eVLccuIYTdESxihUs0EH9tvP1DR+37uloL3UdajeMHbxKFw==" target="_blank">1999 F355 Spider</a></td>
+  <td><strong>$379,990</strong></td>
+  <td>-142.8%</td>
+  <td class="bad">-382.2%</td>
+  <td>24,262</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>288</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Nero</td>
+  <td>Twin Cities Performance</td>
+  <td>MN</td>
+  <td>612-876-4010</td>
+</tr>
+<tr>
+  <td class="good">19.6</td>
+  <td>1999</td>
+  <td><a href="https://exceptionalmotorcars.com/vdp/23021207/Used-1999-Ferrari-F355-Spider-F1-for-sale-in-Glenshaw-PA-15116" target="_blank">1999 Ferrari F355 Spider F1</a></td>
+  <td><strong>$109,900</strong></td>
+  <td>29.8%</td>
+  <td class="bad">-44.1%</td>
+  <td>25,367</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>280</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>Exceptional Motorcars Ltd.</td>
+  <td>PA</td>
+  <td>412-487-5006</td>
+</tr>
+</table>
+<h3 class="model-title">599 GTB (12 listings)</h3>
+<div class="baseline-info">Market baseline: Median $87,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="https://www.drivingemotions.com/2011-ferrari-599-sa-aperta-sa-aperta-c-438.htm" target="_blank">2024 Ferrari SF90 Spider</a></td>
+  <td><strong>$1,249,900</strong></td>
+  <td>-1336.7%</td>
+  <td class="bad">-2110.3%</td>
+  <td>537</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>894</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>Driving Emotions</td>
+  <td>FL</td>
+  <td>561-845-3838</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="https://www.drivingemotions.com/2011-ferrari-599-gtb-60-f1-alonso-final-edition-alonso-final-edition-c-13.htm" target="_blank">2024 Ferrari SF90 Spider</a></td>
+  <td><strong>$289,900</strong></td>
+  <td>-233.2%</td>
+  <td class="bad">-412.6%</td>
+  <td>3,505</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>733</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso F1 Storico</td>
+  <td>Driving Emotions</td>
+  <td>FL</td>
+  <td>561-845-3838</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2009</td>
+  <td><a href="https://www.alexanderautomotive.net/Inventory/Details/1b38de91-6a69-49fa-9295-e9b80b6fba69" target="_blank">2009 Ferrari 599 GTB Fiorano Base</a></td>
+  <td><strong>$188,900</strong></td>
+  <td>-117.1%</td>
+  <td class="bad">-234.0%</td>
+  <td>9,322</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1465</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>Alexander Automotive Llc</td>
+  <td>TN</td>
+  <td>866-750-4380</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2011</td>
+  <td><a href="https://indianahorsepower.com/product/2011-ferrari-gto/" target="_blank">2011 Ferrari...</a></td>
+  <td><strong>$849,000</strong></td>
+  <td>-875.9%</td>
+  <td class="bad">-1401.3%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>688</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Indiana Horsepower</td>
+  <td>IN</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">24.2</td>
+  <td>2008</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-599-GTB-FIORANO-2008-162156-YMMZXQEY" target="_blank">2008 FERRARI 599 GTB FIORANO</a></td>
+  <td><strong>$269,985</strong></td>
+  <td>-210.3%</td>
+  <td class="bad">-377.4%</td>
+  <td>18,989</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>587</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+<tr>
+  <td class="good">17.6</td>
+  <td>2008</td>
+  <td><a href="https://www.carriomotorcars.com/vehicle-details/used-2008-ferrari-599-gtb-fiorano-one-of-one-spec-rosso-dino-paint-bespoke-factory-interior-and-much-more-fort-lauderdale-fl-id-65086887" target="_blank">2008 Ferrari 599 GTB Fiorano ONE-OF-ONE SPEC! Rosso Dino paint, bespoke factory interior AND MUCH MORE!!</a></td>
+  <td><strong>$799,998</strong></td>
+  <td>-819.5%</td>
+  <td class="bad">-1314.7%</td>
+  <td>9,038</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>203</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Carrio Motor Cars</td>
+  <td>FL</td>
+  <td>954-733-7555</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="http://showroom.auction123.com/topgear_imports_llc/inventory/11263/2008/Ferrari/ZFFFC60A480163826.html" target="_blank">2008 599 GTB</a></td>
+  <td><strong>$179,888</strong></td>
+  <td>-106.8%</td>
+  <td class="bad">-106.8%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>2845</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Top Gear Imports</td>
+  <td>NJ</td>
+  <td>856-451-2716</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://cars.ultimateauto.com/2007-ferrari-599-gtb-fiorano-f1-%7C-orlando,-fl-%7C-ultimate-auto---fl-32808/7272774" target="_blank">2007 Ferrari 599 GTB Fiorano F1 | Orlando, FL | Ultimate Auto</a></td>
+  <td><strong>$199,000</strong></td>
+  <td>-128.7%</td>
+  <td class="bad">-251.9%</td>
+  <td>25,000</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>660</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Scuderia Red</td>
+  <td>Ultimate Auto</td>
+  <td>FL</td>
+  <td>407-849-1100</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="https://orlando.ferraridealers.com/en-US/a/used-ferrari/599-gtb-fiorano/IljixbcgVnJGsKsQfDGsrsaesGvIqeQ11Oh9l5%2FoPItY%2FbvnUxCyg1s7NuQWkH5tuIYTalWzghVDsEH9sv30Dhy37ulnLHoebT+AFr9IFw==" target="_blank">2008 599 GTB Fiorano</a></td>
+  <td><strong>$189,895</strong></td>
+  <td>-118.3%</td>
+  <td class="bad">-235.8%</td>
+  <td>33,861</td>
+  <td class="high-miles">2.3x avg</td>
+  <td>535</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Silverstone</td>
+  <td>Ferrari Central Florida</td>
+  <td>FL</td>
+  <td>407-667-4300</td>
+</tr>
+<tr>
+  <td class="good">14.3</td>
+  <td>2008</td>
+  <td><a href="https://www.fusionmotorco.com/vehicles/1507/2008-ferrari-599-gtb-fiorano-6-speed-conversion" target="_blank">2008 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$349,950</strong></td>
+  <td>-302.2%</td>
+  <td class="bad">-518.8%</td>
+  <td>16,578</td>
+  <td class="">1.1x avg</td>
+  <td>138</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Fusion Luxury Motors</td>
+  <td>CA</td>
+  <td>818-773-8181</td>
+</tr>
+<tr>
+  <td class="good">14.1</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-ferrari-599-gtb-fiorano-ZFFFC60A980159030" target="_blank">2008 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$157,998</strong></td>
+  <td>-81.6%</td>
+  <td class="bad">-179.4%</td>
+  <td>32,041</td>
+  <td class="high-miles">2.1x avg</td>
+  <td>423</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Black</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">6.8</td>
+  <td>2007</td>
+  <td><a href="https://autobonmotors.com/vdp/23709302/Used-2007-Ferrari-599-GTB-Fiorano-Coupe-F1-for-sale-in-Fort-Lauderdale-FL-33304" target="_blank">2007 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$189,999</strong></td>
+  <td>-118.4%</td>
+  <td class="bad">-236.0%</td>
+  <td>28,490</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>204</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Autobon Leasing &amp; Sales</td>
+  <td>FL</td>
+  <td>954-866-2886</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="salvage">
+<h2 class="report-header">Salvage Auctions</h2>
+<p class="report-desc">2 listings found</p>
+<div class="method"><strong>Salvage auction search:</strong> Copart &amp; IAA listings found via Google for mechanically-damaged exotics — engine, transmission, drivetrain issues. These are insurance total-loss or dealer trade-ins with expensive problems, ideal for fix-and-flip or manual-swap donor cars.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">2</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">With Damage Type</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">Copart</div></div>
+<div class="stat-card"><div class="num">0</div><div class="label">IAA</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">Ferrari F430 (2 listings)</h3>
+<table>
+<tr><th>Source</th><th>Listing</th><th>Damage Type</th><th>Snippet</th></tr>
+<tr>
+  <td>Copart</td>
+  <td><a href="https://www.copart.com/pl/vehicle-search-model/ferrari/california%20t" target="_blank">Używane i powypadkowe Ferrari CALIFORNIA T na ... - Copart</a></td>
+  <td><span class="tag tag-salvage">engine</span></td>
+  <td class="snippet">Engine Start Program. Enhanced Vehicles. Exotics. Featured Vehicles. Saved ... Ferrari F430 · Ferrari California · Ferrari 458 Italia · Ferrari 296GTB · Ferrari ...</td>
+</tr>
+<tr>
+  <td>Copart</td>
+  <td><a href="https://www.copart.com/es/vehicle-search-model/ferrari/308gts" target="_blank">Ferrari 308GTS Usados ​​y de Salvamento a la Venta en Subastas ...</a></td>
+  <td></td>
+  <td class="snippet">... F430 · Ferrari California · Ferrari 296GTB · Ferrari Purosangue · Ferrari Portofino ... Ferrari 330 · Ferrari 308GTS · Ferrari 296 Gts. Encontrar Ferrari 308GTS ...</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="projects">
+<h2 class="report-header">Project Cars</h2>
+<p class="report-desc">30 listings found</p>
+<div class="method"><strong>Project car search:</strong> eBay Motors, Facebook Marketplace, and Craigslist listings matching keywords like "needs work," "as-is," "mechanic special," "not running." Also targets F1/e-gear keywords for manual-swap candidates. Private sellers on these platforms price lower than dealers.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">30</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">23</div><div class="label">Swap Candidates</div></div>
+<div class="stat-card"><div class="num">7</div><div class="label">Project Cars</div></div>
+<div class="stat-card"><div class="num">4</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">Ferrari F430 (11 listings)</h3>
+<table>
+<tr><th>Category</th><th>Site</th><th>Listing</th><th>Keyword</th><th>Snippet</th></tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://autos.yahoo.com/classic-and-collector/articles/2006-ferrari-f430-spider-coveted-235642955.html" target="_blank">2006 Ferrari F430 Spider With Coveted 6-speed Manual For Sale At ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">2006 Ferrari F430 Spider With Coveted 6-speed Manual For Sale At $… ... F1 transmission, for all its speed, quietly suppressed. The market clearly ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.autoblog.com/carbuying/2008-ferrari-f430-for-sale" target="_blank">2008 Ferrari F430 With 4.3 Liter V8, Carbon Ceramic Brakes, And ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">2008 Ferrari F430. According to Classic.com market data for the F430 coupe with the F1 transmission, the average sale price is about $116,239, with recorded ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>Facebook Marketplace</td>
+  <td><a href="https://www.facebook.com/marketplace/107201355977030/ferrari-f430/?locale=sw_KE" target="_blank">Ferrari F430 kwa mauzo kwenye Anderson Town, Saint Ann, Jamaica</a></td>
+  <td>project keywords</td>
+  <td class="snippet">Ferrari F430 mpya na iliyotumika inauzwa jijini Anderson Town, Saint ... 2008 Nissan Tida SELL AS IS $350,000 or Scrapping [hidden information] for sale -.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/p/DY9HhK5DCs5/" target="_blank">2006 Ferrari F430 F1 Sold before it reached the market ... - Instagram</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">... F1 transmission, the F430 remains one of the most rewarding modern Ferraris to ... | Ferrari F430 F1 Coupe - For Sale now at CarConnection — #POV #F430 ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.classic.com/m/ferrari/f430/coupe/" target="_blank">Ferrari F430 Berlinetta Market - CLASSIC.COM</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">It was available with a 6-speed manual transmission and more commonly with the F1 transmission. ... Q: What is the highest sale price of a Ferrari F430 - Coupe? A ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.reddit.com/r/Ferrari/comments/1tqve4f/whats_your_opinion_on_the_f430/" target="_blank">What&#x27;s your opinion on the f430? : r/Ferrari - Reddit</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">... F1 gearbox guise. CountBean1234. •. 22d ago. Like ... Ferrari F430 vs 430 Scuderia - Here&#x27;s ALL The Changes Ferrari Made ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/p/DZsccTvNAdx/" target="_blank">Ferrari&#x27;s last naturally aspirated V8 Spider with ... - Instagram</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Finished in elegant Silverstone Gray over red leather, this 2008 Ferrari F430 Spider combines a 4.3L V8, six-speed F1 gearbox, carbon ceramic brakes, and open- ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.evo.co.uk/ferrari-430-scuderia/9874/ferrari-f430-scuderia-2007-2009-review-the-forgotten-hardcore-ferrari" target="_blank">Ferrari F430 Scuderia (2007 - 2009) review – the forgotten hardcore ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Engine gearbox and performance. Ferrari F430 Scuderia engine. 12. F1 transmission dropped shift times to 60ms; E-Diff and F1-Trac stability systems worked in ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://foreignautomotive.ca/blogs/news/ferrari-f430-common-problems?srsltid=AfmBOooV892WS0MTmocI3gC4xvb6dk267LwY1LGJV_7V8j9xsiUOj-tI" target="_blank">Ferrari F430 Common Problems - Foreign Automotive</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">It is one of the first things we flag on any F430 inspection. F1 Transmission and Clutch Wear ... F1 Pump and Actuator. The F1 hydraulic pump and ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>Facebook Marketplace</td>
+  <td><a href="https://www.facebook.com/marketplace/109046645790921/ferrari-f430/?locale=pa_IN" target="_blank">Rio Claro, Trinidad and Tobago ਨੇੜੇFerrari F430 - Facebook</a></td>
+  <td>project keywords</td>
+  <td class="snippet">Facebook Marketplace &#x27;ਤੇ ਨਵੇਂ ਅਤੇ ਵਰਤੇ ਜਾ ਚੁੱਕੇ Ferrari F430 ... Rio Claro-Mayaro, Trinidad and T... Ck2 sale selling as is for sale - Used - Fair - TTD 5,000 in Chaguanas.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>eBay</td>
+  <td><a href="https://www.ebay.com/itm/236825864513" target="_blank">1969 Porsche 911 E - eBay</a></td>
+  <td>project keywords</td>
+  <td class="snippet">As with any early 911 project, prospective buyers are encouraged to review ... OEM Ferrari F430 430 Scuderia Carbon Fiber Paddle Shifter F1 P/N 226101 ...</td>
+</tr>
+</table>
+<h3 class="model-title">Ferrari 575M (9 listings)</h3>
+<table>
+<tr><th>Category</th><th>Site</th><th>Listing</th><th>Keyword</th><th>Snippet</th></tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.hemmings.com/stories/car-tales-gt-local-boy-ferrari-575m-maranello/" target="_blank">Car Tales: GT Local Boy, Ferrari 575M Maranello - Hemmings</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">This rare and low-mileage 2002 Ferrari 575M Maranello is now available to buy at The Beverly Hills Car Club ... &#x27; The F1 transmission added $10,000 to the price ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.sgcarmart.com/used_cars/print_info.php?ID=1333164&amp;DL=3973" target="_blank">Ferrari 575M Maranello (COE till 08/2034) Details - Sgcarmart</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Ferrari 575M Maranello (COE till 08/2034). Price, spacer, $398,000. spacer. Reg ... F1 gearbox and rear differential oil replacement. New cambelt and ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/p/DZNV0PgAFxP/?img_index=13" target="_blank">Sold. Introduced as the successor to the 550 Maranello, the Ferrari ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">... F1 gearbox setup, unique wheels, and a freer-flowing exhaust system ... For Sale: 2003 Ferrari 575M Maranello – Manual One of just 69 right-hand ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://autofolio.info/blogs/investment-cars/ferrari-575m-vs-599-gtb-investment-2026?srsltid=AfmBOooXDXm5h35J0N-x_fwMMke6CjLKdtELLLny6IEzf9eKKaSQzIDJ" target="_blank">Don&#x27;t Buy This £80,000 Modern Classic Ferrari. Buy the 599 GTB ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">The F1 gearbox is the main issue. The majority of 575Ms on the market at this price point are F1 transmission cars — approximately 1,810 of the 575M&#x27;s total ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/reel/DY612tHoLOm/" target="_blank">A quick test drive to check over the 575M Maranello we have just ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">The Ferrari 355 was unveiled at the 1994 Geneva Motor Show, it was produced until early 1999 and featured either a 6-speed F1 gearbox or a six speed gated ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://forza.fandom.com/wiki/Ferrari_575M_Maranello" target="_blank">Ferrari 575M Maranello - Forza Wiki - Fandom</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">The 2002 Ferrari 575M Maranello - abbreviated as &quot;Ferrari 575M&quot; or ... F1&quot; gearbox. In 2006, the Ferrari 599 GTB Fiorano was introduced as the 575M ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.carandclassic.com/l/C2096148" target="_blank">2003 Ferrari 575 Maranello - Car &amp; Classic</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">The 575 Maranello with F1 gearbox is the quickest of the variants over ... 2003 Ferrari 575M Maranello – Manual | 1 of 69 RHD | 14,702. 5700cc · Petrol ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/p/DZ3FFmCk2At/" target="_blank">Ever seen a drop-top that spins? This 2005 Ferrari 575 is one of 559 ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Finished in Rosso Corsa over Beige Daytona seats, it&#x27;s powered by a 4.3-liter F136 V8 paired with a 6-speed F1 gearbox and carbon-ceramic brakes. ... For Sale: ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>eBay</td>
+  <td><a href="https://www.ebay.com/itm/296836535127" target="_blank">742447300 FRONT COVER, I/M - eBay</a></td>
+  <td>parts/not running</td>
+  <td class="snippet">Covers for Ferrari 575 M Maranello. Brown Front Car &amp; Truck Seat Covers. Autodrive Front Car &amp; Truck Seat Covers. White Leather Front Car &amp; Truck Seat Covers ...</td>
+</tr>
+</table>
+<h3 class="model-title">Ferrari F355 (7 listings)</h3>
+<table>
+<tr><th>Category</th><th>Site</th><th>Listing</th><th>Keyword</th><th>Snippet</th></tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.classic.com/m/ferrari/f355/berlinetta-f1/" target="_blank">Ferrari F355 Berlinetta - F1 Market - CLASSIC.COM</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Between late 1997 and 1999, Ferrari produced 1,042 coupes with the F1 transmission ... Q: What is the highest sale price of a Ferrari F355 - Berlinetta F1? A: The ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://carsandbids.com/auctions/3zx0NYaB/1999-ferrari-355-f1-spider" target="_blank">1999 Ferrari 355 F1 Spider - Cars &amp; Bids</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Introduced for 1995 as the successor to the 348, the Pininfarina-designed Ferrari F355 marked a dramatic return to form. ... F1 transmission arrived for the 1998 ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.motorious.com/articles/all/final-year-ferrari-f355-f1-spider-draws-interest-ahead-of-auction-close/" target="_blank">Final-Year 1999 Ferrari F355 F1 Spider at Auction - Motorious</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Equipped with Ferrari&#x27;s paddle-shifted F1 transmission and a high-revving ... https://www.motorious.com/this-race-ready-ferrari-f355-challenge/.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://autos.yahoo.com/classic-and-collector/articles/1999-ferrari-f355-spider-draws-133000331.html" target="_blank">1999 Ferrari F355 Spider Draws Attention as Auction Nears Final Days</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Low-mileage Ferrari F355 Spider with F1 transmission and performance upgrades gains interest ahead of auction closing.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://bringatrailer.com/listing/1999-ferrari-f355-spider-42/" target="_blank">1999 Ferrari F355 Spider - Bring a Trailer</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">This 1999 Ferrari F355 Spider is powered by a 3.5-liter DOHC V8 linked with a paddle-shifted six-speed F1 gearbox. The car is finished in Blu Tour de France ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.instagram.com/p/DZCAwDOmslY/" target="_blank">Timing belts just completed by Ferrari • Original books and all keys ...</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">... F1 gearbox or a six speed gated manual. It features a 3.5 ... Amazing 1998 Ferrari F355 Berlinetta 6-Speed now available for sale on @thecollectorsgarage 🏎️</td>
+</tr>
+<tr>
+  <td><span class="tag tag-swap">Swap Candidate</span></td>
+  <td>Other</td>
+  <td><a href="https://www.cars.com/shopping/ferrari-f355/orlando-fl/" target="_blank">Used Ferrari F355 for Sale Near Orlando, FL | Cars.com</a></td>
+  <td>F1/e-gear keywords</td>
+  <td class="snippet">Used Ferrari F355 for sale near Orlando, FL. Applied filters and sort ... The F1 transmission came right from F1 racing. Save. No photo available.</td>
+</tr>
+</table>
+<h3 class="model-title">Ferrari 599 (3 listings)</h3>
+<table>
+<tr><th>Category</th><th>Site</th><th>Listing</th><th>Keyword</th><th>Snippet</th></tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>eBay</td>
+  <td><a href="https://www.ebay.com/shop/ferrari-488-engine?_nkw=ferrari+488+engine" target="_blank">Ferrari 488 Engine - eBay</a></td>
+  <td>parts/not running</td>
+  <td class="snippet">Ferrari 599 GTB, Engine / Motor, Long Block, Used. Pre-Owned. $22,500.00. or Best Offer. +$500.00 delivery.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>eBay</td>
+  <td><a href="https://www.ebay.com/itm/206210697582" target="_blank">Hot Wheels Speed Machines Ferrari 599XX Silver/Gray VHTF D02</a></td>
+  <td>parts/not running</td>
+  <td class="snippet">Hi and thanks for checking out this listing. What you see in the picture is what you will receive in the mail. We ship within 3 business days after ...</td>
+</tr>
+<tr>
+  <td><span class="tag tag-project">Project</span></td>
+  <td>eBay</td>
+  <td><a href="https://www.ebay.com/itm/287167013620" target="_blank">Hot Wheels 2026 Ferrari 365 GTB4 Competizione (white) Short ...</a></td>
+  <td>parts/not running</td>
+  <td class="snippet">Ferrari Hot Wheels Cars · Hot Wheels Ferrari 250 · Hot Wheels Ferrari 599 Gtb Fiorano · Hot Wheels Ferrari 250 Gto Black · Ferrari 365 Gt4 · Ferrari 250 Gto Hot ...</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="forums">
+<h2 class="report-header">Forum Listings</h2>
+<p class="report-desc">1 listings found</p>
+<div class="method"><strong>Forum search:</strong> Enthusiast forums (FerrariChat, Rennlist, Lamborghini Talk, 6SpeedOnline, PistonHeads, etc.) scanned for &quot;for sale&quot; posts mentioning mechanical issues or urgency signals. Rows highlighted green have <em>both</em> a problem keyword and a sale signal — highest priority.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">1</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">0</div><div class="label">With Problem Keyword</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">With Sale Signal</div></div>
+<div class="stat-card"><div class="num">0</div><div class="label">Both (High Priority)</div></div>
+<div class="stat-card"><div class="num">1</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">Ferrari F430 (1 listings)</h3>
+<table>
+<tr><th>Forum</th><th>Listing</th><th>Problem</th><th>Sale Signal</th><th>Snippet</th></tr>
+<tr>
+  <td>FerrariChat Classifieds</td>
+  <td><a href="https://ads.ferrarichat.com/buy-ferrari/f430-spider/zffew59a970153114" target="_blank">PreOwned 2007 Ferrari F430 Spider for Sale in Charleston Vin</a></td>
+  <td></td>
+  <td><span class="tag tag-clean">for sale</span></td>
+  <td class="snippet">Check out this 2007 Ferrari F430 Spider ZFFEW59A970153114 for sale! Listed at $82500 with 59300 miles. Contact the seller today or browse more listings on ...</td>
+</tr>
+</table>
+</div>
+<div class="footer">
+<strong>How to read deals/swaps:</strong> "Disc." = raw discount vs flat median. "Adj. Disc." = discount vs mileage+year adjusted expected price (the real signal). Score combines adjusted discount + days on lot + title status + owner history. Positive score = genuinely underpriced.
+</div>
+</body>
+</html>

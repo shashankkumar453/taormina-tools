@@ -1,0 +1,4988 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Taormina Tools — Weekly Report 2026-05-06</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1400px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+h1 { font-size: 28px; margin-bottom: 4px; }
+.subtitle { color: #666; margin-bottom: 10px; font-size: 14px; }
+nav { display: flex; gap: 8px; margin: 16px 0 30px; flex-wrap: wrap; }
+nav a { display: inline-block; padding: 8px 16px; border-radius: 6px; background: #2c3e50; color: white; font-size: 13px; font-weight: 600; text-decoration: none; }
+nav a:hover { background: #1a252f; }
+nav a .nav-count { opacity: 0.7; font-weight: 400; margin-left: 4px; }
+.report-section { margin-bottom: 60px; }
+.report-header { font-size: 24px; margin: 0 0 4px; padding-top: 30px; border-top: 3px solid #8b1c1c; }
+.report-desc { color: #666; font-size: 13px; margin-bottom: 16px; }
+.stats { display: flex; gap: 16px; margin: 16px 0 20px; flex-wrap: wrap; }
+.stat-card { background: #f8f9fa; border-radius: 8px; padding: 14px 20px; border-left: 3px solid #8b1c1c; }
+.stat-card .num { font-size: 24px; font-weight: 700; color: #8b1c1c; }
+.stat-card .label { font-size: 12px; color: #666; }
+.method { background: #f0f7f0; border: 1px solid #c3e6c3; border-radius: 6px; padding: 14px 18px; margin: 12px 0 20px; font-size: 13px; }
+.method strong { color: #1a5c1a; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 16px; }
+th { background: #2c3e50; color: white; padding: 10px 8px; text-align: left; position: sticky; top: 0; z-index: 1; }
+td { padding: 8px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:hover td { background: #f5f5f5; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.good { color: #27ae60; font-weight: 600; }
+.bad { color: #c0392b; }
+.tag { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+.tag-clean { background: #d4edda; color: #155724; }
+.tag-salvage { background: #f8d7da; color: #721c24; }
+.tag-1owner { background: #cce5ff; color: #004085; }
+.tag-swap { background: #fff3cd; color: #856404; }
+.tag-project { background: #e2e3e5; color: #383d41; }
+.low-miles { color: #27ae60; }
+.high-miles { color: #c0392b; }
+.model-title { font-size: 18px; margin: 30px 0 8px; padding-top: 16px; border-top: 1px solid #eee; }
+.baseline-info { font-size: 12px; color: #666; margin: 4px 0 12px; }
+.highlight-row td { background: #f0fff0; }
+.snippet { max-width: 400px; font-size: 12px; color: #555; word-break: break-word; }
+.footer { color: #666; font-size: 12px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 12px; }
+
+</style>
+</head>
+<body>
+<h1>Weekly Report</h1>
+<p class="subtitle">Generated 2026-05-06 | 271 total leads across 2 sources</p>
+<nav>
+<a href="#values">Market Values</a>
+<a href="#swap-economics">Swap Targets</a>
+<a href="#deals">Deals<span class="nav-count">(37)</span></a>
+<a href="#stale">Stale Inventory<span class="nav-count">(234)</span></a>
+</nav>
+<div class="report-section" id="values">
+<h2 class="report-header">Estimated Market Values</h2>
+<p class="report-desc">Based on recent Bring a Trailer + Cars &amp; Bids sold prices (mileage-adjusted regression)</p>
+<table>
+<tr><th>Model</th><th>Est. Market Value</th><th>Range (P25–P75)</th><th>Avg Miles</th><th>$/Mile</th><th>Sales Sampled</th><th>Listings Found</th><th>Best Deal</th><th>Best Adj. Disc.</th></tr>
+<tr>
+  <td><strong>Murcielago</strong></td>
+  <td>$400,000</td>
+  <td>$278,000–$430,000</td>
+  <td>13,028</td>
+  <td>$-2</td>
+  <td>19</td>
+  <td>1</td>
+  <td>$579,991</td>
+  <td class="bad">-42.3%</td>
+</tr>
+<tr>
+  <td><strong>Huracan</strong></td>
+  <td>$215,000</td>
+  <td>$69,500–$357,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>7</td>
+  <td>29</td>
+  <td>$154,900</td>
+  <td class="good">28.0%</td>
+</tr>
+<tr>
+  <td><strong>458</strong></td>
+  <td>$211,000</td>
+  <td>$170,000–$270,000</td>
+  <td>14,600</td>
+  <td>$-8</td>
+  <td>22</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>599 GTB</strong></td>
+  <td>$131,550</td>
+  <td>$45,600–$153,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>6</td>
+  <td>18</td>
+  <td>$148,995</td>
+  <td class="bad">-13.3%</td>
+</tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$131,000</td>
+  <td>$107,000–$183,333</td>
+  <td>13,769</td>
+  <td>$-5</td>
+  <td>20</td>
+  <td>36</td>
+  <td>$149,800</td>
+  <td class="good">16.7%</td>
+</tr>
+<tr>
+  <td><strong>Gallardo</strong></td>
+  <td>$117,250</td>
+  <td>$92,000–$132,000</td>
+  <td>13,780</td>
+  <td>$-2</td>
+  <td>26</td>
+  <td>49</td>
+  <td>$100,977</td>
+  <td class="good">13.9%</td>
+</tr>
+<tr>
+  <td><strong>R8</strong></td>
+  <td>$110,000</td>
+  <td>$78,001–$135,000</td>
+  <td>20,000</td>
+  <td>$-2</td>
+  <td>19</td>
+  <td>48</td>
+  <td>$63,800</td>
+  <td class="good">42.5%</td>
+</tr>
+<tr>
+  <td><strong>F430 Spider</strong></td>
+  <td>$105,000</td>
+  <td>$31,750–$114,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>5</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$105,000</td>
+  <td>$28,750–$152,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>7</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>360 Modena</strong></td>
+  <td>$85,750</td>
+  <td>$78,000–$124,000</td>
+  <td>13,750</td>
+  <td>$-3</td>
+  <td>24</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>360 Spider</strong></td>
+  <td>$67,500</td>
+  <td>$56,500–$78,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>9</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>997</strong></td>
+  <td>$63,000</td>
+  <td>$48,000–$84,500</td>
+  <td>27,727</td>
+  <td>$-0</td>
+  <td>27</td>
+  <td>44</td>
+  <td>$19,950</td>
+  <td class="good">63.7%</td>
+</tr>
+<tr>
+  <td><strong>V8 Vantage</strong></td>
+  <td>$48,500</td>
+  <td>$40,250–$59,500</td>
+  <td>19,862</td>
+  <td>$-1</td>
+  <td>21</td>
+  <td>46</td>
+  <td>$29,995</td>
+  <td class="good">38.2%</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="swap-economics">
+<h2 class="report-header">Manual Swap Targets</h2>
+<p class="report-desc">F1/e-gear exotics where converting to manual gearbox unlocks significant value. Swap cost is for parts + labor at a specialist shop.</p>
+<table>
+<tr><th>Model</th><th>F1/E-gear Value</th><th>Manual Value</th><th>Swap Cost</th><th>Potential Profit</th><th>ROI</th><th>Notes</th></tr>
+<tr>
+  <td><strong>360 Modena</strong></td>
+  <td>$85,750</td>
+  <td>$140,000</td>
+  <td>$18,000</td>
+  <td class="good"><strong>$36,250</strong></td>
+  <td class="good">35%</td>
+  <td class="snippet">F1-to-gated 6-speed. Most common swap; well-documented process.</td>
+</tr>
+<tr>
+  <td><strong>360 Spider</strong></td>
+  <td>$67,500</td>
+  <td>$110,000</td>
+  <td>$18,000</td>
+  <td class="good"><strong>$24,500</strong></td>
+  <td class="good">29%</td>
+  <td class="snippet">Same drivetrain as Modena. Spiders trade lower but manual premium still strong.</td>
+</tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$131,000</td>
+  <td>$260,000</td>
+  <td>$22,000</td>
+  <td class="good"><strong>$107,000</strong></td>
+  <td class="good">70%</td>
+  <td class="snippet">F1-to-gated 6-speed. Largest profit margin — manual F430s are highly sought.</td>
+</tr>
+<tr>
+  <td><strong>F430 Spider</strong></td>
+  <td>$105,000</td>
+  <td>$180,000</td>
+  <td>$22,000</td>
+  <td class="good"><strong>$53,000</strong></td>
+  <td class="good">42%</td>
+  <td class="snippet">Same swap as coupe. Spider manual premiums slightly lower but still significant.</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$105,000</td>
+  <td>$175,000</td>
+  <td>$20,000</td>
+  <td class="good"><strong>$50,000</strong></td>
+  <td class="good">40%</td>
+  <td class="snippet">F1-to-gated 6-speed. V12 GT cruiser with strong manual demand.</td>
+</tr>
+<tr>
+  <td><strong>599 GTB</strong></td>
+  <td>$131,550</td>
+  <td>$250,000</td>
+  <td>$25,000</td>
+  <td class="good"><strong>$93,450</strong></td>
+  <td class="good">60%</td>
+  <td class="snippet">F1-to-gated 6-speed. Low production manual cars; swap adds huge value.</td>
+</tr>
+<tr>
+  <td><strong>Gallardo</strong></td>
+  <td>$117,250</td>
+  <td>$180,000</td>
+  <td>$20,000</td>
+  <td class="good"><strong>$42,750</strong></td>
+  <td class="good">31%</td>
+  <td class="snippet">E-gear to gated 6-speed. Well-proven swap with strong aftermarket support.</td>
+</tr>
+<tr>
+  <td><strong>Murcielago</strong></td>
+  <td>$400,000</td>
+  <td>$600,000</td>
+  <td>$25,000</td>
+  <td class="good"><strong>$175,000</strong></td>
+  <td class="good">41%</td>
+  <td class="snippet">E-gear to gated 6-speed. Manual Murcielagos are unicorns — massive premium.</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="deals">
+<h2 class="report-header">Deal Finder</h2>
+<p class="report-desc">37 listings found</p>
+<div class="method"><strong>How market price is determined:</strong> Recent sold prices from Bring a Trailer (with mileage from titles) + Cars &amp; Bids (via Google). A linear regression on price vs. mileage calculates what each car <em>should</em> cost at its specific odometer reading. The "Adj. Disc." column shows how far below that mileage-adjusted expected price this listing is — a much more accurate picture than a flat median comparison.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">37</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">12</div><div class="label">Positive Score</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">Clean Title</div></div>
+<div class="stat-card"><div class="num">6</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">997 (8 listings)</h3>
+<div class="baseline-info">Market baseline: Median $55,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">60.7</td>
+  <td>2005</td>
+  <td><a href="https://www.beverlyhillscarclub.com/2005-porsche-997-carrera-coupe-c-18593.htm" target="_blank">2005 Porsche 997 Carrera Coupe With Only 32,421 Miles</a></td>
+  <td><strong>$19,950</strong></td>
+  <td>63.7%</td>
+  <td class="good">63.7%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>149</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Dark Grey</td>
+  <td>Beverly Hills Car Club</td>
+  <td>CA</td>
+  <td>310-975-0272</td>
+</tr>
+<tr>
+  <td class="good">21.0</td>
+  <td>2006</td>
+  <td><a href="https://www.barrettautogallery.com/vehicle-details/2006-porsche-911-carrera-convertible-f52a78014348492e8d62ec07ef3735a4" target="_blank">2006 Porsche 911 Carrera Convertible</a></td>
+  <td><strong>$39,977</strong></td>
+  <td>27.3%</td>
+  <td class="good">15.9%</td>
+  <td>37,807</td>
+  <td class="">0.9x avg</td>
+  <td>218</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Barrett Auto Gallery</td>
+  <td>TX</td>
+  <td>956-686-3653</td>
+</tr>
+<tr>
+  <td class="bad">-23.0</td>
+  <td>2006</td>
+  <td><a href="https://anomalyautosport.com/456445" target="_blank">2006 PORSCHE 911, Stock No: 10109 by</a></td>
+  <td><strong>$39,884</strong></td>
+  <td>27.5%</td>
+  <td class="bad">-18.7%</td>
+  <td>57,625</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>227</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GUARDS</td>
+  <td>Anomaly Autosport</td>
+  <td>MI</td>
+  <td>989-391-5555</td>
+</tr>
+<tr>
+  <td class="bad">-23.8</td>
+  <td>2005</td>
+  <td><a href="https://lwautomotive.com/vdp/23273350/Used-2005-Porsche-911-2dr-Cabriolet-Carrera-for-sale-in-Pittsburgh-PA-15237" target="_blank">2005 Porsche 911</a></td>
+  <td><strong>$42,900</strong></td>
+  <td>22.0%</td>
+  <td class="bad">-27.7%</td>
+  <td>54,930</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>236</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Lw Automotive</td>
+  <td>PA</td>
+  <td>412-366-7400</td>
+</tr>
+<tr>
+  <td class="bad">-26.1</td>
+  <td>2005</td>
+  <td><a href="https://www.meritautos.com/inventory/used-2005-porsche-911-carrera-cabriolet-2d-wp0ca29925s755346-in-jacksonville-fl" target="_blank">2005 Porsche 911 Carrera Cabriolet 2D</a></td>
+  <td><strong>$40,390</strong></td>
+  <td>26.6%</td>
+  <td class="bad">-20.2%</td>
+  <td>59,042</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>35</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Merit Auto Group</td>
+  <td>FL</td>
+  <td>904-850-6250</td>
+</tr>
+<tr>
+  <td class="bad">-31.0</td>
+  <td>2005</td>
+  <td><a href="https://www.lindsaycadillac.com/used-Alexandria-2005-Porsche-911-Carrera-WP0CA29975S650074" target="_blank">2005 Porsche 911 Carrera</a></td>
+  <td><strong>$39,647</strong></td>
+  <td>27.9%</td>
+  <td class="bad">-18.0%</td>
+  <td>60,436</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>300</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Lindsay Cadillac Of Alexandria</td>
+  <td>VA</td>
+  <td>571-481-2296</td>
+</tr>
+<tr>
+  <td class="bad">-33.7</td>
+  <td>2006</td>
+  <td><a href="https://www.exoticmotorsportsstore.com/details/used-2006-porsche-911/122901024" target="_blank">2006 Porsche 911 Carrera</a></td>
+  <td><strong>$40,558</strong></td>
+  <td>26.3%</td>
+  <td class="bad">-20.7%</td>
+  <td>67,081</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>196</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Exotic Motorsports Of Oklahoma</td>
+  <td>OK</td>
+  <td>405-433-7808</td>
+</tr>
+<tr>
+  <td class="bad">-40.9</td>
+  <td>2008</td>
+  <td><a href="https://www.paramountford.com/inventory/used-2008-porsche-911-carrera-rwd-2-door-convertible-wp0ca29978s765309/" target="_blank">Pre-Owned 2008 Porsche 911 Carrera</a></td>
+  <td><strong>$42,980</strong></td>
+  <td>21.9%</td>
+  <td class="bad">-27.9%</td>
+  <td>65,627</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>201</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Paramount Ford</td>
+  <td>NC</td>
+  <td>828-525-9373</td>
+</tr>
+</table>
+<h3 class="model-title">R8 (11 listings)</h3>
+<div class="baseline-info">Market baseline: Median $112,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">35.4</td>
+  <td>2008</td>
+  <td><a href="https://www.autoboom.com/used/Audi/2008-Audi-R8-97af0950ac183a61373cfa70e941e931.htm" target="_blank">2008 Audi R8 4.2 Coupe</a></td>
+  <td><strong>$76,791</strong></td>
+  <td>31.4%</td>
+  <td class="good">37.5%</td>
+  <td>14,119</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>220</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Mugello Blue Pearl Effect Night Blue</td>
+  <td>Auto Boom</td>
+  <td>AZ</td>
+  <td>602-777-7082</td>
+</tr>
+<tr>
+  <td class="good">34.2</td>
+  <td>2009</td>
+  <td><a href="http://www.fas4cars.com/pre-owned-cars/detail/2009-Audi-R8-4.2L/1458600" target="_blank">2009-Audi-R8-4.2L</a></td>
+  <td><strong>$75,495</strong></td>
+  <td>32.6%</td>
+  <td class="good">36.5%</td>
+  <td>16,322</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>100</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Phantom Black Pearl</td>
+  <td>Future Auto Sales</td>
+  <td>CA</td>
+  <td>818-240-0099</td>
+</tr>
+<tr>
+  <td class="good">33.0</td>
+  <td>2008</td>
+  <td><a href="https://diplomatmotors.mycarsonline.com/inv-scripts-v2/AUDI/R8/003732" target="_blank">2008 AUDI R8 QUATTRO COUPE 2D</a></td>
+  <td><strong>$70,990</strong></td>
+  <td>36.6%</td>
+  <td class="good">35.7%</td>
+  <td>20,849</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>116</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Diplomat Motors</td>
+  <td>OR</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">32.8</td>
+  <td>2008</td>
+  <td><a href="https://www.toybarncars.com/used/Audi/2008-Audi-R8-9c641214ac1810998925e01136a2275c.htm" target="_blank">2008 Audi R8 4.2 V8 AWD Coupe</a></td>
+  <td><strong>$77,244</strong></td>
+  <td>31.0%</td>
+  <td class="good">35.1%</td>
+  <td>16,229</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>261</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Phantom Black Pearl</td>
+  <td>Toy Barn</td>
+  <td>OH</td>
+  <td>614-808-8065</td>
+</tr>
+<tr>
+  <td class="good">28.2</td>
+  <td>2008</td>
+  <td><a href="http://www.pmcdetroit.com/details-2008-audi-r8-2dr_coupe_automatic_quattro_ltd_avail_-used-wuaau34268n002794.html" target="_blank">2008 Audi R8</a></td>
+  <td><strong>$69,995</strong></td>
+  <td>37.5%</td>
+  <td class="good">31.2%</td>
+  <td>25,495</td>
+  <td class="">1.0x avg</td>
+  <td>228</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Phantom Black Pearl</td>
+  <td>Platinum Motorcars</td>
+  <td>MI</td>
+  <td>248-313-2800</td>
+</tr>
+<tr>
+  <td class="good">27.2</td>
+  <td>2012</td>
+  <td><a href="https://www.jimellis.com/used/Audi/2012-Audi-R8-1cbd0d9eac18237db9b2dfc8fa904b87.htm" target="_blank">2012 Audi R8 4.2 Coupe</a></td>
+  <td><strong>$79,170</strong></td>
+  <td>29.3%</td>
+  <td class="good">29.7%</td>
+  <td>19,644</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>80</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Ibis White</td>
+  <td>Jim Ellis Automotive Group</td>
+  <td>GA</td>
+  <td>770-692-2432</td>
+</tr>
+<tr>
+  <td class="good">8.2</td>
+  <td>2014</td>
+  <td><a href="http://www.globalbellemeade.com/details-2014-audi-r8_spyder-msrp_152000_quattro~spyder~v8_conveniencepkg_heatedsportseats-used-wuasuafg9en000521.html" target="_blank">2014 Audi R8 Spyder</a></td>
+  <td><strong>$79,880</strong></td>
+  <td>28.7%</td>
+  <td class="good">11.9%</td>
+  <td>31,453</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>291</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Ibis White/Black Roof</td>
+  <td>Global Motorsports Belle Meade</td>
+  <td>TN</td>
+  <td>615-353-9333</td>
+</tr>
+<tr>
+  <td class="">-0.0</td>
+  <td>2009</td>
+  <td><a href="https://www.unlimitedag.com/inventory/audi/r8/002269/" target="_blank">2009 AUDI R8</a></td>
+  <td><strong>$62,995</strong></td>
+  <td>43.8%</td>
+  <td class="good">13.0%</td>
+  <td>41,302</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>204</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLUE</td>
+  <td>Unlimited Auto Group</td>
+  <td>OH</td>
+  <td>513-801-1465</td>
+</tr>
+<tr>
+  <td class="bad">-9.6</td>
+  <td>2011</td>
+  <td><a href="https://hotrides.com/2011-audi-r8-v10-5.2-spyder-w%2F-upgrades-%7C-carrollton,-tx-%7C-texas-hot-rides-carrollton-tx-75006/7479586" target="_blank">2011 Audi R8 V10 5.2 Spyder w/ Upgrades | Carrollton, TX | Texas Hot Rides</a></td>
+  <td><strong>$75,991</strong></td>
+  <td>32.2%</td>
+  <td class="good">3.4%</td>
+  <td>37,935</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>188</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Phantom Black Pearl Effect</td>
+  <td>Texas Hot Rides</td>
+  <td>TX</td>
+  <td>214-244-2956</td>
+</tr>
+<tr>
+  <td class="bad">-15.9</td>
+  <td>2011</td>
+  <td><a href="https://www.carguyzmotors.com/inventory/AUDI/R8/001017" target="_blank">2011 AUDI R8</a></td>
+  <td><strong>$76,999</strong></td>
+  <td>31.3%</td>
+  <td class="bad">-2.9%</td>
+  <td>39,973</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>253</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Carguyz Llc</td>
+  <td>UT</td>
+  <td>801-669-8599</td>
+</tr>
+<tr>
+  <td class="bad">-27.8</td>
+  <td>2009</td>
+  <td><a href="https://mcofchicago.com/vehicle-details?id=74887c8768464f93907faaf9f454cb59" target="_blank">2009 Audi R8</a></td>
+  <td><strong>$76,995</strong></td>
+  <td>31.3%</td>
+  <td class="bad">-14.8%</td>
+  <td>44,172</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>190</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Motor Cars Of Chicago</td>
+  <td>IL</td>
+  <td>815-733-6111</td>
+</tr>
+</table>
+<h3 class="model-title">V8 Vantage (6 listings)</h3>
+<div class="baseline-info">Market baseline: Median $45,257</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">17.3</td>
+  <td>2009</td>
+  <td><a href="http://www.villageimportauto.com/default.asp?page=xInventoryDetail&amp;id=17909835" target="_blank">2009 Aston Martin V8 Vantage Roadster</a></td>
+  <td><strong>$32,000</strong></td>
+  <td>29.3%</td>
+  <td class="good">20.4%</td>
+  <td>25,565</td>
+  <td class="">1.0x avg</td>
+  <td>193</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Meteorite Silver Metallic</td>
+  <td>Village Import Auto Sales &amp; Service</td>
+  <td>NY</td>
+  <td>716-633-8686</td>
+</tr>
+<tr>
+  <td class="bad">-7.0</td>
+  <td>2010</td>
+  <td><a href="https://optimusmotorsllc.com/inventory/ASTON%20MARTIN/VANTAGE/GC13750" target="_blank">2010 ASTON MARTIN VANTAGE</a></td>
+  <td><strong>$33,867</strong></td>
+  <td>25.2%</td>
+  <td class="bad">-3.0%</td>
+  <td>33,753</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>54</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Optimus Motors Llc</td>
+  <td>TX</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="bad">-17.6</td>
+  <td>2010</td>
+  <td><a href="https://performanceautosofcarrollton.com/vehicles/11240677-2010-Aston%20Martin-V8%20Vantage/" target="_blank">2010 ASTON MARTIN V8 VANTAGE !DEALER MAINTAINED!LOW MILES !LOADED!!</a></td>
+  <td><strong>$42,900</strong></td>
+  <td>5.2%</td>
+  <td class="bad">-14.2%</td>
+  <td>28,500</td>
+  <td class="">1.1x avg</td>
+  <td>230</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Performance Autos</td>
+  <td>TX</td>
+  <td>214-418-8446</td>
+</tr>
+<tr>
+  <td class="bad">-39.4</td>
+  <td>2010</td>
+  <td><a href="https://www.briansautocenter.com/vdp/23394889/Used-2010-Aston-Martin-Vantage-2dr-Cpe-Sportshift-for-sale-in-Manasquan-NJ-08736" target="_blank">2010 Aston Martin Vantage</a></td>
+  <td><strong>$39,900</strong></td>
+  <td>11.8%</td>
+  <td class="bad">-34.9%</td>
+  <td>37,482</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>64</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Brian&#x27;s Auto Center</td>
+  <td>NJ</td>
+  <td>732-528-9777</td>
+</tr>
+<tr>
+  <td class="bad">-59.2</td>
+  <td>2008</td>
+  <td><a href="https://alpinenissan.com/inventory/Used-2008-Aston%20Martin-V8%20Vantage-Base-SCFBB03B68GC09783" target="_blank">2008 Aston Martin V8 Vantage</a></td>
+  <td><strong>$36,000</strong></td>
+  <td>20.5%</td>
+  <td class="bad">-44.6%</td>
+  <td>43,632</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>34</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Alpine Nissan of Denver</td>
+  <td>CO</td>
+  <td>720-689-0320</td>
+</tr>
+<tr>
+  <td class="bad">-69.6</td>
+  <td>2011</td>
+  <td><a href="https://www.davinciautomotive.com/inventory/ASTON%20MARTIN/VANTAGE/C14809" target="_blank">2011 ASTON MARTIN VANTAGE V8 COUPE 2D</a></td>
+  <td><strong>$38,985</strong></td>
+  <td>13.9%</td>
+  <td class="bad">-56.6%</td>
+  <td>47,943</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>149</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLUE</td>
+  <td>Da Vinci Automotive</td>
+  <td>FL</td>
+  <td>904-404-8087</td>
+</tr>
+</table>
+<h3 class="model-title">Huracan (3 listings)</h3>
+<div class="baseline-info">Market baseline: Median $215,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2017</td>
+  <td><a href="https://svmotors.mycarsonline.com/inventory/lamborghini/huracan/a07023/" target="_blank">2017 LAMBORGHINI HURACAN</a></td>
+  <td><strong>$154,900</strong></td>
+  <td>28.0%</td>
+  <td class="good">28.0%</td>
+  <td>23,941</td>
+  <td class="high-miles">2.4x avg</td>
+  <td>96</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLUE</td>
+  <td>Sv Motors Inc</td>
+  <td>IA</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="bad">-3.2</td>
+  <td>2016</td>
+  <td><a href="https://www.lamborghininaples.com/inventory/used-2016-lamborghini-huracan-lp580-2-rwd-2d-coupe-zhwuc2zf8gla04716/" target="_blank">2016 Lamborghini Huracan LP580-2</a></td>
+  <td><strong>$214,797</strong></td>
+  <td>0.1%</td>
+  <td class="good">0.1%</td>
+  <td>10,916</td>
+  <td class="">1.1x avg</td>
+  <td>199</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Pyra Matte (Red)</td>
+  <td>Lamborghini Naples</td>
+  <td>FL</td>
+  <td>239-990-5518</td>
+</tr>
+<tr>
+  <td class="bad">-13.0</td>
+  <td>2015</td>
+  <td><a href="https://exoticcarsofftlauderdale.com/vdp/23616028/Used-2015-Lamborghini-Huracan-2dr-Cpe-LP-6104-for-sale-in-Pompano-Beach-FL-33069" target="_blank">2015 Lamborghini Huracan 2dr Cpe LP 610-4</a></td>
+  <td><strong>$214,995</strong></td>
+  <td>0.0%</td>
+  <td class="">0.0%</td>
+  <td>19,216</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>202</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>Exotic Sports Cars</td>
+  <td>FL</td>
+  <td>954-942-3151</td>
+</tr>
+</table>
+<h3 class="model-title">Gallardo (6 listings)</h3>
+<div class="baseline-info">Market baseline: Median $117,777</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">6.3</td>
+  <td>2007</td>
+  <td><a href="https://brooklynautoonline.com/vdp/23735541/Used-2007-Lamborghini-Gallardo-Spyder-for-sale-in-Staten-Island-NY-10310" target="_blank">2007 Lamborghini Gallardo</a></td>
+  <td><strong>$104,999</strong></td>
+  <td>10.8%</td>
+  <td class="good">8.5%</td>
+  <td>15,759</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>102</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>Brooklyn Auto Sales</td>
+  <td>NY</td>
+  <td>718-825-4678</td>
+</tr>
+<tr>
+  <td class="bad">-3.8</td>
+  <td>2004</td>
+  <td><a href="https://www.marshallgoldmanbh.com/used-vehicle-2004-lamborghini-gallardo-low-miles-first-production-year-c-5296/" target="_blank">2004 Lamborghini Gallardo -Low Miles, First Production Year</a></td>
+  <td><strong>$116,900</strong></td>
+  <td>0.7%</td>
+  <td class="bad">-1.6%</td>
+  <td>15,557</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>183</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Giallo Midas</td>
+  <td>Marshall Goldman Beverly Hills</td>
+  <td>CA</td>
+  <td>424-201-0084</td>
+</tr>
+<tr>
+  <td class="bad">-13.4</td>
+  <td>2013</td>
+  <td><a href="https://platinumcollectionpb.com/product/2013-lamborghini-gallardo-lp-550-2-coupe/" target="_blank">2013 Lamborghini Gallardo LP 550-2 Coupe</a></td>
+  <td><strong>$108,827</strong></td>
+  <td>7.6%</td>
+  <td class="bad">-10.2%</td>
+  <td>26,391</td>
+  <td class="">1.1x avg</td>
+  <td>307</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>YELLOW</td>
+  <td>The Platinum Collection</td>
+  <td>FL</td>
+  <td>561-794-3841</td>
+</tr>
+<tr>
+  <td class="bad">-20.6</td>
+  <td>2006</td>
+  <td><a href="https://www.thenewautotoystore.net/details/used-2006-lamborghini-gallardo/124525483" target="_blank">2006 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$99,950</strong></td>
+  <td>15.1%</td>
+  <td class="bad">-16.4%</td>
+  <td>34,918</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>338</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>The New Auto Toy Store</td>
+  <td>FL</td>
+  <td>954-710-5978</td>
+</tr>
+<tr>
+  <td class="bad">-28.1</td>
+  <td>2010</td>
+  <td><a href="https://smartbuymalden.com/vehicles/11120470-2010-Lamborghini-Gallardo/" target="_blank">2010 Lamborghini Gallardo LP 560-4 Roadster 2D</a></td>
+  <td><strong>$109,900</strong></td>
+  <td>6.7%</td>
+  <td class="bad">-24.1%</td>
+  <td>33,142</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>234</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Smart Buy Usa - Malden</td>
+  <td>MA</td>
+  <td>781-322-2277</td>
+</tr>
+<tr>
+  <td class="bad">-34.3</td>
+  <td>2006</td>
+  <td><a href="https://www.zmotorschatt.com/details/used-2006-lamborghini-gallardo/120715998" target="_blank">2006 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$89,999</strong></td>
+  <td>23.6%</td>
+  <td class="bad">-21.3%</td>
+  <td>42,645</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>344</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>Z Motors</td>
+  <td>TN</td>
+  <td>423-455-5826</td>
+</tr>
+</table>
+<h3 class="model-title">F430 (3 listings)</h3>
+<div class="baseline-info">Market baseline: Median $131,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="bad">-50.1</td>
+  <td>2006</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/43000/" target="_blank">2006 Ferrari 430 convertible Convertible</a></td>
+  <td><strong>$104,900</strong></td>
+  <td>19.9%</td>
+  <td class="bad">-40.1%</td>
+  <td>40,670</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>273</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="bad">-86.5</td>
+  <td>2006</td>
+  <td><a href="http://www.goldboyzautosales.com/pre-owned-cars/detail/2006-Ferrari-430-/1501088" target="_blank">2006-Ferrari-430-</a></td>
+  <td><strong>$129,950</strong></td>
+  <td>0.8%</td>
+  <td class="bad">-73.5%</td>
+  <td>35,572</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>66</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Goldboyz Auto Sales</td>
+  <td>WA</td>
+  <td>253-301-4555</td>
+</tr>
+<tr>
+  <td class="bad">-89.5</td>
+  <td>2006</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2006-147934-RJPDMMQR" target="_blank">2006 FERRARI F430</a></td>
+  <td><strong>$129,985</strong></td>
+  <td>0.8%</td>
+  <td class="bad">-73.5%</td>
+  <td>37,283</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>20</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="stale">
+<h2 class="report-header">Stale Inventory (Problem Signals)</h2>
+<p class="report-desc">234 listings found</p>
+<div class="method"><strong>Stale inventory:</strong> Dealer listings sitting 120+ days on market, sorted by days on lot. Cars that sit this long usually have undisclosed problems — mechanical issues, title problems, or dealers who can't move them. The longer it sits, the more negotiable the price. Non-clean titles are highlighted as fixable opportunities.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">234</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">233</div><div class="label">Positive Score</div></div>
+<div class="stat-card"><div class="num">79</div><div class="label">Clean Title</div></div>
+<div class="stat-card"><div class="num">8</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">R8 (37 listings)</h3>
+<div class="baseline-info">Market baseline: Median $110,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">40.5</td>
+  <td>2008</td>
+  <td><a href="https://www.roadreadyusedcars.com/inventory/used-2008-audi-r8-4-2-quattro-coupe-wuaau34258n005458/" target="_blank">2008 Audi R8 4.2</a></td>
+  <td><strong>$80,899</strong></td>
+  <td>26.5%</td>
+  <td class="good">35.1%</td>
+  <td>12,172</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1711</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Road Ready Used Cars</td>
+  <td>CT</td>
+  <td>203-371-6957</td>
+</tr>
+<tr>
+  <td class="good">38.1</td>
+  <td>2011</td>
+  <td><a href="http://wendellautobrokers.com/inventory/45095/view/6760/" target="_blank">2011 Audi R8 4.2</a></td>
+  <td><strong>$99,995</strong></td>
+  <td>9.1%</td>
+  <td class="good">27.0%</td>
+  <td>5,448</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>2888</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Black</td>
+  <td>Wendell Auto Brokers</td>
+  <td>NC</td>
+  <td>919-374-7088</td>
+</tr>
+<tr>
+  <td class="good">35.1</td>
+  <td>2009</td>
+  <td><a href="https://avonautobrokers.com/vdp/22974552/Used-2009-Audi-R8-2dr-Cpe-42L-Auto-quattro-for-sale-in-Avon-MA-02322" target="_blank">2009 Audi R8 2dr Cpe 4.2L Auto quattro</a></td>
+  <td><strong>$64,795</strong></td>
+  <td>41.1%</td>
+  <td class="good">34.1%</td>
+  <td>26,253</td>
+  <td class="">1.1x avg</td>
+  <td>1938</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Avon Auto Brokers</td>
+  <td>MA</td>
+  <td>508-584-0577</td>
+</tr>
+<tr>
+  <td class="good">33.1</td>
+  <td>2018</td>
+  <td><a href="http://autopleaseca.com/inventory/2018-audi-r8-v10-coupe/" target="_blank">2018 Audi R8 V10 COUPE</a></td>
+  <td><strong>$131,950</strong></td>
+  <td>-20.0%</td>
+  <td class="good">10.2%</td>
+  <td>121</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>1701</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Auto Please California</td>
+  <td>CA</td>
+  <td>310-961-6655</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2020</td>
+  <td><a href="https://www.solimanmotors.com/2020-Audi-R8-Spyder-Lodi-NJ-Garfield-Maywood-Saddle-Brook-Bergen/used_car/L8O1skj6S%5Bc=" target="_blank">Used 2020 Audi R8 Spyder V10 quattro</a></td>
+  <td><strong>$175,890</strong></td>
+  <td>-59.9%</td>
+  <td class="bad">-21.7%</td>
+  <td>1,457</td>
+  <td class="low-miles">0.1x avg</td>
+  <td>1710</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Daytona Gray Pearl Effect</td>
+  <td>Soliman Motors</td>
+  <td>NJ</td>
+  <td>973-246-1471</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2020</td>
+  <td><a href="https://www.automotiv.io/inventory/AUDI/R8/901898" target="_blank">2020 AUDI R8</a></td>
+  <td><strong>$174,999</strong></td>
+  <td>-59.1%</td>
+  <td class="bad">-29.2%</td>
+  <td>6,331</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>1251</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Automotiv Inc.</td>
+  <td>CA</td>
+  <td>530-961-2886</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2015</td>
+  <td><a href="https://heritagecarsinc.com/vehicles/6624565-2015-Audi-R8/" target="_blank">2015 Audi R8 Coupe V10 Competition</a></td>
+  <td><strong>$189,000</strong></td>
+  <td>-71.8%</td>
+  <td class="bad">-39.1%</td>
+  <td>6,068</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>1206</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Heritage Cars</td>
+  <td>WA</td>
+  <td>855-674-4074</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2018</td>
+  <td><a href="https://www.audiflatirons.com/en/inventory/vehicle/?isdealer=&amp;market=usuc&amp;vehicleId=WUAKBAFX2J7900407" target="_blank">2018 Audi R8 Coup   V10 quattro</a></td>
+  <td><strong>$190,684</strong></td>
+  <td>-73.3%</td>
+  <td class="bad">-36.9%</td>
+  <td>4,256</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>1079</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Ibis White</td>
+  <td>Audi Flatirons</td>
+  <td>CO</td>
+  <td>720-986-1931</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2020</td>
+  <td><a href="https://www.roimotors.com/used/Audi/2020-Audi-R8-42982eafac1800c98eb83cade60f6da2.htm" target="_blank">2020 Audi R8 V10 Spyder</a></td>
+  <td><strong>$175,987</strong></td>
+  <td>-60.0%</td>
+  <td class="bad">-29.0%</td>
+  <td>5,796</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>1047</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Ara Blue Crystal</td>
+  <td>Roi Motors</td>
+  <td>VT</td>
+  <td>888-365-6168</td>
+</tr>
+<tr>
+  <td class="good">28.3</td>
+  <td>2012</td>
+  <td><a href="https://www.familyautoandtrailer.com/details/used-2012-audi-r8/110637486" target="_blank">2012 Audi R8 5.2 quattro Spyder</a></td>
+  <td><strong>$95,999</strong></td>
+  <td>12.7%</td>
+  <td class="good">10.2%</td>
+  <td>21,694</td>
+  <td class="">0.9x avg</td>
+  <td>1327</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>Family Auto And Trailer Sales Llc</td>
+  <td>FL</td>
+  <td>941-909-2624</td>
+</tr>
+<tr>
+  <td class="good">28.2</td>
+  <td>2012</td>
+  <td><a href="https://e20c7cab-cc4b-4a48-9e54-ab915e19c977.autorevo-websites.com/2012-audi-r8-4.2-quattro-%7C-dania-beach,-fl-%7C-gomez-auto-group-llc-dania-beach-fl-33004/7318884" target="_blank">2012 Audi R8 4.2 quattro | Dania Beach, FL | Gomez Auto Group LLC</a></td>
+  <td><strong>$63,800</strong></td>
+  <td>42.0%</td>
+  <td class="good">42.5%</td>
+  <td>19,488</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1461</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Gomez &amp; Gomez 2020</td>
+  <td>FL</td>
+  <td>954-374-8750</td>
+</tr>
+<tr>
+  <td class="good">27.4</td>
+  <td>2011</td>
+  <td><a href="https://www.bespokemotorcar.com/Inventory/Audi-R8-V10-Spyder" target="_blank">2011 Audi R8 V10 Spyder</a></td>
+  <td><strong>$89,500</strong></td>
+  <td>18.6%</td>
+  <td class="good">8.6%</td>
+  <td>26,500</td>
+  <td class="">1.1x avg</td>
+  <td>1053</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Ice Silver Metallic</td>
+  <td>Bespoke Motorcar Company</td>
+  <td>NC</td>
+  <td>984-381-9203</td>
+</tr>
+<tr>
+  <td class="good">26.1</td>
+  <td>2012</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/347210/2012-Audi-R8-52L.aspx" target="_blank">2012 Audi R8 5.2L</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>9.1%</td>
+  <td class="good">20.3%</td>
+  <td>11,686</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2175</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ibis White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/178931/2011-Audi-R8-52L.aspx" target="_blank">2011 Audi R8 5.2L</a></td>
+  <td><strong>$105,977</strong></td>
+  <td>3.7%</td>
+  <td class="good">19.6%</td>
+  <td>8,300</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>2693</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Nardo Grey</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">25.2</td>
+  <td>2021</td>
+  <td><a href="http://www.habautos.com/details-2021-audi-r8_coupe-v10_performance_quattro-used-wuabaafx0m7900798.html" target="_blank">2021 Audi R8 Coupe</a></td>
+  <td><strong>$127,711</strong></td>
+  <td>-16.1%</td>
+  <td class="bad">-20.1%</td>
+  <td>21,968</td>
+  <td class="">0.9x avg</td>
+  <td>1146</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Vegas Yellow</td>
+  <td>Houston Auto Broker Homepage -</td>
+  <td>TX</td>
+  <td>713-780-0807</td>
+</tr>
+<tr>
+  <td class="good">25.2</td>
+  <td>2011</td>
+  <td><a href="https://thecarguysautos.com/details/used-2011-audi-r8/124329238" target="_blank">2011 Audi R8 5.2 quattro</a></td>
+  <td><strong>$117,995</strong></td>
+  <td>-7.3%</td>
+  <td class="bad">-12.9%</td>
+  <td>22,933</td>
+  <td class="">0.9x avg</td>
+  <td>1072</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grey</td>
+  <td>The Car Guys</td>
+  <td>CA</td>
+  <td>714-905-5239</td>
+</tr>
+<tr>
+  <td class="good">25.1</td>
+  <td>2015</td>
+  <td><a href="http://www.palmbeachexotic.com/vehicles/2015%20Audi%20R8/6B00E884-CFE5-11ED-8992-FF83AEF01470" target="_blank">2015 Audi R8</a></td>
+  <td><strong>$115,995</strong></td>
+  <td>-5.5%</td>
+  <td class="bad">-11.9%</td>
+  <td>23,403</td>
+  <td class="">0.9x avg</td>
+  <td>1713</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>Palm Beach Exotic</td>
+  <td>FL</td>
+  <td>561-301-5044</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2012</td>
+  <td><a href="https://www.coolclassicsinternational.com/vehicles/23/2012-audi-r8" target="_blank">2012 Audi R8 $145,000 Request More Info 775-629-6167 Finance This Vehicle Return to Inventory Jump To Section Section Highlights Description Specs Details Photos</a></td>
+  <td><strong>$145,000</strong></td>
+  <td>-31.8%</td>
+  <td class="bad">-31.8%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1756</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Cool Classics International</td>
+  <td>NV</td>
+  <td>775-629-6167</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2014</td>
+  <td><a href="https://sales.autosofeurope.com/details/used-2014-audi-r8/96361396" target="_blank">2014 Audi R8 5.2 quattro</a></td>
+  <td><strong>$105,990</strong></td>
+  <td>3.6%</td>
+  <td class="bad">-4.3%</td>
+  <td>24,511</td>
+  <td class="">1.0x avg</td>
+  <td>1252</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Autos Of Europe</td>
+  <td>MO</td>
+  <td>636-227-8887</td>
+</tr>
+<tr>
+  <td class="good">24.4</td>
+  <td>2012</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/272548/2012-Audi-R8-V10-52L.aspx" target="_blank">2012 Audi R8 V10 5.2L</a></td>
+  <td><strong>$100,977</strong></td>
+  <td>8.2%</td>
+  <td class="bad">-10.8%</td>
+  <td>30,140</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>2755</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Nardo Grey</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2011</td>
+  <td><a href="https://qualityautoramsey.net/bhphvdp/16897376/BuyHerePayHere-2011-Audi-R8-52L-Enhanced-Leather-Package-19-Inch-Titanium-All-for-sale-in-Ramsey-NJ-07446" target="_blank">2011 Audi R8 5.2L Enhanced Leather Package 19 Inch Titanium All</a></td>
+  <td><strong>$88,995</strong></td>
+  <td>19.1%</td>
+  <td class="bad">-8.9%</td>
+  <td>35,196</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1770</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Quality Auto Center Ramsey</td>
+  <td>NJ</td>
+  <td>888-298-9022</td>
+</tr>
+<tr>
+  <td class="good">23.5</td>
+  <td>2012</td>
+  <td><a href="https://westrumenterprises.com/vdp/19974384/Used-2012-Audi-R8-52-Coupe-quattro-Auto-R-tronic-for-sale-in-Norwalk-IA-50211" target="_blank">2012 Audi R8 5.2 Coupe quattro Auto R tronic</a></td>
+  <td><strong>$79,900</strong></td>
+  <td>27.4%</td>
+  <td class="bad">-2.4%</td>
+  <td>37,194</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1163</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Westrum Enterprises Llc</td>
+  <td>IA</td>
+  <td>515-644-4870</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/126627/2011-Audi-R8-52L.aspx" target="_blank">2011 Audi R8 5.2L</a></td>
+  <td><strong>$138,977</strong></td>
+  <td>-26.3%</td>
+  <td class="bad">-8.8%</td>
+  <td>10,462</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>2668</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ibis White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2017</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/171599/2017-Audi-R8-Coupe-V10.aspx" target="_blank">2017 Audi R8 Coupe V10</a></td>
+  <td><strong>$165,977</strong></td>
+  <td>-50.9%</td>
+  <td class="bad">-16.6%</td>
+  <td>2,633</td>
+  <td class="low-miles">0.1x avg</td>
+  <td>2639</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Daytona Gray Pearl Effect</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2017</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/234284/2017-Audi-R8-Spyder-V10.aspx" target="_blank">2017 Audi R8 Spyder V10</a></td>
+  <td><strong>$189,977</strong></td>
+  <td>-72.7%</td>
+  <td class="bad">-50.2%</td>
+  <td>11,134</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>2260</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ibis White/Black Roof</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2017</td>
+  <td><a href="https://www.paulblouinmazda.com/auto/used-2017-audi-r8-v10-augusta-me/60419510/" target="_blank">Used 2017 Audi R8 V10</a></td>
+  <td><strong>$138,900</strong></td>
+  <td>-26.3%</td>
+  <td class="bad">-11.9%</td>
+  <td>12,397</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1804</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Gray</td>
+  <td>Paul Blouin Mazda</td>
+  <td>ME</td>
+  <td>207-626-3500</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2020</td>
+  <td><a href="https://www.platinumautohaus.com/2020-audi-r8-5.2-quattro-v10-spyder-c-15454.htm" target="_blank">2020 Audi R8 5.2 quattro V10 Spyder 5.2 quattro V10 Spyder*** Only 9K Miles *** Price: $163,888</a></td>
+  <td><strong>$163,888</strong></td>
+  <td>-49.0%</td>
+  <td class="bad">-27.0%</td>
+  <td>9,748</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>1260</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Suzuka Gray Metallic</td>
+  <td>Platinum Autohaus</td>
+  <td>CA</td>
+  <td>310-318-3122</td>
+</tr>
+<tr>
+  <td class="good">17.0</td>
+  <td>2012</td>
+  <td><a href="https://autoparkdallas.com/2012-audi-r8-4.2-quattro-1-of-20-lewisville-tx-75067/7440738" target="_blank">2012 Audi R8 4.2 quattro 1 of 20</a></td>
+  <td><strong>$79,995</strong></td>
+  <td>27.3%</td>
+  <td class="good">9.3%</td>
+  <td>31,722</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>1055</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Daytona Gray Pearl Effect</td>
+  <td>Auto Park Dallas</td>
+  <td>TX</td>
+  <td>214-945-2601</td>
+</tr>
+<tr>
+  <td class="good">16.7</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/165450/2011-Audi-R8-52L.aspx" target="_blank">2011 Audi R8 5.2L</a></td>
+  <td><strong>$95,977</strong></td>
+  <td>12.7%</td>
+  <td class="good">5.5%</td>
+  <td>24,509</td>
+  <td class="">1.0x avg</td>
+  <td>2676</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ibis White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">16.4</td>
+  <td>2008</td>
+  <td><a href="https://midwesthighline.com/277612" target="_blank">2008 Audi R8 Coupe quattro Clean Carfax! 18K Miles! Rare Gated 6 Speed Manual!</a></td>
+  <td><strong>$109,900</strong></td>
+  <td>0.1%</td>
+  <td class="good">3.0%</td>
+  <td>18,251</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>1679</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Phantom Black Pearl Effect</td>
+  <td>Midwest Highline In Rockford</td>
+  <td>IL</td>
+  <td>815-299-8020</td>
+</tr>
+<tr>
+  <td class="good">15.3</td>
+  <td>2009</td>
+  <td><a href="https://r21motorsports.com/vehicle?vehicle_id=97233" target="_blank">2009 Audi R8 quattro</a></td>
+  <td><strong>$63,995</strong></td>
+  <td>41.8%</td>
+  <td class="good">1.0%</td>
+  <td>44,402</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>1018</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>R21 Motorsports</td>
+  <td>OH</td>
+  <td>330-854-5380</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2015</td>
+  <td><a href="https://adcoximports.com/vdp/23566820/Used-2015-Audi-R8-V8-quattro-7A-for-sale-in-Pensacola-FL-32505" target="_blank">2015 Audi R8 V8 quattro 7A</a></td>
+  <td><strong>$85,900</strong></td>
+  <td>21.9%</td>
+  <td class="bad">-13.4%</td>
+  <td>38,432</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1158</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Orange</td>
+  <td>Adcox Imports</td>
+  <td>FL</td>
+  <td>850-439-9209</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2017</td>
+  <td><a href="https://brooklynautoonline.com/vdp/23746237/Used-2017-Audi-R8-V10-Plus-quattro-7A-for-sale-in-Staten-Island-NY-10310" target="_blank">2017 Audi R8</a></td>
+  <td><strong>$184,999</strong></td>
+  <td>-68.2%</td>
+  <td class="bad">-176.5%</td>
+  <td>43,170</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>998</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Brooklyn Auto Sales</td>
+  <td>NY</td>
+  <td>718-825-4678</td>
+</tr>
+<tr>
+  <td class="good">13.8</td>
+  <td>2011</td>
+  <td><a href="https://www.falconmotorgroup.com/inventory/used-2011-audi-r8-4-2-quattro-2d-convertible-wuauuafg9bn002953/" target="_blank">Pre-Owned 2011 Audi R8 4.2</a></td>
+  <td><strong>$89,995</strong></td>
+  <td>18.2%</td>
+  <td class="bad">-10.6%</td>
+  <td>35,383</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1556</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Exotic Knights</td>
+  <td>FL</td>
+  <td>407-664-1194</td>
+</tr>
+<tr>
+  <td class="good">13.7</td>
+  <td>2020</td>
+  <td><a href="https://www.mclarennorthjersey.com/inventory/used-2020-audi-r8-52-wuaeeafx9l7901271" target="_blank">2020 R8</a></td>
+  <td><strong>$159,999</strong></td>
+  <td>-45.5%</td>
+  <td class="bad">-98.5%</td>
+  <td>35,801</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1153</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Mclaren North Jersey</td>
+  <td>NJ</td>
+  <td>201-639-7750</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2009</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/112970/2009-Audi-R8-42L.aspx" target="_blank">2009 Audi R8 4.2L</a></td>
+  <td><strong>$76,977</strong></td>
+  <td>30.0%</td>
+  <td class="bad">-10.7%</td>
+  <td>41,739</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>2685</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ice Silver Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2012</td>
+  <td><a href="https://www.bentleyindianapolis.com/vehicle-details/used-2012-audi-r8-5-2-indianapolis-in-id-64853159" target="_blank">2012 Audi R8 5.2</a></td>
+  <td><strong>$81,990</strong></td>
+  <td>25.5%</td>
+  <td class="bad">-24.8%</td>
+  <td>43,832</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>1971</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ibis White/Black Roof</td>
+  <td>Bentley Indianapolis</td>
+  <td>IN</td>
+  <td>317-688-9444</td>
+</tr>
+</table>
+<h3 class="model-title">V8 Vantage (40 listings)</h3>
+<div class="baseline-info">Market baseline: Median $48,500</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">36.4</td>
+  <td>2009</td>
+  <td><a href="http://streetsideclassics.com/vehicles/8956-atl/2009-aston-martin-vantage-v8" target="_blank">2009 Aston Martin Vantage V8</a></td>
+  <td><strong>$29,995</strong></td>
+  <td>38.2%</td>
+  <td class="good">38.2%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>459</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Streetside Classics - Dallas/fort Worth</td>
+  <td>GA</td>
+  <td>678-279-1609</td>
+</tr>
+<tr>
+  <td class="good">34.0</td>
+  <td>2009</td>
+  <td><a href="https://hansenbrothersautosales.com/details/used-2009-aston-martin-v8-vantage/108294779" target="_blank">2009 Aston Martin V8 Vantage Roadster</a></td>
+  <td><strong>$47,990</strong></td>
+  <td>1.1%</td>
+  <td class="good">13.4%</td>
+  <td>12,106</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>539</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>Hansen Brothers Auto Sales</td>
+  <td>WI</td>
+  <td>414-250-8623</td>
+</tr>
+<tr>
+  <td class="good">33.9</td>
+  <td>2012</td>
+  <td><a href="https://www.davinciautomotive.com/inventory/ASTON%20MARTIN/VANTAGE/D16660" target="_blank">2012 ASTON MARTIN VANTAGE V8 CONVERTIBLE 2D</a></td>
+  <td><strong>$49,985</strong></td>
+  <td>-3.1%</td>
+  <td class="good">12.9%</td>
+  <td>9,852</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>618</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Da Vinci Automotive</td>
+  <td>FL</td>
+  <td>904-404-8087</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2016</td>
+  <td><a href="https://www.briansautocenter.com/vdp/23476892/Used-2016-Aston-Martin-V8-Vantage-2dr-Conv-for-sale-in-Manasquan-NJ-08736" target="_blank">2016 Aston Martin V8 Vantage</a></td>
+  <td><strong>$74,900</strong></td>
+  <td>-54.4%</td>
+  <td class="bad">-30.8%</td>
+  <td>9,998</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>898</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Brian&#x27;s Auto Center</td>
+  <td>NJ</td>
+  <td>732-528-9777</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2014</td>
+  <td><a href="https://www.miamiautobrokerfl.com/details/used-2014-aston-martin-v8-vantage/113518783" target="_blank">2014 Aston Martin V8 Vantage S Roadster</a></td>
+  <td><strong>$64,900</strong></td>
+  <td>-33.8%</td>
+  <td class="bad">-13.3%</td>
+  <td>9,986</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>767</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Miami Auto Broker</td>
+  <td>FL</td>
+  <td>877-558-8371</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2013</td>
+  <td><a href="https://www.astonmartinranchomirage.com/used-Rancho+Mirage-2013-Aston+Martin-V8+Vantage+S-+-SCFEKBEL4DGD17683" target="_blank">2013 Aston Martin V8 Vantage S Base</a></td>
+  <td><strong>$74,990</strong></td>
+  <td>-54.6%</td>
+  <td class="bad">-24.2%</td>
+  <td>6,499</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>535</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Stratus White</td>
+  <td>Aston Martin Rancho Mirage</td>
+  <td>CA</td>
+  <td>442-397-9070</td>
+</tr>
+<tr>
+  <td class="good">27.4</td>
+  <td>2007</td>
+  <td><a href="https://www.md-autogroup.com/inventory/ASTON%20MARTIN/VANTAGE/1924" target="_blank">2007 ASTON MARTIN VANTAGE</a></td>
+  <td><strong>$32,000</strong></td>
+  <td>34.0%</td>
+  <td class="good">17.1%</td>
+  <td>31,000</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>389</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>TUNGSTEN SILVER</td>
+  <td>Md Autogroup Llc</td>
+  <td>FL</td>
+  <td>850-857-9987</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2016</td>
+  <td><a href="https://www.davinciautomotive.com/inventory/ASTON%20MARTIN/VANTAGE/D20748" target="_blank">2016 ASTON MARTIN VANTAGE V8 S CONVERTIBLE 2D</a></td>
+  <td><strong>$65,985</strong></td>
+  <td>-36.1%</td>
+  <td class="bad">-23.1%</td>
+  <td>14,130</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>921</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>GRAY</td>
+  <td>Da Vinci Automotive</td>
+  <td>FL</td>
+  <td>904-404-8087</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2016</td>
+  <td><a href="https://www.audinashvilledowntown.com/en/inventory/vehicle/?isdealer=&amp;market=usuc&amp;vehicleId=SCFEKBBL3GGD20342" target="_blank">2016 Aston Martin V8 Vantage</a></td>
+  <td><strong>$69,999</strong></td>
+  <td>-44.3%</td>
+  <td class="bad">-32.9%</td>
+  <td>15,196</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>741</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Audi Downtown Nashville</td>
+  <td>TN</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">25.7</td>
+  <td>2016</td>
+  <td><a href="https://www.astonmartinsummit.com/used/Aston-Martin/2016-Aston-Martin-V8-Vantage-GTS-bbdf84c5ac18162841248f68dda7a4d8.htm" target="_blank">2016 Aston Martin V8 Vantage GTS Coupe</a></td>
+  <td><strong>$74,998</strong></td>
+  <td>-54.6%</td>
+  <td class="bad">-45.7%</td>
+  <td>16,539</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>1220</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Lightning Silver</td>
+  <td>Aston Martin Summit</td>
+  <td>NJ</td>
+  <td>877-850-4236</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2009</td>
+  <td><a href="http://www.maztak.com/2012/02/2009-aston-martin-vantage-base/" target="_blank">2009 Aston Martin Vantage Base</a></td>
+  <td><strong>$80,000</strong></td>
+  <td>-64.9%</td>
+  <td class="bad">-61.9%</td>
+  <td>18,834</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>3554</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>Maztak Auto Sales</td>
+  <td>CA</td>
+  <td>949-370-6118</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2013</td>
+  <td><a href="https://www.fishersimports.com/inventory/2013-aston-martin-v8-vantage-SCFEKBBK5DGD17283" target="_blank">2013 Aston Martin V8 Vantage</a></td>
+  <td><strong>$51,650</strong></td>
+  <td>-6.5%</td>
+  <td class="bad">-5.0%</td>
+  <td>19,103</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>550</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Obsidian Black</td>
+  <td>Fishers Imports - North East</td>
+  <td>IN</td>
+  <td>317-405-8555</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2010</td>
+  <td><a href="https://www.abescars.com/inventory/ASTON%20MARTIN/VANTAGE/15229" target="_blank">2010 ASTON MARTIN VANTAGE COUPE 2D</a></td>
+  <td><strong>$41,999</strong></td>
+  <td>13.4%</td>
+  <td class="good">4.0%</td>
+  <td>25,220</td>
+  <td class="">1.0x avg</td>
+  <td>429</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Abe&#x27;s Motorsports</td>
+  <td>CA</td>
+  <td>916-515-8113</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2013</td>
+  <td><a href="https://franksautony.com/details/used-2013-aston-martin-v8-vantage/50533946" target="_blank">2013 Aston Martin V8 Vantage</a></td>
+  <td><strong>$55,995</strong></td>
+  <td>-15.5%</td>
+  <td class="bad">-15.7%</td>
+  <td>20,000</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1365</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Matte Black</td>
+  <td>Frank&#x27;s Automotive</td>
+  <td>NY</td>
+  <td>607-367-7229</td>
+</tr>
+<tr>
+  <td class="good">25.3</td>
+  <td>2011</td>
+  <td><a href="https://www.foreigncarscharlotte.com/viewdetails/used/scfefbbk8bgd14816/2011-aston-martin-v8-vantage-convertible?type=finance" target="_blank">2011 Aston Martin V8 Vantage N420</a></td>
+  <td><strong>$60,894</strong></td>
+  <td>-25.6%</td>
+  <td class="bad">-22.0%</td>
+  <td>18,259</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>442</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Titanium Silver</td>
+  <td>Foreign Cars Charlotte</td>
+  <td>NC</td>
+  <td>704-703-9422</td>
+</tr>
+<tr>
+  <td class="good">24.9</td>
+  <td>2010</td>
+  <td><a href="https://www.hawksubaru.com/used/Aston%20Martin/2010-Aston-Martin-Vantage-for-sale-joliet-il-9dfab0b3ac1839c938ebe672efbbdeb6.htm" target="_blank">2010 Aston Martin Vantage Convertible</a></td>
+  <td><strong>$46,888</strong></td>
+  <td>3.3%</td>
+  <td class="bad">-7.8%</td>
+  <td>25,464</td>
+  <td class="">1.0x avg</td>
+  <td>485</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Hawk Subaru</td>
+  <td>IL</td>
+  <td>779-260-4000</td>
+</tr>
+<tr>
+  <td class="good">24.5</td>
+  <td>2016</td>
+  <td><a href="https://www.theluxurycollectionwc.com/api/cars/1679" target="_blank">2016 Aston Martin V8 Vantage S</a></td>
+  <td><strong>$69,991</strong></td>
+  <td>-44.3%</td>
+  <td class="bad">-72.5%</td>
+  <td>28,765</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>787</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Lightning Silver</td>
+  <td>The Luxury Collection Walnut Creek</td>
+  <td>CA</td>
+  <td>925-444-2000</td>
+</tr>
+<tr>
+  <td class="good">24.4</td>
+  <td>2016</td>
+  <td><a href="https://www.msmotrsportland.com/details/used-2016-aston-martin-v8-vantage/120069653" target="_blank">2016 Aston Martin V8 Vantage S</a></td>
+  <td><strong>$59,999</strong></td>
+  <td>-23.7%</td>
+  <td class="bad">-50.7%</td>
+  <td>29,621</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>1315</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Jet Black</td>
+  <td>Ms Motors</td>
+  <td>OR</td>
+  <td>503-805-0976</td>
+</tr>
+<tr>
+  <td class="good">24.4</td>
+  <td>2013</td>
+  <td><a href="https://ferranteandson.com/cars-list/2013-aston-martin-v8-vantage-2d-coupe/" target="_blank">2013 Aston Martin V8 Vantage 2D Coupe</a></td>
+  <td><strong>$64,400</strong></td>
+  <td>-32.8%</td>
+  <td class="bad">-62.8%</td>
+  <td>29,905</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>601</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Meteorite Silver</td>
+  <td>Ferrante &amp; Son Sales &amp; Leasing</td>
+  <td>CA</td>
+  <td>408-244-6612</td>
+</tr>
+<tr>
+  <td class="good">24.3</td>
+  <td>2009</td>
+  <td><a href="http://www.villageimportauto.com/default.asp?page=xInventoryDetail&amp;id=17909835" target="_blank">2009 Aston Martin V8 Vantage Roadster</a></td>
+  <td><strong>$32,000</strong></td>
+  <td>34.0%</td>
+  <td class="good">26.3%</td>
+  <td>25,565</td>
+  <td class="">1.0x avg</td>
+  <td>193</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Meteorite Silver Metallic</td>
+  <td>Village Import Auto Sales &amp; Service</td>
+  <td>NY</td>
+  <td>716-633-8686</td>
+</tr>
+<tr>
+  <td class="good">24.1</td>
+  <td>2013</td>
+  <td><a href="https://klsautobrokers.com/inventory/ASTON%20MARTIN/VANTAGE/2" target="_blank">2013 ASTON MARTIN VANTAGE</a></td>
+  <td><strong>$65,000</strong></td>
+  <td>-34.0%</td>
+  <td class="bad">-73.8%</td>
+  <td>32,329</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>529</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Kls Autobrokers Llc</td>
+  <td>GA</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2016</td>
+  <td><a href="https://www.miamiautobrokerfl.com/details/used-2016-aston-martin-v8-vantage/110597033" target="_blank">2016 Aston Martin V8 Vantage GT</a></td>
+  <td><strong>$78,900</strong></td>
+  <td>-62.7%</td>
+  <td class="bad">-126.5%</td>
+  <td>35,212</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1068</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Miami Auto Broker</td>
+  <td>FL</td>
+  <td>877-558-8371</td>
+</tr>
+<tr>
+  <td class="good">23.6</td>
+  <td>2015</td>
+  <td><a href="https://www.flemingsultimategarage.com/vehicles/4794/2015-aston-martin-vantage-v8-roadster" target="_blank">2015 Aston Martin Vantage</a></td>
+  <td><strong>$69,990</strong></td>
+  <td>-44.3%</td>
+  <td class="bad">-40.9%</td>
+  <td>18,527</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>393</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>China grey</td>
+  <td>Flemings Ultimate Garage</td>
+  <td>MD</td>
+  <td>301-816-1000</td>
+</tr>
+<tr>
+  <td class="good">22.5</td>
+  <td>2015</td>
+  <td><a href="https://www.ryanfriedmanmotorcars.com/2015-aston-martin-v8-vantage-gt-roadster-c-3002/" target="_blank">2015 Aston Martin V8 Vantage</a></td>
+  <td><strong>$99,995</strong></td>
+  <td>-106.2%</td>
+  <td class="bad">-88.1%</td>
+  <td>14,614</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>350</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Jet Black</td>
+  <td>Ryan Friedman Motor Cars</td>
+  <td>NY</td>
+  <td>516-888-9000</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/136426/2007-Aston-Martin-Vantage.aspx" target="_blank">2007 Aston Martin Vantage</a></td>
+  <td><strong>$63,977</strong></td>
+  <td>-31.9%</td>
+  <td class="bad">-9.5%</td>
+  <td>8,700</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>2640</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2015</td>
+  <td><a href="https://lwautomotive.com/vdp/21949758/Used-2015-Aston-Martin-V8-Vantage-2dr-Conv-S-for-sale-in-Pittsburgh-PA-15237" target="_blank">2015 Aston Martin V8 Vantage</a></td>
+  <td><strong>$75,900</strong></td>
+  <td>-56.5%</td>
+  <td class="bad">-36.3%</td>
+  <td>11,777</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>778</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>White</td>
+  <td>Lw Automotive</td>
+  <td>PA</td>
+  <td>412-366-7400</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2013</td>
+  <td><a href="https://www.ryanfriedmanmotorcars.com/2013-aston-martin-v8-vantage-c-1253/" target="_blank">2013 Aston Martin V8 Vantage</a></td>
+  <td><strong>$139,995</strong></td>
+  <td>-188.6%</td>
+  <td class="bad">-116.2%</td>
+  <td>1,593</td>
+  <td class="low-miles">0.1x avg</td>
+  <td>661</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Stratus White</td>
+  <td>Ryan Friedman Motor Cars</td>
+  <td>NY</td>
+  <td>516-888-9000</td>
+</tr>
+<tr>
+  <td class="good">19.2</td>
+  <td>2015</td>
+  <td><a href="https://www.parkplaceltd.com/used-Bellevue-2015-Aston+Martin-V8+Vantage+Roadster-GT-SCFEKBBL9FGD19159" target="_blank">2015 Aston Martin V8 Vantage Roadster GT</a></td>
+  <td><strong>$69,950</strong></td>
+  <td>-44.2%</td>
+  <td class="bad">-21.3%</td>
+  <td>9,580</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>127</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Skyfall Silver</td>
+  <td>Park Place Ltd</td>
+  <td>WA</td>
+  <td>425-562-1000</td>
+</tr>
+<tr>
+  <td class="good">17.7</td>
+  <td>2015</td>
+  <td><a href="https://www.ryanfriedmanmotorcars.com/2015-aston-martin-v8-vantage-gt-c-3028/" target="_blank">2015 Aston Martin V8 Vantage</a></td>
+  <td><strong>$99,995</strong></td>
+  <td>-106.2%</td>
+  <td class="bad">-83.6%</td>
+  <td>13,152</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>202</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Jet Black</td>
+  <td>Ryan Friedman Motor Cars</td>
+  <td>NY</td>
+  <td>516-888-9000</td>
+</tr>
+<tr>
+  <td class="good">17.6</td>
+  <td>2012</td>
+  <td><a href="https://www.fieldspreowned.com/used/Aston-Martin/2012-Aston-Martin-V8-Vantage-S-e233d4ebac180acbe92e69db041f0467.htm" target="_blank">2012 Aston Martin V8 Vantage S Base Roadster</a></td>
+  <td><strong>$48,990</strong></td>
+  <td>-1.0%</td>
+  <td class="bad">-46.1%</td>
+  <td>36,680</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>270</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Jet Black</td>
+  <td>Fields Auto Group&#x27;s</td>
+  <td>FL</td>
+  <td>847-999-4955</td>
+</tr>
+<tr>
+  <td class="good">17.5</td>
+  <td>2015</td>
+  <td><a href="http://www.amazingluxurycars.com/details-2015-aston_martin-v8_vantage-2dr_coupe_gt-used-scfekbal2fgc18983.html" target="_blank">2015 Aston Martin V8 Vantage 2dr Coupe GT</a></td>
+  <td><strong>$70,999</strong></td>
+  <td>-46.4%</td>
+  <td class="bad">-84.3%</td>
+  <td>31,080</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>246</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Speedway White</td>
+  <td>Amazing Luxury Cars</td>
+  <td>GA</td>
+  <td>770-982-3733</td>
+</tr>
+<tr>
+  <td class="good">17.2</td>
+  <td>2010</td>
+  <td><a href="https://performanceautosofcarrollton.com/vehicles/11240677-2010-Aston%20Martin-V8%20Vantage/" target="_blank">2010 ASTON MARTIN V8 VANTAGE !DEALER MAINTAINED!LOW MILES !LOADED!!</a></td>
+  <td><strong>$42,900</strong></td>
+  <td>11.5%</td>
+  <td class="bad">-5.1%</td>
+  <td>28,500</td>
+  <td class="">1.1x avg</td>
+  <td>230</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Performance Autos</td>
+  <td>TX</td>
+  <td>214-418-8446</td>
+</tr>
+<tr>
+  <td class="good">15.6</td>
+  <td>2012</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/150426/2012-Aston-Martin-V8-Vantage.aspx" target="_blank">2012 Aston Martin V8 Vantage</a></td>
+  <td><strong>$77,977</strong></td>
+  <td>-60.8%</td>
+  <td class="bad">-54.1%</td>
+  <td>17,513</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>2540</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Red Lion</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2009</td>
+  <td><a href="https://www.myprestigecar.com/Inventory/Details/63f91946-20c8-4ad6-8b2d-1a88174c5ced" target="_blank">2009 Aston Martin V8 Vantage Roadster</a></td>
+  <td><strong>$48,495</strong></td>
+  <td>0.0%</td>
+  <td class="bad">-72.1%</td>
+  <td>45,451</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>1274</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Mercury Silver</td>
+  <td>Prestige Motor Works Certified Pre-owned Sales &amp; Service</td>
+  <td>IL</td>
+  <td>630-780-6439</td>
+</tr>
+<tr>
+  <td class="good">14.5</td>
+  <td>2015</td>
+  <td><a href="https://stingrayautorepair.com/vdp/23186510/Used-2015-Aston-Martin-V8-Vantage-Coupe-7A-for-sale-in-Redmond-WA-98053" target="_blank">2015 Aston Martin V8 Vantage</a></td>
+  <td><strong>$88,000</strong></td>
+  <td>-81.4%</td>
+  <td class="bad">-115.1%</td>
+  <td>28,398</td>
+  <td class="">1.1x avg</td>
+  <td>147</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Green</td>
+  <td>Stingray Auto Brokers</td>
+  <td>WA</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">14.2</td>
+  <td>2009</td>
+  <td><a href="https://www.bardinomotorsinc.com/Inventory/Details/ab7acfaf-14d6-4bac-86fc-35f4e9dd9626" target="_blank">2009 Aston Martin V8 Vantage Roadster</a></td>
+  <td><strong>$47,995</strong></td>
+  <td>1.0%</td>
+  <td class="bad">-42.4%</td>
+  <td>36,498</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>167</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Jet Black</td>
+  <td>Bardino Motors Inc</td>
+  <td>NY</td>
+  <td>518-516-5502</td>
+</tr>
+<tr>
+  <td class="good">14.1</td>
+  <td>2015</td>
+  <td><a href="https://www.hgreg.com/used-car/aston-martin-v8-vantage-2015-for-sale-3287518224" target="_blank">2015 Aston Martin V8..</a></td>
+  <td><strong>$86,998</strong></td>
+  <td>-79.4%</td>
+  <td class="bad">-133.9%</td>
+  <td>32,557</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>522</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black () / Pure Black w/Full-Grain Leather Seat Trim ()</td>
+  <td>Hgreg Lux Pompano Beach</td>
+  <td>FL</td>
+  <td>844-536-5900</td>
+</tr>
+<tr>
+  <td class="good">11.6</td>
+  <td>2011</td>
+  <td><a href="http://www.californiacarcompany.com/pre-owned-cars/detail/2011-Aston-Martin-V8-Vantage-S/1433364" target="_blank">2011-Aston-Martin-V8-Vantage-S</a></td>
+  <td><strong>$51,995</strong></td>
+  <td>-7.2%</td>
+  <td class="bad">-84.5%</td>
+  <td>47,564</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>348</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>California Car Company</td>
+  <td>CA</td>
+  <td>714-256-8600</td>
+</tr>
+<tr>
+  <td class="good">5.8</td>
+  <td>2007</td>
+  <td><a href="https://www.hkautoboutique.com/vehicle-details/2007-aston-martin-v8-vantage-coupe-3ddbc861dffd44deaa259315361911d6" target="_blank">2007 Aston Martin V8 Vantage Coupe</a></td>
+  <td><strong>$49,888</strong></td>
+  <td>-2.9%</td>
+  <td class="bad">-14.8%</td>
+  <td>25,525</td>
+  <td class="">1.0x avg</td>
+  <td>175</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>AM Titanium Silver</td>
+  <td>Hk Auto Boutique</td>
+  <td>UT</td>
+  <td>385-424-0880</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2011</td>
+  <td><a href="https://www.davinciautomotive.com/inventory/ASTON%20MARTIN/VANTAGE/C14809" target="_blank">2011 ASTON MARTIN VANTAGE V8 COUPE 2D</a></td>
+  <td><strong>$38,985</strong></td>
+  <td>19.6%</td>
+  <td class="bad">-38.4%</td>
+  <td>47,943</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>149</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLUE</td>
+  <td>Da Vinci Automotive</td>
+  <td>FL</td>
+  <td>904-404-8087</td>
+</tr>
+</table>
+<h3 class="model-title">997 (36 listings)</h3>
+<div class="baseline-info">Market baseline: Median $63,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">35.4</td>
+  <td>2005</td>
+  <td><a href="http://gearsmotorsports.com/05P997_713583.htm" target="_blank">2005 Porsche 911 (997) Carrera Coupe&#x27; - Bose - Htd Seats - Perfect!</a></td>
+  <td><strong>$38,900</strong></td>
+  <td>38.3%</td>
+  <td class="good">34.1%</td>
+  <td>36,986</td>
+  <td class="">0.9x avg</td>
+  <td>1485</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>German &amp; Exotic Auto Remarketing Specialists</td>
+  <td>GA</td>
+  <td>770-460-1300</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2008</td>
+  <td><a href="https://www.nichemotors.com/available-units/2008-911-gt3rs-green" target="_blank">2008 Porsche 911 GT3RS</a></td>
+  <td><strong>$479,975</strong></td>
+  <td>-661.9%</td>
+  <td class="bad">-578.7%</td>
+  <td>9,786</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>2887</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Niche Motors</td>
+  <td>TN</td>
+  <td>615-678-7176</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2007</td>
+  <td><a href="https://twinsautomall.com/vdp/21772750/Used-2007-Porsche-911-Cpe-Turbo-for-sale-in-Rockford-IL-61109" target="_blank">2007 Porsche 911 Cpe Turbo</a></td>
+  <td><strong>$109,995</strong></td>
+  <td>-74.6%</td>
+  <td class="bad">-58.7%</td>
+  <td>13,036</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>1436</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>RED</td>
+  <td>Twins Auto Mall</td>
+  <td>IL</td>
+  <td>815-721-0501</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2012</td>
+  <td><a href="https://autoconsignmentofsandiego.com/index.php?main_page=product_info&amp;cPath=62&amp;products_id=449" target="_blank">2012 Porsche 911 S</a></td>
+  <td><strong>$69,000</strong></td>
+  <td>-9.5%</td>
+  <td class="bad">-3.4%</td>
+  <td>19,000</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1336</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Auto Consignment San Diego</td>
+  <td>CA</td>
+  <td>760-822-7106</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2012</td>
+  <td><a href="https://lknautoexchange.com/vdp/22198269/Used-2012-Porsche-911-2dr-Cabriolet-Carrera-GTS-for-sale-in-Cornelius-NC-28031" target="_blank">2012 Porsche 911</a></td>
+  <td><strong>$94,495</strong></td>
+  <td>-50.0%</td>
+  <td class="bad">-43.5%</td>
+  <td>21,152</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1268</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Lake Norman Auto Exchange</td>
+  <td>NC</td>
+  <td>980-819-1792</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2011</td>
+  <td><a href="https://sceniccitycars.com/476278/2011-Porsche-911-Turbo-S-Cabriolet" target="_blank">2011 Porsche 911 Turbo S Cabriolet</a></td>
+  <td><strong>$129,995</strong></td>
+  <td>-106.3%</td>
+  <td class="bad">-102.6%</td>
+  <td>24,997</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1146</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Scenic City Cars</td>
+  <td>TN</td>
+  <td>877-895-6728</td>
+</tr>
+<tr>
+  <td class="good">25.6</td>
+  <td>2006</td>
+  <td><a href="http://cyberdealsusa.com/stock.asp?id=716584" target="_blank">2006 Porsche 911 Carrera 4 Coupe</a></td>
+  <td><strong>$34,999</strong></td>
+  <td>44.4%</td>
+  <td class="good">36.8%</td>
+  <td>45,500</td>
+  <td class="">1.1x avg</td>
+  <td>1430</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>A&amp;a Quality Services Inc</td>
+  <td>NY</td>
+  <td>718-444-8183</td>
+</tr>
+<tr>
+  <td class="good">25.3</td>
+  <td>2011</td>
+  <td><a href="https://www.blackdogperformancecars.com/used-vehicle-2011-porsche-911-gt3-c-343/" target="_blank">2011 PORSCHE 911 GT3</a></td>
+  <td><strong>$214,997</strong></td>
+  <td>-241.3%</td>
+  <td class="bad">-254.0%</td>
+  <td>33,017</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1603</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Blackdog Performance Cars</td>
+  <td>IL</td>
+  <td>224-352-2535</td>
+</tr>
+<tr>
+  <td class="good">25.3</td>
+  <td>2012</td>
+  <td><a href="http://www.webeautos.com/details-2012-porsche-911-turbo_s_awd_2dr_convertible-used-wp0cd2a93cs773189.html" target="_blank">2012 Porsche 911</a></td>
+  <td><strong>$110,000</strong></td>
+  <td>-74.6%</td>
+  <td class="bad">-82.1%</td>
+  <td>33,771</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1532</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Carrara White</td>
+  <td>Webe Autos</td>
+  <td>NY</td>
+  <td>631-339-0399</td>
+</tr>
+<tr>
+  <td class="good">25.2</td>
+  <td>2009</td>
+  <td><a href="https://www.toy-barn.com/details/used-2009-porsche-911/117041616" target="_blank">2009 Porsche 911 Carrera 4S</a></td>
+  <td><strong>$63,995</strong></td>
+  <td>-1.6%</td>
+  <td class="bad">-8.3%</td>
+  <td>36,829</td>
+  <td class="">0.9x avg</td>
+  <td>1701</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Toy Factory</td>
+  <td>IL</td>
+  <td>630-422-3157</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2008</td>
+  <td><a href="http://showroom.auction123.com/topgear_imports_llc/inventory/11263/2008/Porsche/911/WP0CD299X8S789532.html" target="_blank">2008 997</a></td>
+  <td><strong>$92,888</strong></td>
+  <td>-47.4%</td>
+  <td class="bad">-47.4%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>2527</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Top Gear Imports</td>
+  <td>NJ</td>
+  <td>856-451-2716</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2008</td>
+  <td><a href="http://ehrlichmotorwerks.com/sold-inventory-1/2021/6/11/2008-porsche-911-turbo" target="_blank">2008 Porsche 911 Turbo</a></td>
+  <td><strong>$75,000</strong></td>
+  <td>-19.0%</td>
+  <td class="bad">-19.0%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1595</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>EXTERIOR</td>
+  <td>Ehrlich Motorwerks</td>
+  <td>AR</td>
+  <td>479-524-6560</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2012</td>
+  <td><a href="https://www.customcarswest.com/inventory/2012-porsche-911-/548016" target="_blank">2012 Porsche 911</a></td>
+  <td><strong>$69,950</strong></td>
+  <td>-11.0%</td>
+  <td class="bad">-11.0%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1291</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Custom Cars West</td>
+  <td>CO</td>
+  <td>303-733-0135</td>
+</tr>
+<tr>
+  <td class="good">24.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/233810/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$59,977</strong></td>
+  <td>4.8%</td>
+  <td class="bad">-15.5%</td>
+  <td>53,446</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>2515</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Basalt Black Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2008</td>
+  <td><a href="https://platinumcollectionpb.com/product/2008-porsche-911-turbo/" target="_blank">2008 PORSCHE 911 TURBO</a></td>
+  <td><strong>$64,998</strong></td>
+  <td>-3.2%</td>
+  <td class="bad">-27.1%</td>
+  <td>55,355</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1184</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>55355</td>
+  <td>The Platinum Collection</td>
+  <td>FL</td>
+  <td>561-794-3841</td>
+</tr>
+<tr>
+  <td class="good">21.2</td>
+  <td>2007</td>
+  <td><a href="http://cyberdealsusa.com/stock.asp?id=732499" target="_blank">2007 Porsche 911 Carrera 4S Coupe</a></td>
+  <td><strong>$44,999</strong></td>
+  <td>28.6%</td>
+  <td class="good">21.0%</td>
+  <td>41,750</td>
+  <td class="">1.0x avg</td>
+  <td>1698</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>A&amp;a Quality Services Inc</td>
+  <td>NY</td>
+  <td>718-444-8183</td>
+</tr>
+<tr>
+  <td class="good">21.0</td>
+  <td>2012</td>
+  <td><a href="https://www.abzmotors.com/used-vehicle-2012-porsche-911-carrera-s-c-3595/" target="_blank">2012 Porsche 911</a></td>
+  <td><strong>$65,991</strong></td>
+  <td>-4.7%</td>
+  <td class="good">3.4%</td>
+  <td>15,366</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>1538</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Abz Motors</td>
+  <td>TX</td>
+  <td>713-839-9800</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/103290/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$76,977</strong></td>
+  <td>-22.2%</td>
+  <td class="bad">-12.7%</td>
+  <td>15,420</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>2875</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Basalt Black Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/237250/2007-Porsche-911-GT3.aspx" target="_blank">2007 Porsche 911 GT3</a></td>
+  <td><strong>$105,977</strong></td>
+  <td>-68.2%</td>
+  <td class="bad">-59.0%</td>
+  <td>19,261</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2247</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Speed Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2012</td>
+  <td><a href="https://www.21centuryautogroup.com/used.cfm/vehicle/2012-porsche-911-991-carrera-s-WP0AB2A97CS120622/" target="_blank">Used 2012 Porsche 911</a></td>
+  <td><strong>$69,995</strong></td>
+  <td>-11.1%</td>
+  <td class="bad">-5.2%</td>
+  <td>19,470</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2159</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Carrara White</td>
+  <td>21st Century Auto Group</td>
+  <td>NJ</td>
+  <td>908-360-9944</td>
+</tr>
+<tr>
+  <td class="good">16.3</td>
+  <td>2010</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/173796/2010-Porsche-911-Carrera.aspx" target="_blank">2010 Porsche 911 Carrera</a></td>
+  <td><strong>$58,977</strong></td>
+  <td>6.4%</td>
+  <td class="good">3.2%</td>
+  <td>32,499</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2775</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Basalt Black Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.9</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/181004/2011-Porsche-911-Turbo.aspx" target="_blank">2011 Porsche 911 Turbo</a></td>
+  <td><strong>$94,977</strong></td>
+  <td>-50.8%</td>
+  <td class="bad">-44.5%</td>
+  <td>21,330</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2792</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Carrara White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.8</td>
+  <td>2009</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/145537/2009-Porsche-911-Turbo.aspx" target="_blank">2009 Porsche 911 Turbo</a></td>
+  <td><strong>$129,977</strong></td>
+  <td>-106.3%</td>
+  <td class="bad">-99.9%</td>
+  <td>23,050</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2607</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Carrara White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.5</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/103289/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$75,977</strong></td>
+  <td>-20.6%</td>
+  <td class="bad">-22.8%</td>
+  <td>30,412</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2763</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Guards Red</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.5</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/230094/2011-Porsche-911-Turbo-S.aspx" target="_blank">2011 Porsche 911 Turbo S</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>-58.7%</td>
+  <td class="bad">-60.3%</td>
+  <td>29,196</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>2209</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Basalt Black Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.4</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/183202/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$100,977</strong></td>
+  <td>-60.3%</td>
+  <td class="bad">-65.4%</td>
+  <td>32,250</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2691</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Atlas Grey Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.2</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/145535/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$79,977</strong></td>
+  <td>-26.9%</td>
+  <td class="bad">-34.4%</td>
+  <td>35,869</td>
+  <td class="">0.9x avg</td>
+  <td>2751</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Speed Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="https://www.mcintoshauto.com/inventory/PORSCHE/911/S.789814" target="_blank">2008 PORSCHE 911</a></td>
+  <td><strong>$89,900</strong></td>
+  <td>-42.7%</td>
+  <td class="bad">-86.3%</td>
+  <td>62,000</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>2455</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>RED</td>
+  <td>Mcintosh Auto Group Llc</td>
+  <td>FL</td>
+  <td>954-451-3924</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/304093/2007-Porsche-911-4.aspx" target="_blank">2007 Porsche 911 4</a></td>
+  <td><strong>$61,977</strong></td>
+  <td>1.6%</td>
+  <td class="bad">-30.0%</td>
+  <td>63,389</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>1609</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Basalt Black Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2012</td>
+  <td><a href="https://www.autoworldofatlanta.com/details/used-2012-porsche-911/116502494" target="_blank">2012 Porsche 911 Turbo S</a></td>
+  <td><strong>$85,995</strong></td>
+  <td>-36.5%</td>
+  <td class="bad">-82.2%</td>
+  <td>64,497</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>1602</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Auto World Of Atlanta Inc</td>
+  <td>GA</td>
+  <td>404-948-7401</td>
+</tr>
+<tr>
+  <td class="good">14.6</td>
+  <td>2008</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/376250/2008-Porsche-911-Turbo.aspx" target="_blank">2008 Porsche 911 Turbo</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>-58.7%</td>
+  <td class="bad">-80.4%</td>
+  <td>45,379</td>
+  <td class="">1.1x avg</td>
+  <td>1136</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.3</td>
+  <td>2008</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/164769/2008-Porsche-911-Turbo.aspx" target="_blank">2008 Porsche 911 Turbo</a></td>
+  <td><strong>$78,977</strong></td>
+  <td>-25.4%</td>
+  <td class="bad">-46.4%</td>
+  <td>48,818</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>2862</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Speed Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.1</td>
+  <td>2006</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/231156/2006-Porsche-911-Carrera-S.aspx" target="_blank">2006 Porsche 911 Carrera S</a></td>
+  <td><strong>$55,977</strong></td>
+  <td>11.1%</td>
+  <td class="bad">-6.5%</td>
+  <td>51,981</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>2205</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Speed Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">13.9</td>
+  <td>2006</td>
+  <td><a href="https://texasautowholesale.net/2006-porsche-911-carrera-s-*-tiptronic-*-54k-miles-*-white%2Ftan-*-tx-%7C-plano,-texas-%7C-lone-star-cars,-inc-plano-texas-75093/6999906" target="_blank">2006 Porsche 911 Carrera S * Tiptronic * 54k Miles * White/Tan * TX | Plano, Texas | Lone Star Cars, Inc</a></td>
+  <td><strong>$55,990</strong></td>
+  <td>11.1%</td>
+  <td class="bad">-8.4%</td>
+  <td>54,174</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1740</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Carrara White</td>
+  <td>Lone Star Cars</td>
+  <td>TX</td>
+  <td>214-566-1411</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/101814/2007-Porsche-911-Turbo.aspx" target="_blank">2007 Porsche 911 Turbo</a></td>
+  <td><strong>$64,977</strong></td>
+  <td>-3.1%</td>
+  <td class="bad">-35.1%</td>
+  <td>62,405</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>2799</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Guards Red</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2009</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/327453/2009-Porsche-911-Carrera-C4S.aspx" target="_blank">2009 Porsche 911 Carrera C4S</a></td>
+  <td><strong>$59,977</strong></td>
+  <td>4.8%</td>
+  <td class="bad">-24.1%</td>
+  <td>61,872</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1334</td>
+  <td>Automatic</td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Ruby Red Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+</table>
+<h3 class="model-title">F430 (33 listings)</h3>
+<div class="baseline-info">Market baseline: Median $131,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">35.0</td>
+  <td>2008</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/20080/" target="_blank">2008 Ferrari 430 Spyder</a></td>
+  <td><strong>$149,800</strong></td>
+  <td>-14.4%</td>
+  <td class="good">16.7%</td>
+  <td>4,420</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>2015</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2009</td>
+  <td><a href="https://www.westcoastexoticcars.com/used-vehicle-2009-ferrari-430-scuderia-spider-16m-c-2693/" target="_blank">2009 Ferrari 430</a></td>
+  <td><strong>$979,990</strong></td>
+  <td>-648.1%</td>
+  <td class="bad">-475.8%</td>
+  <td>6,260</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>559</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>West Coast Exotic Cars</td>
+  <td>CA</td>
+  <td>844-488-9232</td>
+</tr>
+<tr>
+  <td class="good">26.0</td>
+  <td>2007</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2007-157753-ROAOBJJR" target="_blank">2007 FERRARI F430</a></td>
+  <td><strong>$257,985</strong></td>
+  <td>-96.9%</td>
+  <td class="bad">-74.2%</td>
+  <td>10,488</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>847</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>YELLOW</td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2007</td>
+  <td><a href="https://www.internationalmotorgroupllc.com/details/used-2007-ferrari-f430/82380926" target="_blank">2007 Ferrari F430 F1</a></td>
+  <td><strong>$149,995</strong></td>
+  <td>-14.5%</td>
+  <td class="bad">-4.4%</td>
+  <td>11,328</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1560</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>International Motor Group Llc</td>
+  <td>NJ</td>
+  <td>732-334-7423</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2009</td>
+  <td><a href="https://www.5cornerautosales.com/Inventory/Details/026a7a53-9dd7-43a6-a2cf-b431c741262d" target="_blank">2009 Ferrari F430 Spider F1</a></td>
+  <td><strong>$165,995</strong></td>
+  <td>-26.7%</td>
+  <td class="bad">-12.3%</td>
+  <td>10,548</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>743</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Burgandy Red</td>
+  <td>5 Corner Auto Sales Inc.</td>
+  <td>MA</td>
+  <td>508-801-7426</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2007</td>
+  <td><a href="https://www.siennamotors.com/used/Ferrari/2007-Ferrari-F430-535c3bb7ac1851f4ece837f0d4d156be.htm" target="_blank">2007 Ferrari F430 Berlinetta F1 Coupe</a></td>
+  <td><strong>$198,900</strong></td>
+  <td>-51.8%</td>
+  <td class="bad">-39.0%</td>
+  <td>11,450</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>651</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>Sienna Motors</td>
+  <td>FL</td>
+  <td>954-784-7181</td>
+</tr>
+<tr>
+  <td class="good">25.7</td>
+  <td>2008</td>
+  <td><a href="https://mrcarguys.com/2008-ferrari-f430-spider-base-%7C-addison,-tx-%7C-mr-car-guys-addison-tx-75001/7294475" target="_blank">2008 Ferrari F430 Spider Base | Addison, TX | Mr Car Guys</a></td>
+  <td><strong>$149,900</strong></td>
+  <td>-14.4%</td>
+  <td class="bad">-11.8%</td>
+  <td>13,180</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>1540</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Mr Car Guys</td>
+  <td>TX</td>
+  <td>214-732-7859</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2008</td>
+  <td><a href="https://www.continentalautosports.com/inventory/used-2008-ferrari-f430-spider-rwd-2d-convertible-zffew59a880161111/" target="_blank">Pre-Owned 2008 Ferrari F430 Spider</a></td>
+  <td><strong>$169,999</strong></td>
+  <td>-29.8%</td>
+  <td class="bad">-35.8%</td>
+  <td>14,888</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>864</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Silverstone</td>
+  <td>Continental Ferrari</td>
+  <td>IL</td>
+  <td>630-655-3535</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2005</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/79990/" target="_blank">2005 Ferrari 430 spider Convertible</a></td>
+  <td><strong>$129,000</strong></td>
+  <td>1.5%</td>
+  <td class="good">1.5%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>565</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Gray</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2007</td>
+  <td><a href="https://www.martinautopa.com/Inventory/Details/19ddd0b1-d718-4eb1-91ab-c0178eaa718c" target="_blank">2007 Ferrari F430 Spider</a></td>
+  <td><strong>$149,988</strong></td>
+  <td>-14.5%</td>
+  <td class="bad">-25.1%</td>
+  <td>15,905</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2720</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>Martin Auto Gallery</td>
+  <td>PA</td>
+  <td>412-861-0904</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2006</td>
+  <td><a href="https://www.marinoperformancemotors.com/2006-ferrari-f430-spider-c-15634/" target="_blank">2006 Ferrari F430 Spider</a></td>
+  <td><strong>$135,900</strong></td>
+  <td>-3.7%</td>
+  <td class="bad">-14.2%</td>
+  <td>16,069</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>1524</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Marino Performance Motors</td>
+  <td>FL</td>
+  <td>877-561-2121</td>
+</tr>
+<tr>
+  <td class="good">25.1</td>
+  <td>2006</td>
+  <td><a href="https://www.dreamcarsellers.com/2006-ferrari-430-spider-f1-c-3006.htm" target="_blank">2006 Ferrari 430 Spider F1</a></td>
+  <td><strong>$161,000</strong></td>
+  <td>-22.9%</td>
+  <td class="bad">-54.6%</td>
+  <td>18,916</td>
+  <td class="">0.9x avg</td>
+  <td>1170</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Giallo Modena Ds</td>
+  <td>Dream Car Sellers</td>
+  <td>FL</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">25.1</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/007%20fer/" target="_blank">2007 Ferrari F430 Spider</a></td>
+  <td><strong>$139,900</strong></td>
+  <td>-6.8%</td>
+  <td class="bad">-36.3%</td>
+  <td>19,200</td>
+  <td class="">1.0x avg</td>
+  <td>823</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Corsa red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/777677/" target="_blank">2007 Ferrari 430 convertible 430</a></td>
+  <td><strong>$137,000</strong></td>
+  <td>-4.6%</td>
+  <td class="bad">-4.6%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1032</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">24.2</td>
+  <td>2007</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/380/" target="_blank">2007 Ferrari F430 Coupe</a></td>
+  <td><strong>$123,995</strong></td>
+  <td>5.3%</td>
+  <td class="bad">-65.5%</td>
+  <td>25,200</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>1899</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">24.1</td>
+  <td>2006</td>
+  <td><a href="http://themarkmotors.com/vehicle-details/used-2006-ferrari-430-spider---factory-challenge-wheels---daytona-seats---high-power-h-boerne-tx-id-ZFFEW59A860145875" target="_blank">2006 Ferrari 430 Spider - FACTORY CHALLENGE WHEELS - DAYTONA SEATS - HIGH POWER H</a></td>
+  <td><strong>$142,927</strong></td>
+  <td>-9.1%</td>
+  <td class="bad">-90.8%</td>
+  <td>25,714</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>698</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Corsa Ds</td>
+  <td>Mark Motors</td>
+  <td>TX</td>
+  <td>830-981-5050</td>
+</tr>
+<tr>
+  <td class="good">23.9</td>
+  <td>2009</td>
+  <td><a href="https://www.ferrarisiliconvalley.com/used-Redwood+City+-2009-Ferrari-430-Scuderia+Spider+16M-ZFFKW66AX90166793" target="_blank">2009 Ferrari 430 Scuderia Spider 16M</a></td>
+  <td><strong>$709,990</strong></td>
+  <td>-442.0%</td>
+  <td class="bad">-847.9%</td>
+  <td>27,087</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>850</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Corsa</td>
+  <td>Ferrari Silicon Valley</td>
+  <td>CA</td>
+  <td>888-686-2718</td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2008</td>
+  <td><a href="https://www.autoexcellencegroup.com/details/used-2008-ferrari-f430-spider/92241166" target="_blank">2008 Ferrari F430 Spider</a></td>
+  <td><strong>$139,977</strong></td>
+  <td>-6.9%</td>
+  <td class="bad">-86.9%</td>
+  <td>27,722</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1577</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Auto Excellence Group</td>
+  <td>MA</td>
+  <td>617-782-8222</td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-ferrari-f430-spider-ZFFEW59A680163553" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$129,998</strong></td>
+  <td>0.8%</td>
+  <td class="bad">-73.6%</td>
+  <td>28,137</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1007</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Blue Pozzi</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">23.5</td>
+  <td>2005</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-F430-2005-144636-YMMMZJEY" target="_blank">2005 FERRARI F430</a></td>
+  <td><strong>$127,985</strong></td>
+  <td>2.3%</td>
+  <td class="bad">-70.9%</td>
+  <td>29,966</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>572</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+<tr>
+  <td class="good">15.2</td>
+  <td>2008</td>
+  <td><a href="https://laautocity.com/vdp/23737351/Used-2008-Ferrari-F430-Spider-for-sale-in-Alhambra-CA-91803" target="_blank">2008 Ferrari F430 Spider</a></td>
+  <td><strong>$139,999</strong></td>
+  <td>-6.9%</td>
+  <td class="bad">-30.4%</td>
+  <td>18,305</td>
+  <td class="">0.9x avg</td>
+  <td>780</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>BLACK</td>
+  <td>Auto City</td>
+  <td>CA</td>
+  <td>626-780-3338</td>
+</tr>
+<tr>
+  <td class="good">15.1</td>
+  <td>2008</td>
+  <td><a href="https://www.wideworldferrari.com/inventory/used-2008-ferrari-f430-scuderia-rwd-2d-coupe-zffkw64a580161292/" target="_blank">Pre-Owned 2008 Ferrari F430 Scuderia RWD 2D Coupe</a></td>
+  <td><strong>$710,170</strong></td>
+  <td>-442.1%</td>
+  <td class="bad">-602.1%</td>
+  <td>19,487</td>
+  <td class="">1.0x avg</td>
+  <td>767</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Yellow Modena</td>
+  <td>Wide World Ferrari</td>
+  <td>NY</td>
+  <td>845-425-3002</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2006</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/176398/2006-Ferrari-F-430.aspx" target="_blank">2006 Ferrari F 430</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>23.7%</td>
+  <td class="bad">-33.5%</td>
+  <td>43,100</td>
+  <td class="high-miles">2.2x avg</td>
+  <td>2762</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Alloy</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://thenewautotoystore.com/carsforsale/2007-FERRARI-F430-Spider-Stock=102518" target="_blank">2007 FERRARI F430 Spider</a></td>
+  <td><strong>$119,950</strong></td>
+  <td>8.4%</td>
+  <td class="bad">-60.1%</td>
+  <td>34,152</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1721</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black / Black</td>
+  <td>The New Auto Toy Store</td>
+  <td>FL</td>
+  <td>954-379-2886</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="https://www.eastsidemotoringautosales.com/used/Ferrari/2008-Ferrari-F430-06bc351cac18104abfd5363456c1e7f2.htm" target="_blank">2008 Ferrari F430 Spider Convertible 2D</a></td>
+  <td><strong>$134,983</strong></td>
+  <td>-3.0%</td>
+  <td class="bad">-80.2%</td>
+  <td>34,167</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1439</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Eastside Motoring</td>
+  <td>MA</td>
+  <td>781-488-1998</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2006</td>
+  <td><a href="http://autosportofpalmbeach.com/inventory/30254/view/Red2006/" target="_blank">2006 Ferrari F430 Coupe</a></td>
+  <td><strong>$99,995</strong></td>
+  <td>23.7%</td>
+  <td class="bad">-33.5%</td>
+  <td>38,500</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>841</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Corsa Red</td>
+  <td>Autosport</td>
+  <td>FL</td>
+  <td>561-351-7377</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2005</td>
+  <td><a href="https://www.summitautogroupsales.com/Inventory/Details/f47e5868-283f-4b3b-be7a-0c2e704571a1" target="_blank">2005 Ferrari F430 Base</a></td>
+  <td><strong>$149,995</strong></td>
+  <td>-14.5%</td>
+  <td class="bad">-100.3%</td>
+  <td>39,000</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>709</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Summit Auto Group</td>
+  <td>FL</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-ferrari-f430-spider-ZFFEW59A080159742" target="_blank">2008 Ferrari F430</a></td>
+  <td><strong>$129,998</strong></td>
+  <td>0.8%</td>
+  <td class="bad">-73.6%</td>
+  <td>34,735</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>697</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Black</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://highsierrapowersports.com/inventory/2007-Ferrari-F430-42f9aba4-1650-4c10-af5e-94dddac13415" target="_blank">2007 Ferrari F430</a></td>
+  <td><strong>$159,999</strong></td>
+  <td>-22.1%</td>
+  <td class="bad">-113.6%</td>
+  <td>32,899</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>675</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>High Sierra Powersports</td>
+  <td>NV</td>
+  <td>775-384-1398</td>
+</tr>
+<tr>
+  <td class="good">14.5</td>
+  <td>2008</td>
+  <td><a href="https://www.blackhorsegarage.com/inventory/FERRARI/F430%20SPIDER/160504" target="_blank">2008 FERRARI F430 SPIDER</a></td>
+  <td><strong>$147,000</strong></td>
+  <td>-12.2%</td>
+  <td class="bad">-85.1%</td>
+  <td>23,651</td>
+  <td class="high-miles">1.2x avg</td>
+  <td>1913</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>RED</td>
+  <td>Black Horse Garage</td>
+  <td>CT</td>
+  <td>203-330-9604</td>
+</tr>
+<tr>
+  <td class="good">14.0</td>
+  <td>2006</td>
+  <td><a href="https://www.ryanfriedmanmotorcars.com/2006-ferrari-f430-f1-spider-c-2780/" target="_blank">2006 Ferrari F430</a></td>
+  <td><strong>$199,995</strong></td>
+  <td>-52.7%</td>
+  <td class="bad">-167.0%</td>
+  <td>26,802</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>603</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Avus</td>
+  <td>Ryan Friedman Motor Cars</td>
+  <td>NY</td>
+  <td>516-888-9000</td>
+</tr>
+<tr>
+  <td class="good">13.6</td>
+  <td>2005</td>
+  <td><a href="https://www.hgreg.com/used-car/ferrari-f430-2005-for-sale-2277697080" target="_blank">2005 Ferrari F430</a></td>
+  <td><strong>$138,998</strong></td>
+  <td>-6.1%</td>
+  <td class="bad">-85.6%</td>
+  <td>29,180</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1099</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black () / Leather ()</td>
+  <td>Hgreg Lux Pompano Beach</td>
+  <td>FL</td>
+  <td>844-536-5900</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2005</td>
+  <td><a href="https://www.hgreg.com/used-car/ferrari-f430-2005-for-sale-2780413013" target="_blank">2005 Ferrari F430</a></td>
+  <td><strong>$122,998</strong></td>
+  <td>6.1%</td>
+  <td class="bad">-64.2%</td>
+  <td>31,663</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>1487</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>() / Bordeaux w/Leather Seat Trim or Daytona Style Seat Trim ()</td>
+  <td>Hgreg Lux Pompano Beach</td>
+  <td>FL</td>
+  <td>844-536-5900</td>
+</tr>
+</table>
+<h3 class="model-title">Gallardo (43 listings)</h3>
+<div class="baseline-info">Market baseline: Median $117,250</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2010</td>
+  <td><a href="http://www.kleyssonbraga.com/details-2010-lamborghini-gallardo-2dr_lp560~4_convertible_spyder-used-zhwgu6au2ala09199.html" target="_blank">2010 Lamborghini Gallardo 2dr LP560-4 Convertible Spyder</a></td>
+  <td><strong>$134,995</strong></td>
+  <td>-15.1%</td>
+  <td class="bad">-12.1%</td>
+  <td>11,708</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2789</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Braga Management Inc</td>
+  <td>MA</td>
+  <td>866-560-2277</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="http://www.kleyssonbraga.com/details-2011-lamborghini-gallardo-used-zhwgu5au2bla10946.html" target="_blank">2011 Lamborghini Gallardo Base Trim Coupe</a></td>
+  <td><strong>$147,495</strong></td>
+  <td>-25.8%</td>
+  <td class="bad">-13.0%</td>
+  <td>4,980</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>2060</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>YELLOW</td>
+  <td>Braga Management Inc</td>
+  <td>MA</td>
+  <td>866-560-2277</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2008</td>
+  <td><a href="https://divineautogroup.com/listings/lamborghini-urus-2021/" target="_blank">Lamborghini Urus 2021 Stage 2, Akrapovic Exhaust</a></td>
+  <td><strong>$305,000</strong></td>
+  <td>-160.1%</td>
+  <td class="bad">-123.9%</td>
+  <td>1,200</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>1783</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Orange Metallic</td>
+  <td>Divine Auto Group</td>
+  <td>FL</td>
+  <td>954-988-1885</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="https://www.domanimotorsfl.com/details/used-2011-lamborghini-gallardo/79515946" target="_blank">2011 Lamborghini Gallardo LP 560-4 Spyder</a></td>
+  <td><strong>$145,899</strong></td>
+  <td>-24.4%</td>
+  <td class="bad">-20.7%</td>
+  <td>11,356</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1772</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>Domani Motors</td>
+  <td>FL</td>
+  <td>954-519-6572</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2013</td>
+  <td><a href="https://www.lamborghiniparamus.com/vehicle-details/used-2013-lamborghini-gallardo-lp570-4-super-trofeo-paramus-nj-id-59682599" target="_blank">2013 Lamborghini Gallardo LP570-4 Super Trofeo</a></td>
+  <td><strong>$189,895</strong></td>
+  <td>-62.0%</td>
+  <td class="bad">-41.4%</td>
+  <td>2,506</td>
+  <td class="low-miles">0.1x avg</td>
+  <td>1068</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Lamborghini Paramus</td>
+  <td>NJ</td>
+  <td>201-639-2253</td>
+</tr>
+<tr>
+  <td class="good">26.5</td>
+  <td>2004</td>
+  <td><a href="https://www.ultimatemotorcars.com/vehicle-details/used-2004-lamborghini-gallardo--saint-augustine-fl-id-58495590" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$108,995</strong></td>
+  <td>7.0%</td>
+  <td class="good">2.9%</td>
+  <td>17,110</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>2399</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Ultimate Motor Cars</td>
+  <td>FL</td>
+  <td>888-718-4644</td>
+</tr>
+<tr>
+  <td class="good">26.0</td>
+  <td>2013</td>
+  <td><a href="https://www.lapinmotorco.com/used-vehicle-2013-lamborghini-gallardo-lp550-2-c-54/" target="_blank">2013 Lamborghini Gallardo LP550-2</a></td>
+  <td><strong>$168,991</strong></td>
+  <td>-44.1%</td>
+  <td class="bad">-42.0%</td>
+  <td>12,602</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1597</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>White</td>
+  <td>Lapin Motor Co</td>
+  <td>AZ</td>
+  <td>480-409-4940</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2006</td>
+  <td><a href="https://www.domanimotorsfl.com/details/used-2006-lamborghini-gallardo/79516265" target="_blank">2006 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$122,899</strong></td>
+  <td>-4.8%</td>
+  <td class="bad">-6.8%</td>
+  <td>15,255</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1689</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Domani Motors</td>
+  <td>FL</td>
+  <td>954-519-6572</td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2004</td>
+  <td><a href="https://www.privatecollectionchicago.com/used-vehicle-2004-lamborghini-gallardo-c-21/" target="_blank">2004 LAMBORGHINI GALLARDO</a></td>
+  <td><strong>$139,800</strong></td>
+  <td>-19.2%</td>
+  <td class="bad">-21.1%</td>
+  <td>14,999</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>991</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>Private Collection Chicago</td>
+  <td>IL</td>
+  <td>630-802-4654</td>
+</tr>
+<tr>
+  <td class="good">25.7</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/100830/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>14.7%</td>
+  <td class="good">2.1%</td>
+  <td>23,830</td>
+  <td class="">1.0x avg</td>
+  <td>3323</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Matte Grey</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">25.7</td>
+  <td>2007</td>
+  <td><a href="https://crsamerica.com/vdp/23689800/Used-2007-Lamborghini-Gallardo-Spyder-for-sale-in-West-Jordan-UT-84081" target="_blank">2007 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$114,995</strong></td>
+  <td>1.9%</td>
+  <td class="bad">-1.5%</td>
+  <td>16,410</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>1316</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>RED</td>
+  <td>Crs America</td>
+  <td>UT</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-lamborghini-gallardo-ZHWGU22T68LA07268" target="_blank">2008 Lamborghini Gallardo</a></td>
+  <td><strong>$108,998</strong></td>
+  <td>7.0%</td>
+  <td class="bad">-1.8%</td>
+  <td>20,503</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>859</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">24.2</td>
+  <td>2008</td>
+  <td><a href="https://www.liftautomotive.com/store/p12/2008_Lamborghini_Gallardo_Spyder.html" target="_blank">2008 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$97,995</strong></td>
+  <td>16.4%</td>
+  <td class="bad">-9.0%</td>
+  <td>31,870</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>2326</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Thalasso</td>
+  <td>Lift Automotive Inc.</td>
+  <td>IN</td>
+  <td>260-710-4398</td>
+</tr>
+<tr>
+  <td class="good">23.8</td>
+  <td>2011</td>
+  <td><a href="https://www.legacymotorsales.net/details/used-2011-lamborghini-gallardo/115856945" target="_blank">2011 Lamborghini Gallardo LP 560-4 Spyder</a></td>
+  <td><strong>$114,999</strong></td>
+  <td>1.9%</td>
+  <td class="bad">-34.5%</td>
+  <td>34,787</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1263</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow With Black Trim/ Top / Wheels</td>
+  <td>Legacy Motor Sales</td>
+  <td>GA</td>
+  <td>678-534-2520</td>
+</tr>
+<tr>
+  <td class="good">23.6</td>
+  <td>2011</td>
+  <td><a href="https://uirides.com/vdp/23797182/Used-2011-Lamborghini-Gallardo-LP5604-for-sale-in-Alpharetta-GA-30004" target="_blank">2011 Lamborghini Gallardo LP560-4</a></td>
+  <td><strong>$113,447</strong></td>
+  <td>3.2%</td>
+  <td class="bad">-38.0%</td>
+  <td>36,971</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>2308</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Southern Auto Imports - Alpharetta</td>
+  <td>GA</td>
+  <td>770-252-6900</td>
+</tr>
+<tr>
+  <td class="good">20.3</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/167301/2007-Lamborghini-Gallardo.aspx" target="_blank">2007 Lamborghini Gallardo</a></td>
+  <td><strong>$124,977</strong></td>
+  <td>-6.6%</td>
+  <td class="good">1.1%</td>
+  <td>7,741</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>2880</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.1</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/137984/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$100,977</strong></td>
+  <td>13.9%</td>
+  <td class="good">13.9%</td>
+  <td>13,727</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>2687</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Silver</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2011</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/150429/2011-Lamborghini-Gallardo-Spyder-Performante.aspx" target="_blank">2011 Lamborghini Gallardo Spyder Performante</a></td>
+  <td><strong>$189,977</strong></td>
+  <td>-62.0%</td>
+  <td class="bad">-52.1%</td>
+  <td>8,715</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>3256</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Monocerous (White)</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2008</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/166420/2008-Lamborghini-Gallardo-SUPERLEGGERA.aspx" target="_blank">2008 Lamborghini Gallardo SUPERLEGGERA</a></td>
+  <td><strong>$325,977</strong></td>
+  <td>-178.0%</td>
+  <td class="bad">-157.6%</td>
+  <td>7,634</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>2825</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Giallo Midas Tri-Coat</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2006</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/404871/2006-Lamborghini-Gallardo.aspx" target="_blank">2006 Lamborghini Gallardo</a></td>
+  <td><strong>$129,977</strong></td>
+  <td>-10.9%</td>
+  <td class="bad">-4.3%</td>
+  <td>8,936</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>1022</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Verde Ithaca</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">18.3</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/108909/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="good">8.4%</td>
+  <td>15,572</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2665</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Silver</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.9</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/143589/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$118,977</strong></td>
+  <td>-1.5%</td>
+  <td class="bad">-1.6%</td>
+  <td>13,863</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2760</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.9</td>
+  <td>2013</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/198545/2013-Lamborghini-Gallardo-LP560-4.aspx" target="_blank">2013 Lamborghini Gallardo LP560-4</a></td>
+  <td><strong>$150,977</strong></td>
+  <td>-28.8%</td>
+  <td class="bad">-29.6%</td>
+  <td>14,292</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2635</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Grigio Telesto</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.8</td>
+  <td>2007</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/166642/2007-Lamborghini-Gallardo.aspx" target="_blank">2007 Lamborghini Gallardo</a></td>
+  <td><strong>$127,977</strong></td>
+  <td>-9.1%</td>
+  <td class="bad">-11.0%</td>
+  <td>15,095</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2840</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.7</td>
+  <td>2008</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/170520/2008-Lamborghini-Gallardo.aspx" target="_blank">2008 Lamborghini Gallardo</a></td>
+  <td><strong>$124,977</strong></td>
+  <td>-6.6%</td>
+  <td class="bad">-9.2%</td>
+  <td>15,651</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>2883</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>White</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.4</td>
+  <td>2006</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/160408/2006-Lamborghini-Gallardo.aspx" target="_blank">2006 Lamborghini Gallardo</a></td>
+  <td><strong>$114,977</strong></td>
+  <td>1.9%</td>
+  <td class="bad">-5.7%</td>
+  <td>19,422</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>2706</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Orange</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.2</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/165351/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="bad">-1.5%</td>
+  <td>22,944</td>
+  <td class="">0.9x avg</td>
+  <td>2870</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Orange</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.1</td>
+  <td>2013</td>
+  <td><a href="https://www.cars925.com/vehicle-details/2013-lamborghini-gallardo-lp550-2-convertible-6354cb01b2c74a8ca9964a8b02cdbb23" target="_blank">2013 Lamborghini Gallardo LP550-2 Convertible</a></td>
+  <td><strong>$124,990</strong></td>
+  <td>-6.6%</td>
+  <td class="bad">-22.8%</td>
+  <td>24,004</td>
+  <td class="">1.0x avg</td>
+  <td>953</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Elite Motor Cars</td>
+  <td>CA</td>
+  <td>925-826-5353</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2004</td>
+  <td><a href="https://www.unlimitedag.com/inventory/lamborghini/gallardo/a00858/" target="_blank">2004 LAMBORGHINI GALLARDO</a></td>
+  <td><strong>$89,995</strong></td>
+  <td>23.2%</td>
+  <td class="bad">-34.0%</td>
+  <td>46,950</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>3408</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>ORANGE</td>
+  <td>Unlimited Auto Group</td>
+  <td>OH</td>
+  <td>513-801-1465</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/98341/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="bad">-4.0%</td>
+  <td>24,597</td>
+  <td class="">1.0x avg</td>
+  <td>3108</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/99529/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="bad">-5.0%</td>
+  <td>25,189</td>
+  <td class="">1.0x avg</td>
+  <td>2787</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Tri-Yellow</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2010</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/179970/2010-Lamborghini-Gallardo-Spyder.aspx" target="_blank">2010 Lamborghini Gallardo Spyder</a></td>
+  <td><strong>$127,977</strong></td>
+  <td>-9.1%</td>
+  <td class="bad">-26.5%</td>
+  <td>24,432</td>
+  <td class="">1.0x avg</td>
+  <td>2657</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Nero Noctis (Black)</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/199461/2008-Lamborghini-Gallardo.aspx" target="_blank">2008 Lamborghini Gallardo</a></td>
+  <td><strong>$115,977</strong></td>
+  <td>1.1%</td>
+  <td class="bad">-16.0%</td>
+  <td>25,217</td>
+  <td class="">1.0x avg</td>
+  <td>2589</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Verde Ithaca</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2010</td>
+  <td><a href="https://www.liftautomotive.com/store/p26/2010_Lamborghini_Gallardo_Spyder_LP_560-4_Roadster.html" target="_blank">2010 Lamborghini Gallardo Spyder LP 560-4 Roadster</a></td>
+  <td><strong>$108,000</strong></td>
+  <td>7.9%</td>
+  <td class="bad">-67.7%</td>
+  <td>49,310</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>2004</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Giallo Midas</td>
+  <td>Lift Automotive Inc.</td>
+  <td>IN</td>
+  <td>260-710-4398</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2012</td>
+  <td><a href="https://www.exclusiveautoswholesale.com/details/used-2012-lamborghini-gallardo/100008382" target="_blank">2012 Lamborghini Gallardo LP 550-2 Spyder</a></td>
+  <td><strong>$129,900</strong></td>
+  <td>-10.8%</td>
+  <td class="bad">-67.0%</td>
+  <td>39,923</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>1545</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Grigio Lynx Metallic</td>
+  <td>Exclusive Auto Wholesale</td>
+  <td>SC</td>
+  <td>803-258-6976</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2011</td>
+  <td><a href="https://platinumleasing.com/vdp/21008832/Used-2011-Lamborghini-Gallardo-LP5604-Spyder-for-sale-in-Sanford-FL-32771" target="_blank">2011 Lamborghini Gallardo LP560-4 Spyder</a></td>
+  <td><strong>$126,990</strong></td>
+  <td>-8.3%</td>
+  <td class="bad">-56.1%</td>
+  <td>37,554</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1200</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Green</td>
+  <td>Platinum Leasing Of Orlando</td>
+  <td>FL</td>
+  <td>407-865-1096</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2013</td>
+  <td><a href="https://www.internationalmotorgroupllc.com/details/used-2013-lamborghini-gallardo/99899680" target="_blank">2013 Lamborghini Gallardo LP 560-4 Coupe</a></td>
+  <td><strong>$119,495</strong></td>
+  <td>-1.9%</td>
+  <td class="bad">-72.5%</td>
+  <td>45,558</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>906</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Purple</td>
+  <td>International Motor Group Llc</td>
+  <td>NJ</td>
+  <td>732-334-7423</td>
+</tr>
+<tr>
+  <td class="good">14.7</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/142003/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="bad">-9.2%</td>
+  <td>27,787</td>
+  <td class="">1.1x avg</td>
+  <td>2824</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Matte Silver</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.7</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/126495/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$99,977</strong></td>
+  <td>14.7%</td>
+  <td class="bad">-3.2%</td>
+  <td>27,269</td>
+  <td class="">1.1x avg</td>
+  <td>2788</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Blue</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.6</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/170216/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$104,977</strong></td>
+  <td>10.5%</td>
+  <td class="bad">-9.5%</td>
+  <td>27,924</td>
+  <td class="">1.1x avg</td>
+  <td>2712</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Nardo Grey</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.0</td>
+  <td>2004</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/126687/2004-Lamborghini-Gallardo.aspx" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$102,977</strong></td>
+  <td>12.2%</td>
+  <td class="bad">-17.8%</td>
+  <td>33,556</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>2705</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Orange</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">13.5</td>
+  <td>2004</td>
+  <td><a href="https://importwestmotorcars.com/vdp/23066759/Used-2004-Lamborghini-Gallardo-Coupe-for-sale-in-Riverside-CA-92504" target="_blank">2004 Lamborghini Gallardo</a></td>
+  <td><strong>$91,990</strong></td>
+  <td>21.5%</td>
+  <td class="bad">-12.9%</td>
+  <td>37,488</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>875</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Blue</td>
+  <td>Import West Motorcars</td>
+  <td>CA</td>
+  <td>951-376-1213</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2010</td>
+  <td><a href="https://rollsroycemotorcarsraleigh.com/inventory/Used-2010-Lamborghini-Gallardo--ZHWGU6AU4ALA09219" target="_blank">2010 Lamborghini Gallardo</a></td>
+  <td><strong>$123,400</strong></td>
+  <td>-5.2%</td>
+  <td class="bad">-54.8%</td>
+  <td>38,625</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1122</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Rolls-royce Motor Cars Raleigh</td>
+  <td>NC</td>
+  <td>919-872-9770</td>
+</tr>
+</table>
+<h3 class="model-title">599 GTB (18 listings)</h3>
+<div class="baseline-info">Market baseline: Median $131,550</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="https://www.drivingemotions.com/2011-ferrari-599-sa-aperta-sa-aperta-c-438.htm" target="_blank">2024 Ferrari SF90 Spider</a></td>
+  <td><strong>$1,249,900</strong></td>
+  <td>-850.1%</td>
+  <td class="bad">-850.1%</td>
+  <td>537</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>847</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Corsa Red</td>
+  <td>Driving Emotions</td>
+  <td>FL</td>
+  <td>561-845-3838</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2011</td>
+  <td><a href="https://www.drivingemotions.com/2011-ferrari-599-gtb-60-f1-alonso-final-edition-alonso-final-edition-c-13.htm" target="_blank">2024 Ferrari SF90 Spider</a></td>
+  <td><strong>$289,900</strong></td>
+  <td>-120.4%</td>
+  <td class="bad">-120.4%</td>
+  <td>3,505</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>686</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso F1 Storico</td>
+  <td>Driving Emotions</td>
+  <td>FL</td>
+  <td>561-845-3838</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2010</td>
+  <td><a href="http://www.ferrariboca.com/inventory/used-2010-ferrari-599-gtb-fiorano-rwd-2dr-car-zff60fca3a0172981/" target="_blank">Pre-Owned 2010 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$349,900</strong></td>
+  <td>-166.0%</td>
+  <td class="bad">-166.0%</td>
+  <td>4,446</td>
+  <td class="low-miles">0.3x avg</td>
+  <td>529</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Red</td>
+  <td>Ferrari Of Boca Raton</td>
+  <td>FL</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">25.8</td>
+  <td>2009</td>
+  <td><a href="https://www.alexanderautomotive.net/Inventory/Details/73921b9d-6024-4d2b-b528-a189913cda6b" target="_blank">2009 Ferrari 599 GTB Fiorano Base</a></td>
+  <td><strong>$188,900</strong></td>
+  <td>-43.6%</td>
+  <td class="bad">-43.6%</td>
+  <td>9,322</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1432</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Avus White</td>
+  <td>Alexander Automotive Llc</td>
+  <td>TN</td>
+  <td>866-750-4380</td>
+</tr>
+<tr>
+  <td class="good">25.5</td>
+  <td>2010</td>
+  <td><a href="https://www.intersportperformance.com/inventory/FERRARI/599GTBFIORANO/3426" target="_blank">2010 FERRARI 599GTBFIORANO</a></td>
+  <td><strong>$269,959</strong></td>
+  <td>-105.2%</td>
+  <td class="bad">-105.2%</td>
+  <td>10,943</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>700</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Intersport Performance</td>
+  <td>VA</td>
+  <td>703-574-9383</td>
+</tr>
+<tr>
+  <td class="good">25.4</td>
+  <td>2008</td>
+  <td><a href="https://www.jparadise.com/used-cars-FERRARI-599-GTB-FIORANO-2008-158875-ROAOKKQR" target="_blank">2008 FERRARI 599 GTB FIORANO</a></td>
+  <td><strong>$199,985</strong></td>
+  <td>-52.0%</td>
+  <td class="bad">-52.0%</td>
+  <td>11,890</td>
+  <td class="low-miles">0.8x avg</td>
+  <td>672</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>BLACK</td>
+  <td>Paradise Automotive Group</td>
+  <td>CA</td>
+  <td>949-347-2522</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2011</td>
+  <td><a href="https://indianahorsepower.com/product/2011-ferrari-gto/" target="_blank">2011 Ferrari...</a></td>
+  <td><strong>$849,000</strong></td>
+  <td>-545.4%</td>
+  <td class="bad">-545.4%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>641</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Indiana Horsepower</td>
+  <td>IN</td>
+  <td></td>
+</tr>
+<tr>
+  <td class="good">24.1</td>
+  <td>2010</td>
+  <td><a href="https://www.maseratiofatlanta.com/inventory/used-2010-ferrari-599-gtb-fiorano-2dr-cpe-rear-wheel-drive-2dr-car-zff60fca3a0170289/" target="_blank">Pre-Owned 2010 Ferrari 599 GTB Fiorano 2dr Cpe</a></td>
+  <td><strong>$288,000</strong></td>
+  <td>-118.9%</td>
+  <td class="bad">-118.9%</td>
+  <td>12,934</td>
+  <td class="">0.9x avg</td>
+  <td>416</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Maserati Of Atlanta</td>
+  <td>GA</td>
+  <td>678-802-5000</td>
+</tr>
+<tr>
+  <td class="good">22.6</td>
+  <td>2009</td>
+  <td><a href="https://www.rosnermotorsports.com/used-Vero+Beach-2009-Ferrari-599+GTB+Fiorano-+-ZFFFC60A690166244" target="_blank">2009 Ferrari 599 GTB Fiorano Base</a></td>
+  <td><strong>$218,990</strong></td>
+  <td>-66.5%</td>
+  <td class="bad">-66.5%</td>
+  <td>10,300</td>
+  <td class="low-miles">0.7x avg</td>
+  <td>358</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Gray</td>
+  <td>Rosner Motorsports</td>
+  <td>FL</td>
+  <td>772-469-4600</td>
+</tr>
+<tr>
+  <td class="good">22.0</td>
+  <td>2009</td>
+  <td><a href="https://www.ferrariofnewportbeach.com/auto/preowned-2009-ferrari-599-gtb-fiorano-2dr-cpe-newport-beach-ca/116377775/" target="_blank">Pre-Owned 2009 Ferrari 599 GTB Fiorano 2dr Cpe</a></td>
+  <td><strong>$289,990</strong></td>
+  <td>-120.4%</td>
+  <td class="bad">-120.4%</td>
+  <td>2,999</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>210</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Corsa</td>
+  <td>Ferrari Of Newport Beach</td>
+  <td>CA</td>
+  <td>949-646-6900</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2008</td>
+  <td><a href="http://showroom.auction123.com/topgear_imports_llc/inventory/11263/2008/Ferrari/ZFFFC60A480163826.html" target="_blank">2008 599 GTB</a></td>
+  <td><strong>$179,888</strong></td>
+  <td>-36.7%</td>
+  <td class="bad">-36.7%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>2798</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td></td>
+  <td>Top Gear Imports</td>
+  <td>NJ</td>
+  <td>856-451-2716</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://www.internationalmotorgroupllc.com/details/used-2007-ferrari-599/100123393" target="_blank">2007 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$149,995</strong></td>
+  <td>-14.0%</td>
+  <td class="bad">-14.0%</td>
+  <td>28,828</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>1098</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Yellow</td>
+  <td>International Motor Group Llc</td>
+  <td>NJ</td>
+  <td>732-334-7423</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2007</td>
+  <td><a href="https://cars.ultimateauto.com/2007-ferrari-599-gtb-fiorano-f1-%7C-orlando,-fl-%7C-ultimate-auto---fl-32808/7272774" target="_blank">2007 Ferrari 599 GTB Fiorano F1 | Orlando, FL | Ultimate Auto</a></td>
+  <td><strong>$199,000</strong></td>
+  <td>-51.3%</td>
+  <td class="bad">-51.3%</td>
+  <td>25,000</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>613</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Scuderia Red</td>
+  <td>Ultimate Auto</td>
+  <td>FL</td>
+  <td>407-849-1100</td>
+</tr>
+<tr>
+  <td class="good">14.8</td>
+  <td>2007</td>
+  <td><a href="https://www.ferrariofnewportbeach.com/auto/preowned-2007-ferrari-599-2dr-cpe-newport-beach-ca/114931688/" target="_blank">Pre-Owned 2007 Ferrari 599 2dr Cpe</a></td>
+  <td><strong>$189,990</strong></td>
+  <td>-44.4%</td>
+  <td class="bad">-44.4%</td>
+  <td>15,985</td>
+  <td class="">1.1x avg</td>
+  <td>528</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Nero Ds</td>
+  <td>Ferrari Of Newport Beach</td>
+  <td>CA</td>
+  <td>949-646-6900</td>
+</tr>
+<tr>
+  <td class="good">12.7</td>
+  <td>2007</td>
+  <td><a href="https://www.cabrioletmotors.com/details/used-2007-ferrari-599/123456905" target="_blank">2007 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$148,995</strong></td>
+  <td>-13.3%</td>
+  <td class="bad">-13.3%</td>
+  <td>36,808</td>
+  <td class="high-miles">2.5x avg</td>
+  <td>380</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Carolina Exotic Cars &amp; Consignment Center</td>
+  <td>NC</td>
+  <td>919-276-8529</td>
+</tr>
+<tr>
+  <td class="good">12.5</td>
+  <td>2008</td>
+  <td><a href="https://hbiauto.com/inventory/2008-ferrari-599-gtb-fiorano-ZFFFC60A980159030" target="_blank">2008 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$159,998</strong></td>
+  <td>-21.6%</td>
+  <td class="bad">-21.6%</td>
+  <td>32,040</td>
+  <td class="high-miles">2.1x avg</td>
+  <td>376</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Black</td>
+  <td>Hbi Auto Main</td>
+  <td>NC</td>
+  <td>336-978-8818</td>
+</tr>
+<tr>
+  <td class="good">4.5</td>
+  <td>2008</td>
+  <td><a href="https://www.tampaautogallery.com/inventory/ZFFFC60AX80160610" target="_blank">2008 Ferrari 599 GTB Fiorano Coupe 2D</a></td>
+  <td><strong>$159,991</strong></td>
+  <td>-21.6%</td>
+  <td class="bad">-21.6%</td>
+  <td>26,748</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>136</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Tampa Auto Gallery Sales &amp; Leasing</td>
+  <td>FL</td>
+  <td>813-733-4165</td>
+</tr>
+<tr>
+  <td class="bad">-0.5</td>
+  <td>2007</td>
+  <td><a href="https://lwautomotive.com/vdp/23810185/Used-2007-Ferrari-599-GTB-Fiorano-2dr-Cpe-for-sale-in-Pittsburgh-PA-15237" target="_blank">2007 Ferrari 599 GTB Fiorano</a></td>
+  <td><strong>$299,999</strong></td>
+  <td>-128.0%</td>
+  <td class="bad">-128.0%</td>
+  <td>26,067</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>285</td>
+  <td><span class="tag tag-clean">Manual</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Black</td>
+  <td>Lw Automotive</td>
+  <td>PA</td>
+  <td>412-366-7400</td>
+</tr>
+</table>
+<h3 class="model-title">Huracan (26 listings)</h3>
+<div class="baseline-info">Market baseline: Median $215,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2018</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/266791/2018-Lamborghini-Huracan-Spyder.aspx" target="_blank">2018 Lamborghini Huracan Spyder</a></td>
+  <td><strong>$279,977</strong></td>
+  <td>-30.2%</td>
+  <td class="bad">-30.2%</td>
+  <td>3,726</td>
+  <td class="low-miles">0.4x avg</td>
+  <td>1933</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosa Opi</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2023</td>
+  <td><a href="https://www.valleyautomall.com/auto/used-2023-lamborghini-huracan-sterrato-henderson-nv/82687152/" target="_blank">Certified 2023 Lamborghini Huracan Sterrato</a></td>
+  <td><strong>$385,988</strong></td>
+  <td>-79.5%</td>
+  <td class="bad">-79.5%</td>
+  <td>139</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>948</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Arancio Borealis Metallic</td>
+  <td>Valley Automall</td>
+  <td>NV</td>
+  <td>702-570-2257</td>
+</tr>
+<tr>
+  <td class="good">30.0</td>
+  <td>2023</td>
+  <td><a href="https://www.maseratiofwashington.com/viewdetails/used/zhwub6zfxpla24041/2023-lamborghini-huracan-tecnica-2d-coupe?type=finance" target="_blank">2023 Lamborghini Huracan Tecnica Base</a></td>
+  <td><strong>$336,430</strong></td>
+  <td>-56.5%</td>
+  <td class="bad">-56.5%</td>
+  <td>2,015</td>
+  <td class="low-miles">0.2x avg</td>
+  <td>858</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span> <span class="tag tag-1owner">1-Owner</span></td>
+  <td>Rosso Mars Metallic</td>
+  <td>Maserati Of Washington</td>
+  <td>VA</td>
+  <td>540-565-5272</td>
+</tr>
+<tr>
+  <td class="good">26.6</td>
+  <td>2017</td>
+  <td><a href="https://www.shopnwautobrokers.com/inventory/LAMBORGHINI/HURACAN/TAA07695" target="_blank">2017 LAMBORGHINI HURACAN</a></td>
+  <td><strong>$195,000</strong></td>
+  <td>9.3%</td>
+  <td class="good">9.3%</td>
+  <td>14,100</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1200</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>WHITE</td>
+  <td>Northwest Auto Broker</td>
+  <td>WA</td>
+  <td>206-474-6690</td>
+</tr>
+<tr>
+  <td class="good">26.4</td>
+  <td>2017</td>
+  <td><a href="https://www.ultimatemotorcars.com/vehicle-details/used-2017-lamborghini-huracan--saint-augustine-fl-id-58495589" target="_blank">2017 Lamborghini Huracan</a></td>
+  <td><strong>$210,995</strong></td>
+  <td>1.9%</td>
+  <td class="good">1.9%</td>
+  <td>6,020</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>1050</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Ultimate Motor Cars</td>
+  <td>FL</td>
+  <td>888-718-4644</td>
+</tr>
+<tr>
+  <td class="good">26.0</td>
+  <td>2022</td>
+  <td><a href="https://www.eurocaroc.com/inventory/display/used/2022/Lamborghini/Huracan-STO/ZHWUA6ZX1NLA18234/" target="_blank">2022 Lamborghini Huracan STO *CARBON SPORT SEATS * FULL PPF*</a></td>
+  <td><strong>$429,999</strong></td>
+  <td>-100.0%</td>
+  <td class="bad">-100.0%</td>
+  <td>5,042</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1522</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Eurocar Inc.</td>
+  <td>CA</td>
+  <td>949-722-7121</td>
+</tr>
+<tr>
+  <td class="good">26.0</td>
+  <td>2017</td>
+  <td><a href="https://www.stradamotorsports.com/used-vehicle-2017-lamborghini-huracan-lp-580-2-spyder-c-44/" target="_blank">2017 Lamborghini Huracan LP 580-2 Spyder</a></td>
+  <td><strong>$239,900</strong></td>
+  <td>-11.6%</td>
+  <td class="bad">-11.6%</td>
+  <td>5,223</td>
+  <td class="low-miles">0.5x avg</td>
+  <td>1156</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Strada Motorsports</td>
+  <td>IL</td>
+  <td>847-648-4900</td>
+</tr>
+<tr>
+  <td class="good">25.9</td>
+  <td>2016</td>
+  <td><a href="https://www.performanceluxurysport.com/used-Marysville-2016-Lamborghini-Huracan-LP+610+4+Spyder-ZHWUR1ZF7GLA05185" target="_blank">2016 Lamborghini Huracan LP 610-4 Spyder</a></td>
+  <td><strong>$255,900</strong></td>
+  <td>-19.0%</td>
+  <td class="bad">-19.0%</td>
+  <td>5,702</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>978</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Arancio Borealis 4-Layer</td>
+  <td>Performance Luxury Sport</td>
+  <td>OH</td>
+  <td>937-303-0332</td>
+</tr>
+<tr>
+  <td class="good">25.2</td>
+  <td>2018</td>
+  <td><a href="https://www.luxuryautocollection.com/inventory/used-2018-lamborghini-huracan-lp-580-2-full-ppf-titanium-exhaust-carbon-wing-rear-wheel-drive-coupe-zhwuc2zf3jla09216/" target="_blank">Pre-Owned 2018 Lamborghini Huracan LP 580-2 | Full PPF | Titanium Exhaust | Carbon Wing</a></td>
+  <td><strong>$234,999</strong></td>
+  <td>-9.3%</td>
+  <td class="bad">-9.3%</td>
+  <td>9,211</td>
+  <td class="">0.9x avg</td>
+  <td>965</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Verde Mantis Pearl Effect</td>
+  <td>Luxury Auto Collection</td>
+  <td>AZ</td>
+  <td>480-660-8330</td>
+</tr>
+<tr>
+  <td class="good">25.0</td>
+  <td>2021</td>
+  <td><a href="https://pistaauto.com/2021-lamborghini-huracan/" target="_blank">2021 Lamborghini Huracan</a></td>
+  <td><strong>$225,000</strong></td>
+  <td>-4.7%</td>
+  <td class="bad">-4.7%</td>
+  <td>0</td>
+  <td class="">unknown</td>
+  <td>1215</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Pista Auto Group</td>
+  <td>FL</td>
+  <td>954-417-0112</td>
+</tr>
+<tr>
+  <td class="good">24.2</td>
+  <td>2018</td>
+  <td><a href="https://www.onelegacymotors.com/used/Lamborghini/2018-Lamborghini-Huracan-b35b5173ac184c418849c2b5ef17368c.htm" target="_blank">2018 Lamborghini Huracan LP580-2S Convertible</a></td>
+  <td><strong>$245,990</strong></td>
+  <td>-14.4%</td>
+  <td class="bad">-14.4%</td>
+  <td>12,527</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>845</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Mars</td>
+  <td>One Legacy Motors</td>
+  <td>TX</td>
+  <td>972-544-0928</td>
+</tr>
+<tr>
+  <td class="good">24.0</td>
+  <td>2018</td>
+  <td><a href="https://www.tbtfw.com/vehicle-details/119f8a05f1de4e759b9d6ce86ff65c9d" target="_blank">2018 Lamborghini Huracan LP 640-4 Performante Twin Turbo</a></td>
+  <td><strong>$399,995</strong></td>
+  <td>-86.0%</td>
+  <td class="bad">-86.0%</td>
+  <td>13,340</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>1712</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Tbtfw</td>
+  <td>CA</td>
+  <td>310-909-6644</td>
+</tr>
+<tr>
+  <td class="good">23.9</td>
+  <td>2018</td>
+  <td><a href="http://themarkmotors.com/vehicle-details/used-2018-lamborghini-huracan-performante---full-ppf---fabspeed-exhaust---hre-wheels-boerne-tx-id-ZHWUD4ZF6JLA09039" target="_blank">2018 Lamborghini Huracan Performante - FULL PPF - FABSPEED EXHAUST - HRE WHEELS</a></td>
+  <td><strong>$349,888</strong></td>
+  <td>-62.7%</td>
+  <td class="bad">-62.7%</td>
+  <td>13,742</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1157</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Giallo Inti Pearl Effect</td>
+  <td>Mark Motors</td>
+  <td>TX</td>
+  <td>830-981-5050</td>
+</tr>
+<tr>
+  <td class="good">23.7</td>
+  <td>2020</td>
+  <td><a href="https://www.astonmartinmichigan.com/used-Troy-2020-Lamborghini-Huracan+EVO-+-ZHWUT5ZF1LLA15083" target="_blank">2020 Lamborghini Huracan EVO Base</a></td>
+  <td><strong>$280,271</strong></td>
+  <td>-30.4%</td>
+  <td class="bad">-30.4%</td>
+  <td>14,324</td>
+  <td class="high-miles">1.4x avg</td>
+  <td>1368</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Black</td>
+  <td>Aston Martin Detroit</td>
+  <td>MI</td>
+  <td>248-430-9610</td>
+</tr>
+<tr>
+  <td class="good">20.0</td>
+  <td>2021</td>
+  <td><a href="https://www.21centuryautogroup.com/used.cfm/vehicle/2021-lamborghini-huracan-evo-ZHWUT5ZF2MLA17751/" target="_blank">Used 2021 Lamborghini Huracan EVO</a></td>
+  <td><strong>$350,000</strong></td>
+  <td>-62.8%</td>
+  <td class="bad">-62.8%</td>
+  <td>374</td>
+  <td class="low-miles">0.0x avg</td>
+  <td>1616</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Grigio Nimbus Metallic</td>
+  <td>21st Century Auto Group</td>
+  <td>NJ</td>
+  <td>908-360-9944</td>
+</tr>
+<tr>
+  <td class="good">19.9</td>
+  <td>2017</td>
+  <td><a href="https://www.weiscomotorcars.com/inventory/2017-lamborghini-huracan-lp-580-2/964665" target="_blank">2017 Lamborghini Huracan LP 580-2</a></td>
+  <td><strong>$179,999</strong></td>
+  <td>16.3%</td>
+  <td class="good">16.3%</td>
+  <td>21,251</td>
+  <td class="high-miles">2.1x avg</td>
+  <td>847</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Arancio Borealis Pearl Effect</td>
+  <td>Weisco Motorcars Ltd</td>
+  <td>CO</td>
+  <td>303-294-9694</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2019</td>
+  <td><a href="https://www.autoboom.com/used/Lamborghini/2019-Lamborghini-Huracan-26a37c46ac1804b634f8b198ea4ec43b.htm" target="_blank">2019 Lamborghini Huracan Performante Convertible</a></td>
+  <td><strong>$297,991</strong></td>
+  <td>-38.6%</td>
+  <td class="bad">-38.6%</td>
+  <td>20,650</td>
+  <td class="high-miles">2.1x avg</td>
+  <td>1506</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Auto Boom</td>
+  <td>AZ</td>
+  <td>602-777-7082</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2015</td>
+  <td><a href="https://www.autobahnporsche.com/inventory/used-2015-lamborghini-huracan-lp-610-4-all-wheel-drive-coupe-zhwuc1zf0fla00913/" target="_blank">Pre-Owned 2015 Lamborghini Huracan LP 610-4</a></td>
+  <td><strong>$219,900</strong></td>
+  <td>-2.3%</td>
+  <td class="bad">-2.3%</td>
+  <td>20,398</td>
+  <td class="high-miles">2.0x avg</td>
+  <td>1452</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Bianco Monocerus</td>
+  <td>Autobahn Porsche</td>
+  <td>TX</td>
+  <td>817-631-6468</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2017</td>
+  <td><a href="https://www.ferrarilakeforest.com/inventory/used-2017-lamborghini-huracan-lp580-2-rwd-2d-coupe-zhwuc2zf2hla07273/" target="_blank">Pre-Owned 2017 Lamborghini Huracan</a></td>
+  <td><strong>$219,900</strong></td>
+  <td>-2.3%</td>
+  <td class="bad">-2.3%</td>
+  <td>19,018</td>
+  <td class="high-miles">1.9x avg</td>
+  <td>1211</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Silver</td>
+  <td>Ferrari Lake Forest</td>
+  <td>IL</td>
+  <td>847-295-6560</td>
+</tr>
+<tr>
+  <td class="good">15.0</td>
+  <td>2020</td>
+  <td><a href="https://www.reachexotics.com/car-sales/2020-lamborghini-huracan-evo" target="_blank">2020 Lamborghini Huracan EVO</a></td>
+  <td><strong>$278,000</strong></td>
+  <td>-29.3%</td>
+  <td class="bad">-29.3%</td>
+  <td>18,000</td>
+  <td class="high-miles">1.8x avg</td>
+  <td>990</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td></td>
+  <td>Reach Exotics</td>
+  <td>FL</td>
+  <td>818-853-1675</td>
+</tr>
+<tr>
+  <td class="good">14.6</td>
+  <td>2015</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/253711/2015-Lamborghini-Huracan.aspx" target="_blank">2015 Lamborghini Huracan</a></td>
+  <td><strong>$239,977</strong></td>
+  <td>-11.6%</td>
+  <td class="bad">-11.6%</td>
+  <td>11,239</td>
+  <td class="">1.1x avg</td>
+  <td>2011</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Blu Caelum Ad Personam Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">14.0</td>
+  <td>2015</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/160732/2015-Lamborghini-Huracan-LP-610-4.aspx" target="_blank">2015 Lamborghini Huracan LP 610-4</a></td>
+  <td><strong>$259,977</strong></td>
+  <td>-20.9%</td>
+  <td class="bad">-20.9%</td>
+  <td>13,173</td>
+  <td class="high-miles">1.3x avg</td>
+  <td>3019</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Icarus Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">5.7</td>
+  <td>2015</td>
+  <td><a href="https://www.21centuryautogroup.com/used.cfm/vehicle/2015-lamborghini-huracan-awd-ZHWUC1ZF2FLA02159/" target="_blank">Used 2015 Lamborghini Huracan</a></td>
+  <td><strong>$209,995</strong></td>
+  <td>2.3%</td>
+  <td class="good">2.3%</td>
+  <td>16,884</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1965</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Giallo Midas Pearl Effect</td>
+  <td>21st Century Auto Group</td>
+  <td>NJ</td>
+  <td>908-360-9944</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2015</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/287572/2015-Lamborghini-Huracan.aspx" target="_blank">2015 Lamborghini Huracan</a></td>
+  <td><strong>$239,977</strong></td>
+  <td>-11.6%</td>
+  <td class="bad">-11.6%</td>
+  <td>15,266</td>
+  <td class="high-miles">1.5x avg</td>
+  <td>1863</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Blu Caelum Ad Personam Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2015</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/281734/2015-Lamborghini-Huracan-LP-610-4.aspx" target="_blank">2015 Lamborghini Huracan LP 610-4</a></td>
+  <td><strong>$309,977</strong></td>
+  <td>-44.2%</td>
+  <td class="bad">-44.2%</td>
+  <td>17,352</td>
+  <td class="high-miles">1.7x avg</td>
+  <td>1741</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Icarus Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+<tr>
+  <td class="good">5.0</td>
+  <td>2015</td>
+  <td><a href="https://www.kellymotorcars.com/Listing/302425/2015-Lamborghini-Huracan-LP-610-4.aspx" target="_blank">2015 Lamborghini Huracan LP 610-4</a></td>
+  <td><strong>$239,977</strong></td>
+  <td>-11.6%</td>
+  <td class="bad">-11.6%</td>
+  <td>16,094</td>
+  <td class="high-miles">1.6x avg</td>
+  <td>1588</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-clean">Clean</span></td>
+  <td>Bianco Icarus Metallic</td>
+  <td>Kelly Motorcars</td>
+  <td>PA</td>
+  <td>215-601-8611</td>
+</tr>
+</table>
+<h3 class="model-title">Murcielago (1 listings)</h3>
+<div class="baseline-info">Market baseline: Median $400,000</div>
+<table>
+<tr><th>Score</th><th>Year</th><th>Listing</th><th>Price</th><th>Disc.</th><th>Adj. Disc.</th><th>Miles</th><th>vs Avg</th><th>Days</th><th>Trans.</th><th>Title</th><th>Color</th><th>Dealer</th><th>State</th><th>Phone</th></tr>
+<tr>
+  <td class="good">22.9</td>
+  <td>2004</td>
+  <td><a href="https://www.lapinmotorco.com/used-vehicle-2004-lamborghini-murcielago-base-c-440/" target="_blank">2004 Lamborghini Murcielago Base</a></td>
+  <td><strong>$579,991</strong></td>
+  <td>-45.0%</td>
+  <td class="bad">-42.3%</td>
+  <td>9,250</td>
+  <td class="low-miles">0.6x avg</td>
+  <td>364</td>
+  <td><span class="tag tag-swap">F1/e-gear</span></td>
+  <td><span class="tag tag-salvage">Not Clean</span></td>
+  <td>Rosso Leto Metallic</td>
+  <td>Lapin Motor Co</td>
+  <td>AZ</td>
+  <td>480-409-4940</td>
+</tr>
+</table>
+</div>
+<div class="footer">
+<strong>How to read deals/swaps:</strong> "Disc." = raw discount vs flat median. "Adj. Disc." = discount vs mileage-adjusted expected price (the real signal). Score combines adjusted discount + days on lot + title status + owner history. Positive score = genuinely underpriced.
+</div>
+</body>
+</html>
