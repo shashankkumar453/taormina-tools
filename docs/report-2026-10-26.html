@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Taormina Tools — Weekly Report 2026-10-26</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 1400px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.5; }
+h1 { font-size: 28px; margin-bottom: 4px; }
+.subtitle { color: #666; margin-bottom: 10px; font-size: 14px; }
+nav { display: flex; gap: 8px; margin: 16px 0 30px; flex-wrap: wrap; }
+nav a { display: inline-block; padding: 8px 16px; border-radius: 6px; background: #2c3e50; color: white; font-size: 13px; font-weight: 600; text-decoration: none; }
+nav a:hover { background: #1a252f; }
+nav a .nav-count { opacity: 0.7; font-weight: 400; margin-left: 4px; }
+.report-section { margin-bottom: 60px; }
+.report-header { font-size: 24px; margin: 0 0 4px; padding-top: 30px; border-top: 3px solid #8b1c1c; }
+.report-desc { color: #666; font-size: 13px; margin-bottom: 16px; }
+.stats { display: flex; gap: 16px; margin: 16px 0 20px; flex-wrap: wrap; }
+.stat-card { background: #f8f9fa; border-radius: 8px; padding: 14px 20px; border-left: 3px solid #8b1c1c; }
+.stat-card .num { font-size: 24px; font-weight: 700; color: #8b1c1c; }
+.stat-card .label { font-size: 12px; color: #666; }
+.method { background: #f0f7f0; border: 1px solid #c3e6c3; border-radius: 6px; padding: 14px 18px; margin: 12px 0 20px; font-size: 13px; }
+.method strong { color: #1a5c1a; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 16px; }
+th { background: #2c3e50; color: white; padding: 10px 8px; text-align: left; position: sticky; top: 0; z-index: 1; }
+td { padding: 8px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:hover td { background: #f5f5f5; }
+a { color: #2980b9; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.good { color: #27ae60; font-weight: 600; }
+.bad { color: #c0392b; }
+.tag { display: inline-block; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+.tag-clean { background: #d4edda; color: #155724; }
+.tag-salvage { background: #f8d7da; color: #721c24; }
+.tag-1owner { background: #cce5ff; color: #004085; }
+.tag-swap { background: #fff3cd; color: #856404; }
+.tag-project { background: #e2e3e5; color: #383d41; }
+.low-miles { color: #27ae60; }
+.high-miles { color: #c0392b; }
+.model-title { font-size: 18px; margin: 30px 0 8px; padding-top: 16px; border-top: 1px solid #eee; }
+.baseline-info { font-size: 12px; color: #666; margin: 4px 0 12px; }
+.highlight-row td { background: #f0fff0; }
+.snippet { max-width: 400px; font-size: 12px; color: #555; word-break: break-word; }
+.footer { color: #666; font-size: 12px; margin-top: 40px; border-top: 1px solid #eee; padding-top: 12px; }
+
+</style>
+</head>
+<body>
+<h1>Weekly Report</h1>
+<p class="subtitle">Generated 2026-10-26 | 2 total leads across 1 sources</p>
+<nav>
+<a href="#forums">Classifieds<span class="nav-count">(2)</span></a>
+</nav>
+<div class="report-section" id="values">
+<h2 class="report-header">Estimated Market Values</h2>
+<p class="report-desc">Based on recent Bring a Trailer + Cars &amp; Bids sold prices (mileage + year adjusted regression)</p>
+<table>
+<tr><th>Model</th><th>Est. Market Value</th><th>Range (P25–P75)</th><th>Avg Miles</th><th>$/Mile</th><th>$/Year</th><th>Sales Sampled</th><th>Listings Found</th><th>Best Deal</th><th>Best Adj. Disc.</th></tr>
+<tr>
+  <td><strong>F355</strong></td>
+  <td>$198,300</td>
+  <td>$106,777–$235,355</td>
+  <td>22,000</td>
+  <td>$-6</td>
+  <td>$39,852</td>
+  <td>23</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$182,944</td>
+  <td>$160,500–$207,500</td>
+  <td>16,764</td>
+  <td>$-7</td>
+  <td>$-22,602</td>
+  <td>22</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>360</strong></td>
+  <td>$101,000</td>
+  <td>$78,000–$115,000</td>
+  <td>21,800</td>
+  <td>$-13</td>
+  <td>—</td>
+  <td>20</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$68,625</td>
+  <td>$32,250–$152,000</td>
+  <td>—</td>
+  <td>—</td>
+  <td>—</td>
+  <td>4</td>
+  <td>0</td>
+  <td>—</td>
+  <td class="">—</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="swap-economics">
+<h2 class="report-header">Manual Swap Targets</h2>
+<p class="report-desc">F1/e-gear exotics where converting to manual gearbox unlocks significant value. Swap cost is for parts + labor at a specialist shop.</p>
+<table>
+<tr><th>Model</th><th>F1/E-gear Value</th><th>Manual Value</th><th>Swap Cost</th><th>Potential Profit</th><th>ROI</th><th>Notes</th></tr>
+<tr>
+  <td><strong>360 Modena</strong></td>
+  <td>$101,000</td>
+  <td>$140,000</td>
+  <td>$18,000</td>
+  <td class="good"><strong>$21,000</strong></td>
+  <td class="good">18%</td>
+  <td class="snippet">F1-to-gated 6-speed. Most common swap; well-documented process.</td>
+</tr>
+<tr>
+  <td><strong>360 Spider</strong></td>
+  <td>$78,000</td>
+  <td>$110,000</td>
+  <td>$18,000</td>
+  <td class="good"><strong>$14,000</strong></td>
+  <td class="good">15%</td>
+  <td class="snippet">Same drivetrain as Modena. Spiders trade lower but manual premium still strong.</td>
+</tr>
+<tr>
+  <td><strong>F430</strong></td>
+  <td>$182,944</td>
+  <td>$260,000</td>
+  <td>$22,000</td>
+  <td class="good"><strong>$55,056</strong></td>
+  <td class="good">27%</td>
+  <td class="snippet">F1-to-gated 6-speed. Largest profit margin — manual F430s are highly sought.</td>
+</tr>
+<tr>
+  <td><strong>575M</strong></td>
+  <td>$68,625</td>
+  <td>$175,000</td>
+  <td>$20,000</td>
+  <td class="good"><strong>$86,375</strong></td>
+  <td class="good">97%</td>
+  <td class="snippet">F1-to-gated 6-speed. V12 GT cruiser with strong manual demand.</td>
+</tr>
+</table>
+</div>
+<div class="report-section" id="forums">
+<h2 class="report-header">Forum Listings</h2>
+<p class="report-desc">2 listings found</p>
+<div class="method"><strong>Forum search:</strong> Enthusiast forums (FerrariChat, Rennlist, Lamborghini Talk, 6SpeedOnline, PistonHeads, etc.) scanned for &quot;for sale&quot; posts mentioning mechanical issues or urgency signals. Rows highlighted green have <em>both</em> a problem keyword and a sale signal — highest priority.</div>
+<div class="stats">
+<div class="stat-card"><div class="num">2</div><div class="label">Total Listings</div></div>
+<div class="stat-card"><div class="num">0</div><div class="label">With Problem Keyword</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">With Sale Signal</div></div>
+<div class="stat-card"><div class="num">0</div><div class="label">Both (High Priority)</div></div>
+<div class="stat-card"><div class="num">2</div><div class="label">Models</div></div>
+</div>
+<h3 class="model-title">Ferrari F355 (1 listings)</h3>
+<table>
+<tr><th>Forum</th><th>Listing</th><th>Problem</th><th>Sale Signal</th><th>Snippet</th></tr>
+<tr>
+  <td>FerrariChat Classifieds</td>
+  <td><a href="https://ads.ferrarichat.com/buy-ferrari/355-f1-spider/zffxr48a1x0114481" target="_blank">PreOwned 1999 Ferrari 355 F1 Spider for Sale in 15209 ...</a></td>
+  <td></td>
+  <td><span class="tag tag-clean">for sale</span></td>
+  <td class="snippet">1999 Ferrari 355 F1 Spider. Listed at $135000 with 32606 miles. Engine V8 Transmission Manual Drive Train … convertible with a 6-speed manual transmission.</td>
+</tr>
+</table>
+<h3 class="model-title">Ferrari F430 (1 listings)</h3>
+<table>
+<tr><th>Forum</th><th>Listing</th><th>Problem</th><th>Sale Signal</th><th>Snippet</th></tr>
+<tr>
+  <td>6SpeedOnline</td>
+  <td><a href="https://www.6speedonline.com/forums/automotive-parts-accessories-sale-wanted/459971-fs-fabspeed-front-license-plate-bracket-ferrari-f430.html" target="_blank">FS: Fabspeed front license plate bracket for Ferrari F430</a></td>
+  <td></td>
+  <td><span class="tag tag-clean">for sale</span></td>
+  <td class="snippet">For sale is a Fabspeed front license plate bracket for a Ferrari F430. Used only to get through state inspections. $100 plus shipping. Price: $75 Private or. ...</td>
+</tr>
+</table>
+</div>
+<div class="footer">
+<strong>How to read deals/swaps:</strong> "Disc." = raw discount vs flat median. "Adj. Disc." = discount vs mileage+year adjusted expected price (the real signal). Score combines adjusted discount + days on lot + title status + owner history. Positive score = genuinely underpriced.
+</div>
+</body>
+</html>
